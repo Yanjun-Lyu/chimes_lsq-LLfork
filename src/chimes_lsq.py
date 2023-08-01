@@ -46,7 +46,8 @@ def main():
     parser.add_argument("--test_suite",           type=str2bool, default=False,           help='output for test suite')
     parser.add_argument("--weights",              type=str,      default="None",          help='weight file')
     parser.add_argument("--active",               type=str2bool, default=False,           help='is this a DLARS/DLASSO run from the active learning driver?')
-    parser.add_argument("--folds",type=int, default=4,help="Number of CV folds")
+    parser.add_argument("--hyper_sets",           type=str2bool, default=False,           help='Are you trying to fit a model with multiple hyperparameter sets?')
+    parser.add_argument("--folds",                type=int,      default=4,               help="Number of CV folds")
     
     # Actually parse the arguments
 
@@ -164,114 +165,138 @@ def main():
     # Solve the matrix equation
     #################################
 
-    if args.algorithm == 'svd':
+
+    if  args.read_output: # We assume a x.txt and Ax.txt file were produced
+
+        x = numpy.genfromtxt("x.txt", dtype='float')
         
-        # Make the scipy call
-        
-        print ('! svd algorithm used')
         try:
-            if DO_WEIGHTING: # Then it's OK to overwrite weightedA.  It is not used to calculate y (predicted forces) below.
-                U,D,VT = scipy.linalg.svd(weightedA,overwrite_a=True)
-                Dmat   = array((transpose(weightedA)))
-            else:            #  Then do not overwrite A.  It is used to calculate y (predicted forces) below.
-                U,D,VT = scipy.linalg.svd(A,overwrite_a=False)
-                Dmat   = array((transpose(A)))  
-        except LinAlgError:
-            sys.stderr.write("SVD algorithm failed")
-            exit(1)
-            
-        # Process output
+            y = numpy.genfromtxt("Ax.txt", dtype='float') 
+        except:
+            y = numpy.genfromtxt("force.txt", dtype='float') 
 
-        dmax = 0.0
-
-        for i in range(0,len(Dmat)):
-            if ( abs(D[i]) > dmax ) :
-                dmax = abs(D[i])
-
-            for j in range(0,len(Dmat[i])):
-                Dmat[i][j]=0.0
-
-        # Cut off singular values based on fraction of maximum value as per numerical recipes.
-        
-        eps=args.eps * dmax
-        nvars = 0
-
-        for i in range(0,len(D)):
-            if abs(D[i]) > eps:
-                Dmat[i][i]=1.0/D[i]
-                nvars += 1
-
-        print ("! eps (= args.eps*dmax)          =  %11.4e" % eps)        
-        print ("! SVD regularization factor      = %11.4e" % args.eps)
-
-        x=dot(transpose(VT),Dmat)
-
-        if DO_WEIGHTING:
-            x = dot(x,dot(transpose(U),weightedb))
-        else:
-            x = dot(x,dot(transpose(U),b))
-
-    elif args.algorithm == 'ridge':
-        print ('! ridge regression used')
-        reg = linear_model.Ridge(alpha=args.alpha,fit_intercept=False)
-
-        # Fit the data.
-        reg.fit(A,b)
-
-        x = reg.coef_
-        nvars = np
-        print ("! Ridge alpha = %11.4e" % args.alpha)
-
-    elif args.algorithm == 'ridgecv':
-        alpha_ar = [1.0e-06, 3.2e-06, 1.0e-05, 3.2e-05, 1.0e-04, 3.2e-04, 1.0e-03, 3.2e-03]
-        reg = linear_model.RidgeCV(alphas=alpha_ar,fit_intercept=False,cv=args.folds)
-        reg.fit(A,b)
-        print ('! ridge CV regression used')
-        print ("! ridge CV alpha = %11.4e"  % reg.alpha_)
-        x = reg.coef_
-        nvars = np
-
-    elif args.algorithm == 'lasso':
-        
-        # Make the sklearn call
-        
-        print ('! Lasso regression used')
-        print ('! Lasso alpha = %11.4e' % args.alpha)
-        reg   = linear_model.Lasso(alpha=args.alpha,fit_intercept=False,max_iter=100000)
-        reg.fit(A,b)
-        x     = reg.coef_
-        np    = count_nonzero_vars(x)
-        nvars = np
-
-    elif args.algorithm == 'lassolars':
-        
-        # Make the sklearn call
-        
-        print ('! LARS implementation of LASSO used')
-        print ('! LASSO alpha = %11.4e' % args.alpha)
-
-        if DO_WEIGHTING:
-            reg = linear_model.LassoLars(alpha=args.alpha,fit_intercept=False,fit_path=False,verbose=True,max_iter=100000, copy_X=False)
-            reg.fit(weightedA,weightedb)
-        else:
-            reg = linear_model.LassoLars(alpha=args.alpha,fit_intercept=False,fit_path=False,verbose=True,max_iter=100000)
-            reg.fit(A,b)
-        x       = reg.coef_[0]
-        np      = count_nonzero_vars(x)
-        nvars   = np
-
-    elif args.algorithm == 'dlars' or args.algorithm == 'dlasso' :
-        
-        # Make the DLARS or DLASSO call
-
-        x,y = fit_dlars(dlasso_dlars_path, args.nodes, args.cores, args.alpha, args.split_files, args.algorithm, args.read_output, args.weights, args.normalize, args.A , args.b ,args.restart_dlasso_dlars)
-        np = count_nonzero_vars(x)
-        nvars = np
-        
     else:
 
-        print ("Unrecognized fitting algorithm") 
-        exit(1)
+            if args.algorithm == 'svd':
+                
+                # Make the scipy call
+                
+                print ('! svd algorithm used')
+                try:
+                    if DO_WEIGHTING: # Then it's OK to overwrite weightedA.  It is not used to calculate y (predicted forces) below.
+                        U,D,VT = scipy.linalg.svd(weightedA,overwrite_a=True)
+                        Dmat   = array((transpose(weightedA)))
+                    else:            #  Then do not overwrite A.  It is used to calculate y (predicted forces) below.
+                        U,D,VT = scipy.linalg.svd(A,overwrite_a=False)
+                        Dmat   = array((transpose(A)))  
+                except LinAlgError:
+                    sys.stderr.write("SVD algorithm failed")
+                    exit(1)
+                    
+                # Process output
+
+                dmax = 0.0
+
+                for i in range(0,len(Dmat)):
+                    if ( abs(D[i]) > dmax ) :
+                        dmax = abs(D[i])
+
+                    for j in range(0,len(Dmat[i])):
+                        Dmat[i][j]=0.0
+
+                # Cut off singular values based on fraction of maximum value as per numerical recipes.
+                
+                eps=args.eps * dmax
+                nvars = 0
+
+                for i in range(0,len(D)):
+                    if abs(D[i]) > eps:
+                        Dmat[i][i]=1.0/D[i]
+                        nvars += 1
+
+                print ("! eps (= args.eps*dmax)          =  %11.4e" % eps)        
+                print ("! SVD regularization factor      = %11.4e" % args.eps)
+
+                x=dot(transpose(VT),Dmat)
+
+                if DO_WEIGHTING:
+                    x = dot(x,dot(transpose(U),weightedb))
+                else:
+                    x = dot(x,dot(transpose(U),b))
+
+            elif args.algorithm == 'ridge':
+                print ('! ridge regression used')
+                reg = linear_model.Ridge(alpha=args.alpha,fit_intercept=False)
+
+                # Fit the data.
+                reg.fit(A,b)
+
+                x = reg.coef_
+                nvars = np
+                print ("! Ridge alpha = %11.4e" % args.alpha)
+
+            elif args.algorithm == 'ridgecv':
+                alpha_ar = [1.0e-06, 3.2e-06, 1.0e-05, 3.2e-05, 1.0e-04, 3.2e-04, 1.0e-03, 3.2e-03]
+                reg = linear_model.RidgeCV(alphas=alpha_ar,fit_intercept=False,cv=args.folds)
+                reg.fit(A,b)
+                print ('! ridge CV regression used')
+                print ("! ridge CV alpha = %11.4e"  % reg.alpha_)
+                x = reg.coef_
+                nvars = np
+
+            elif args.algorithm == 'lasso':
+                
+                # Make the sklearn call
+                
+                print ('! Lasso regression used')
+                print ('! Lasso alpha = %11.4e' % args.alpha)
+                reg   = linear_model.Lasso(alpha=args.alpha,fit_intercept=False,max_iter=100000)
+                reg.fit(A,b)
+                x     = reg.coef_
+                np    = count_nonzero_vars(x)
+                nvars = np
+
+            elif args.algorithm == 'lassolars':
+                
+                # Make the sklearn call
+                
+                print ('! LARS implementation of LASSO used')
+                print ('! LASSO alpha = %11.4e' % args.alpha)
+
+                if DO_WEIGHTING:
+                    reg = linear_model.LassoLars(alpha=args.alpha,fit_intercept=False,fit_path=False,verbose=True,max_iter=100000, copy_X=False)
+                    reg.fit(weightedA,weightedb)
+                else:
+                    reg = linear_model.LassoLars(alpha=args.alpha,fit_intercept=False,fit_path=False,verbose=True,max_iter=100000)
+                    reg.fit(A,b)
+                x       = reg.coef_[0]
+                np      = count_nonzero_vars(x)
+                nvars   = np
+
+            elif args.algorithm == 'dlars' or args.algorithm == 'dlasso' :
+                
+                # Make the DLARS or DLASSO call
+
+                x,y = fit_dlars(dlasso_dlars_path, args.nodes, args.cores, args.alpha, args.split_files, args.algorithm, args.read_output, args.weights, args.normalize, args.A , args.b ,args.restart_dlasso_dlars)
+                np = count_nonzero_vars(x)
+                nvars = np
+                
+            else:
+
+                print ("Unrecognized fitting algorithm") 
+                exit(1)
+                
+            if (args.algorithm not 'dlars') and (args.algorithm not 'dlasso'):
+
+                if ( (not args.split_files) and (not args.read_output) and (not args.active ) and (args.algorithm != "dlasso") ):
+                    y=dot(A,x) 
+                    
+                    
+                numpy.savetxt("force.txt", y)
+                numpy.savetxt("x.txt",     x)
+
+            if args.hyper_sets:
+                exit(1)
 
     #################################
     # Process output from solver(s)
@@ -279,19 +304,23 @@ def main():
 
     # If split_files, A is not read in ...This conditional should really be set by the algorithm, since many set  y themselves...  
       
-    if ( (not args.split_files) and (not args.read_output) and (not args.active ) and (args.algorithm != "dlasso") ):
-        y=dot(A,x)
+    if ( (not args.split_files) and (not args.active ) and (args.algorithm != "dlasso") ):
+        
+        try:
+            y = numpy.genfromtxt("force.txt",dtype = float)
+        except:
+            y = numpy.genfromtxt("Ax.txt", dtype = float)
+            
+    if args.read_output:
+        x = numpy.genfromtxt("x.txt",dtype = float)
         
     Z=0.0
 
     # Put calculated forces in force.txt
     
-    yfile = open("force.txt", "w")
-    
-    for a in range(0,len(b)):
+     for a in range(0,len(b)):
         Z = Z + (y[a] - b[a]) ** 2.0
-        yfile.write("%13.6e\n"% y[a]) 
-
+  
     bic = float(nlines) * log(Z/float(nlines)) + float(nvars) * log(float(nlines))
 
     #############################################
@@ -733,8 +762,8 @@ def fit_dlars(dlasso_dlars_path, nodes, cores, alpha, split_files, algorithm, re
         else:
             print (exepath + " does not exist")
             sys.exit(1)
-    else:
-        print ("! Reading output from prior DLARS calculation")
+#    else:
+#        print ("! Reading output from prior DLARS calculation")
 
     x = numpy.genfromtxt("x.txt", dtype='float')
     y = numpy.genfromtxt("Ax.txt", dtype='float') 
