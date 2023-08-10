@@ -1,4 +1,4 @@
-CXX=mpicxx
+#CXX=mpicxx
 ##CXX=mpicxx -O3 -fopenmp -std=c++11 -Wall -Wno-sign-compare -DUSE_MPI -DUSE_OPENMP
 ##CXX=mpicxx -g -fopenmp -std=c++11 -Wall -Wno-sign-compare -DUSE_MPI -DDEBUG
 ##CXX=mpicxx -g -std=c++11 -Wall -Wno-sign-compare -DUSE_MPI
@@ -23,7 +23,7 @@ debug: dlars.C Matrix.C Restart.C Vector.h IntVector.h Matrix.h DLARS.h
 	$(CXX) $(CFLAGSDBG) dlars.C Matrix.C Restart.C $(LINKFLAGSDBG) -o dlars
 
 clean:
-	rm dlars
+	rm -f dlars
 
 
 
