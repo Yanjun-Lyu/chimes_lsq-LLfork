@@ -297,7 +297,6 @@ def main():
 
         x = numpy.linalg.solve(ATA_reg, ATb)
         
-        np    = count_nonzero_vars(x)
         nvars = np
         print ("! Ridge alpha = %11.4e" % args.alpha)
 
