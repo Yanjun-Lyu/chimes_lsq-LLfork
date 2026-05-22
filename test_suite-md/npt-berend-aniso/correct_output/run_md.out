@@ -1,3 +1,5 @@
+TACC:  Starting up job 3141531 
+TACC:  Starting parallel tasks... 
 Code compiled in MPI mode. Will run on 36 processor(s).
 
 Reading the simulation control input file...
@@ -426,14 +428,14 @@ RANK: 0 RESET RCUT_PADDING TO: 0.2293153091
  Updating neighbor list on step: 3266, with padding: 0.212
  Updating neighbor list on step: 3281, with padding: 0.212
  Updating neighbor list on step: 3296, with padding: 0.211
-    3300    165.00       5.6288728      -1.7274767       3.9013961          1908.2      7.62824285     506.8046549
+    3300    165.00       5.6288728      -1.7274767       3.9013961          1908.2      7.62824285     506.8046550
  Updating neighbor list on step: 3311, with padding: 0.211
  Updating neighbor list on step: 3326, with padding: 0.207
  Updating neighbor list on step: 3341, with padding: 0.201
  Updating neighbor list on step: 3356, with padding: 0.197
  Updating neighbor list on step: 3371, with padding: 0.192
  Updating neighbor list on step: 3386, with padding: 0.196
-    3400    170.00       5.8011056      -1.8981667       3.9029388          1966.6      6.05825144     508.6546399
+    3400    170.00       5.8011056      -1.8981667       3.9029388          1966.6      6.05825148     508.6546400
  Updating neighbor list on step: 3401, with padding: 0.207
  Updating neighbor list on step: 3416, with padding: 0.215
  Updating neighbor list on step: 3431, with padding: 0.215
@@ -441,7 +443,7 @@ RANK: 0 RESET RCUT_PADDING TO: 0.2293153091
  Updating neighbor list on step: 3462, with padding: 0.201
  Updating neighbor list on step: 3477, with padding: 0.197
  Updating neighbor list on step: 3492, with padding: 0.193
-    3500    175.00       5.8757964      -1.9851723       3.8906241          1992.0      5.73809230     497.7733248
+    3500    175.00       5.8757964      -1.9851723       3.8906241          1992.0      5.73809230     497.7733249
  Updating neighbor list on step: 3507, with padding: 0.191
  Updating neighbor list on step: 3522, with padding: 0.192
  Updating neighbor list on step: 3537, with padding: 0.193
@@ -449,14 +451,14 @@ RANK: 0 RESET RCUT_PADDING TO: 0.2293153091
  Updating neighbor list on step: 3567, with padding: 0.203
  Updating neighbor list on step: 3582, with padding: 0.208
  Updating neighbor list on step: 3597, with padding: 0.207
-    3600    180.00       5.8425147      -1.9512098       3.8913050          1980.7      6.78191746     493.1259004
+    3600    180.00       5.8425147      -1.9512097       3.8913050          1980.7      6.78191744     493.1259005
  Updating neighbor list on step: 3612, with padding: 0.210
  Updating neighbor list on step: 3627, with padding: 0.209
  Updating neighbor list on step: 3642, with padding: 0.207
  Updating neighbor list on step: 3657, with padding: 0.216
  Updating neighbor list on step: 3672, with padding: 0.220
  Updating neighbor list on step: 3687, with padding: 0.215
-    3700    185.00       5.7974444      -1.9184045       3.8790399          1965.4      7.12515098     494.1454730
+    3700    185.00       5.7974444      -1.9184045       3.8790399          1965.4      7.12515099     494.1454728
  Updating neighbor list on step: 3702, with padding: 0.212
  Updating neighbor list on step: 3717, with padding: 0.214
  Updating neighbor list on step: 3732, with padding: 0.216
@@ -464,7 +466,7 @@ RANK: 0 RESET RCUT_PADDING TO: 0.2293153091
  Updating neighbor list on step: 3762, with padding: 0.207
  Updating neighbor list on step: 3778, with padding: 0.194
  Updating neighbor list on step: 3794, with padding: 0.184
-    3800    190.00       5.6902479      -1.8081337       3.8821143          1929.1      7.50562458     493.5450597
+    3800    190.00       5.6902480      -1.8081337       3.8821143          1929.1      7.50562442     493.5450592
  Updating neighbor list on step: 3809, with padding: 0.181
  Updating neighbor list on step: 3824, with padding: 0.176
  Updating neighbor list on step: 3839, with padding: 0.178
@@ -472,14 +474,14 @@ RANK: 0 RESET RCUT_PADDING TO: 0.2293153091
  Updating neighbor list on step: 3868, with padding: 0.203
  Updating neighbor list on step: 3883, with padding: 0.207
  Updating neighbor list on step: 3899, with padding: 0.183
-    3900    195.00       5.6466262      -1.7616146       3.8850116          1914.3      6.95127205     497.4034153
+    3900    195.00       5.6466262      -1.7616146       3.8850116          1914.3      6.95127199     497.4034140
  Updating neighbor list on step: 3914, with padding: 0.187
  Updating neighbor list on step: 3928, with padding: 0.214
  Updating neighbor list on step: 3943, with padding: 0.221
  Updating neighbor list on step: 3958, with padding: 0.223
  Updating neighbor list on step: 3973, with padding: 0.222
  Updating neighbor list on step: 3988, with padding: 0.222
-    4000    200.00       5.8438933      -1.9485289       3.8953644          1981.1      5.83679707     491.4516204
+    4000    200.00       5.8438935      -1.9485292       3.8953644          1981.1      5.83679585     491.4516189
  Updating neighbor list on step: 4003, with padding: 0.222
  Updating neighbor list on step: 4018, with padding: 0.222
  Updating neighbor list on step: 4033, with padding: 0.225
@@ -487,7 +489,7 @@ RANK: 0 RESET RCUT_PADDING TO: 0.2293153091
  Updating neighbor list on step: 4063, with padding: 0.223
  Updating neighbor list on step: 4078, with padding: 0.222
  Updating neighbor list on step: 4093, with padding: 0.220
-    4100    205.00       5.6175129      -1.7204814       3.8970316          1904.4      7.32302876     485.4885581
+    4100    205.00       5.6175134      -1.7204819       3.8970316          1904.4      7.32302620     485.4885548
  Updating neighbor list on step: 4108, with padding: 0.218
  Updating neighbor list on step: 4123, with padding: 0.217
  Updating neighbor list on step: 4138, with padding: 0.218
@@ -495,14 +497,14 @@ RANK: 0 RESET RCUT_PADDING TO: 0.2293153091
  Updating neighbor list on step: 4168, with padding: 0.223
  Updating neighbor list on step: 4183, with padding: 0.223
  Updating neighbor list on step: 4198, with padding: 0.223
-    4200    210.00       5.7474365      -1.8439442       3.9034923          1948.4      6.43796030     483.4047207
+    4200    210.00       5.7474362      -1.8439438       3.9034924          1948.4      6.43796235     483.4047236
  Updating neighbor list on step: 4213, with padding: 0.223
  Updating neighbor list on step: 4228, with padding: 0.224
  Updating neighbor list on step: 4243, with padding: 0.226
  Updating neighbor list on step: 4258, with padding: 0.224
  Updating neighbor list on step: 4274, with padding: 0.208
  Updating neighbor list on step: 4290, with padding: 0.186
-    4300    215.00       5.7598476      -1.8571281       3.9027195          1952.6      6.91240031     476.5110703
+    4300    215.00       5.7598486      -1.8571290       3.9027196          1952.6      6.91239456     476.5110655
  Updating neighbor list on step: 4305, with padding: 0.195
  Updating neighbor list on step: 4320, with padding: 0.204
  Updating neighbor list on step: 4335, with padding: 0.214
@@ -510,14 +512,14 @@ RANK: 0 RESET RCUT_PADDING TO: 0.2293153091
  Updating neighbor list on step: 4365, with padding: 0.226
  Updating neighbor list on step: 4380, with padding: 0.227
  Updating neighbor list on step: 4395, with padding: 0.222
-    4400    220.00       5.9024597      -2.0020542       3.9004054          2001.0      6.33699327     473.0129531
+    4400    220.00       5.9024600      -2.0020545       3.9004055          2001.0      6.33699255     473.0129620
  Updating neighbor list on step: 4411, with padding: 0.208
  Updating neighbor list on step: 4427, with padding: 0.184
  Updating neighbor list on step: 4442, with padding: 0.198
  Updating neighbor list on step: 4456, with padding: 0.224
  Updating neighbor list on step: 4471, with padding: 0.237
  Updating neighbor list on step: 4486, with padding: 0.241
-    4500    225.00       5.8338945      -1.9324868       3.9014077          1977.8      7.13308271     473.1646294
+    4500    225.00       5.8338938      -1.9324861       3.9014077          1977.8      7.13308598     473.1646547
  Updating neighbor list on step: 4501, with padding: 0.242
  Updating neighbor list on step: 4516, with padding: 0.240
  Updating neighbor list on step: 4531, with padding: 0.237
@@ -525,14 +527,14 @@ RANK: 0 RESET RCUT_PADDING TO: 0.2293153091
  Updating neighbor list on step: 4562, with padding: 0.220
  Updating neighbor list on step: 4578, with padding: 0.204
  Updating neighbor list on step: 4594, with padding: 0.192
-    4600    230.00       5.5999116      -1.7033439       3.8965678          1898.4      8.70829468     475.1497206
+    4600    230.00       5.5999112      -1.7033434       3.8965678          1898.4      8.70829199     475.1497321
  Updating neighbor list on step: 4609, with padding: 0.189
  Updating neighbor list on step: 4624, with padding: 0.204
  Updating neighbor list on step: 4639, with padding: 0.200
  Updating neighbor list on step: 4655, with padding: 0.177
  Updating neighbor list on step: 4670, with padding: 0.185
  Updating neighbor list on step: 4685, with padding: 0.196
-    4700    235.00       5.4963725      -1.6505060       3.8458665          1863.3      8.56114517     488.8483432
+    4700    235.00       5.4963772      -1.6505103       3.8458669          1863.3      8.56112246     488.8482751
  Updating neighbor list on step: 4700, with padding: 0.201
  Updating neighbor list on step: 4715, with padding: 0.201
  Updating neighbor list on step: 4730, with padding: 0.201
@@ -540,7 +542,7 @@ RANK: 0 RESET RCUT_PADDING TO: 0.2293153091
  Updating neighbor list on step: 4760, with padding: 0.203
  Updating neighbor list on step: 4775, with padding: 0.205
  Updating neighbor list on step: 4790, with padding: 0.204
-    4800    240.00       5.7657742      -1.9129732       3.8528009          1954.7      6.70003300     492.0076935
+    4800    240.00       5.7657728      -1.9129710       3.8528018          1954.7      6.70005146     492.0075847
  Updating neighbor list on step: 4805, with padding: 0.202
  Updating neighbor list on step: 4820, with padding: 0.201
  Updating neighbor list on step: 4835, with padding: 0.202
@@ -548,14 +550,14 @@ RANK: 0 RESET RCUT_PADDING TO: 0.2293153091
  Updating neighbor list on step: 4865, with padding: 0.208
  Updating neighbor list on step: 4880, with padding: 0.209
  Updating neighbor list on step: 4895, with padding: 0.207
-    4900    245.00       5.7532118      -1.8869069       3.8663049          1950.4      6.80266099     490.4889289
+    4900    245.00       5.7532156      -1.8869101       3.8663056          1950.4      6.80264323     490.4886963
  Updating neighbor list on step: 4910, with padding: 0.202
  Updating neighbor list on step: 4925, with padding: 0.200
  Updating neighbor list on step: 4940, with padding: 0.200
  Updating neighbor list on step: 4955, with padding: 0.199
  Updating neighbor list on step: 4970, with padding: 0.195
  Updating neighbor list on step: 4986, with padding: 0.181
-    5000    250.00       5.5520641      -1.6792397       3.8728245          1882.2      7.82567664     490.4990648
+    5000    250.00       5.5520678      -1.6792420       3.8728259          1882.2      7.82565416     490.4988415
  Updating neighbor list on step: 5001, with padding: 0.189
  Updating neighbor list on step: 5016, with padding: 0.202
  Updating neighbor list on step: 5031, with padding: 0.206
@@ -563,7 +565,7 @@ RANK: 0 RESET RCUT_PADDING TO: 0.2293153091
  Updating neighbor list on step: 5062, with padding: 0.195
  Updating neighbor list on step: 5077, with padding: 0.200
  Updating neighbor list on step: 5092, with padding: 0.206
-    5100    255.00       5.4368520      -1.5657624       3.8710896          1843.2      8.25996886     496.4639103
+    5100    255.00       5.4368249      -1.5657334       3.8710915          1843.1      8.26012316     496.4637572
  Updating neighbor list on step: 5107, with padding: 0.212
  Updating neighbor list on step: 5122, with padding: 0.218
  Updating neighbor list on step: 5137, with padding: 0.217
@@ -571,14 +573,14 @@ RANK: 0 RESET RCUT_PADDING TO: 0.2293153091
  Updating neighbor list on step: 5167, with padding: 0.208
  Updating neighbor list on step: 5182, with padding: 0.215
  Updating neighbor list on step: 5197, with padding: 0.219
-    5200    260.00       5.8093434      -1.9569224       3.8524209          1969.4      4.61414168     498.4009446
+    5200    260.00       5.8093439      -1.9569233       3.8524206          1969.4      4.61415975     498.4004127
  Updating neighbor list on step: 5212, with padding: 0.214
  Updating neighbor list on step: 5228, with padding: 0.196
  Updating neighbor list on step: 5243, with padding: 0.194
  Updating neighbor list on step: 5258, with padding: 0.191
  Updating neighbor list on step: 5274, with padding: 0.182
  Updating neighbor list on step: 5289, with padding: 0.182
-    5300    265.00       5.7732960      -1.9392661       3.8340299          1957.2      5.49657156     482.3769528
+    5300    265.00       5.7731909      -1.9391605       3.8340304          1957.2      5.49719307     482.3766688
  Updating neighbor list on step: 5304, with padding: 0.181
  Updating neighbor list on step: 5319, with padding: 0.183
  Updating neighbor list on step: 5334, with padding: 0.185
@@ -586,7 +588,7 @@ RANK: 0 RESET RCUT_PADDING TO: 0.2293153091
  Updating neighbor list on step: 5364, with padding: 0.194
  Updating neighbor list on step: 5379, with padding: 0.200
  Updating neighbor list on step: 5394, with padding: 0.198
-    5400    270.00       5.6536395      -1.8018422       3.8517973          1916.6      6.90062734     479.3451209
+    5400    270.00       5.6536796      -1.8018698       3.8518098          1916.7      6.90039512     479.3455591
  Updating neighbor list on step: 5410, with padding: 0.190
  Updating neighbor list on step: 5425, with padding: 0.188
  Updating neighbor list on step: 5440, with padding: 0.190
@@ -594,14 +596,14 @@ RANK: 0 RESET RCUT_PADDING TO: 0.2293153091
  Updating neighbor list on step: 5470, with padding: 0.191
  Updating neighbor list on step: 5484, with padding: 0.210
  Updating neighbor list on step: 5499, with padding: 0.215
-    5500    275.00       5.8162167      -1.9522478       3.8639689          1971.8      6.11977696     477.2530164
+    5500    275.00       5.8162887      -1.9523071       3.8639816          1971.8      6.11937086     477.2524629
  Updating neighbor list on step: 5514, with padding: 0.217
  Updating neighbor list on step: 5529, with padding: 0.219
  Updating neighbor list on step: 5544, with padding: 0.222
  Updating neighbor list on step: 5559, with padding: 0.223
  Updating neighbor list on step: 5574, with padding: 0.224
  Updating neighbor list on step: 5589, with padding: 0.223
-    5600    280.00       5.9272420      -2.0485230       3.8787190          2009.4      5.95092469     474.9312416
+    5600    280.00       5.9272709      -2.0485420       3.8787289          2009.4      5.95059492     474.9302834
  Updating neighbor list on step: 5605, with padding: 0.205
  Updating neighbor list on step: 5620, with padding: 0.204
  Updating neighbor list on step: 5635, with padding: 0.204
@@ -609,14 +611,14 @@ RANK: 0 RESET RCUT_PADDING TO: 0.2293153091
  Updating neighbor list on step: 5664, with padding: 0.242
  Updating neighbor list on step: 5679, with padding: 0.248
  Updating neighbor list on step: 5694, with padding: 0.244
-    5700    285.00       5.7721451      -1.9014112       3.8707340          1956.8      7.79315847     472.6356622
+    5700    285.00       5.7724205      -1.9016888       3.8707317          1956.9      7.79235584     472.6294693
  Updating neighbor list on step: 5710, with padding: 0.221
  Updating neighbor list on step: 5726, with padding: 0.204
  Updating neighbor list on step: 5741, with padding: 0.204
  Updating neighbor list on step: 5756, with padding: 0.203
  Updating neighbor list on step: 5771, with padding: 0.207
  Updating neighbor list on step: 5786, with padding: 0.211
-    5800    290.00       5.5889991      -1.7595684       3.8294307          1894.7      8.01214252     480.3275720
+    5800    290.00       5.5893619      -1.7598885       3.8294734          1894.9      8.01153813     480.3120138
  Updating neighbor list on step: 5801, with padding: 0.207
  Updating neighbor list on step: 5816, with padding: 0.211
  Updating neighbor list on step: 5831, with padding: 0.215
@@ -624,7 +626,7 @@ RANK: 0 RESET RCUT_PADDING TO: 0.2293153091
  Updating neighbor list on step: 5862, with padding: 0.201
  Updating neighbor list on step: 5878, with padding: 0.199
  Updating neighbor list on step: 5893, with padding: 0.200
-    5900    295.00       5.7245484      -1.8932938       3.8312546          1940.7      6.34734561     483.2017913
+    5900    295.00       5.7248847      -1.8935860       3.8312987          1940.8      6.34645755     483.1917244
  Updating neighbor list on step: 5908, with padding: 0.194
  Updating neighbor list on step: 5924, with padding: 0.190
  Updating neighbor list on step: 5939, with padding: 0.196
@@ -632,1082 +634,1083 @@ RANK: 0 RESET RCUT_PADDING TO: 0.2293153091
  Updating neighbor list on step: 5969, with padding: 0.206
  Updating neighbor list on step: 5984, with padding: 0.211
  Updating neighbor list on step: 5999, with padding: 0.214
-    6000    300.00       5.4736954      -1.6262002       3.8474952          1855.6      7.80113688     482.6026374
- Updating neighbor list on step: 6014, with padding: 0.209
+    6000    300.00       5.4737085      -1.6260086       3.8476999          1855.6      7.80400408     482.5764302
+ Updating neighbor list on step: 6014, with padding: 0.208
  Updating neighbor list on step: 6029, with padding: 0.200
  Updating neighbor list on step: 6045, with padding: 0.170
  Updating neighbor list on step: 6060, with padding: 0.194
  Updating neighbor list on step: 6074, with padding: 0.219
  Updating neighbor list on step: 6089, with padding: 0.227
-    6100    305.00       5.7443736      -1.8863555       3.8580181          1947.4      6.92204136     479.4479148
- Updating neighbor list on step: 6104, with padding: 0.231
+    6100    305.00       5.7463272      -1.8882708       3.8580564          1948.1      6.91346721     479.3948216
+ Updating neighbor list on step: 6104, with padding: 0.230
  Updating neighbor list on step: 6119, with padding: 0.229
  Updating neighbor list on step: 6134, with padding: 0.226
  Updating neighbor list on step: 6149, with padding: 0.217
  Updating neighbor list on step: 6165, with padding: 0.192
  Updating neighbor list on step: 6181, with padding: 0.185
  Updating neighbor list on step: 6196, with padding: 0.185
-    6200    310.00       5.6796434      -1.8143522       3.8652912          1925.5      7.12563763     480.9211295
+    6200    310.00       5.6817586      -1.8164679       3.8652907          1926.2      7.11005850     480.8915515
  Updating neighbor list on step: 6211, with padding: 0.186
  Updating neighbor list on step: 6226, with padding: 0.188
- Updating neighbor list on step: 6241, with padding: 0.189
+ Updating neighbor list on step: 6241, with padding: 0.190
  Updating neighbor list on step: 6256, with padding: 0.189
  Updating neighbor list on step: 6271, with padding: 0.193
- Updating neighbor list on step: 6286, with padding: 0.192
-    6300    315.00       5.7965252      -1.9302113       3.8663139          1965.1      6.18280363     475.2787178
+ Updating neighbor list on step: 6286, with padding: 0.191
+    6300    315.00       5.7989895      -1.9328304       3.8661591          1965.9      6.16928016     475.1288455
  Updating neighbor list on step: 6302, with padding: 0.179
- Updating neighbor list on step: 6316, with padding: 0.199
+ Updating neighbor list on step: 6316, with padding: 0.198
  Updating neighbor list on step: 6331, with padding: 0.205
  Updating neighbor list on step: 6346, with padding: 0.199
  Updating neighbor list on step: 6362, with padding: 0.179
- Updating neighbor list on step: 6378, with padding: 0.181
+ Updating neighbor list on step: 6378, with padding: 0.182
  Updating neighbor list on step: 6393, with padding: 0.178
-    6400    320.00       5.4143818      -1.5447170       3.8696648          1835.5      8.13396388     478.7871137
- Updating neighbor list on step: 6408, with padding: 0.193
- Updating neighbor list on step: 6423, with padding: 0.202
+    6400    320.00       5.4138888      -1.5444804       3.8694084          1835.4      8.13682956     478.5460742
+ Updating neighbor list on step: 6408, with padding: 0.192
+ Updating neighbor list on step: 6423, with padding: 0.201
  Updating neighbor list on step: 6438, with padding: 0.205
- Updating neighbor list on step: 6453, with padding: 0.208
- Updating neighbor list on step: 6468, with padding: 0.209
- Updating neighbor list on step: 6483, with padding: 0.208
- Updating neighbor list on step: 6498, with padding: 0.207
-    6500    325.00       5.6151861      -1.7309995       3.8841866          1903.6      7.03866150     481.3448291
+ Updating neighbor list on step: 6453, with padding: 0.207
+ Updating neighbor list on step: 6468, with padding: 0.208
+ Updating neighbor list on step: 6483, with padding: 0.207
+ Updating neighbor list on step: 6498, with padding: 0.206
+    6500    325.00       5.6271971      -1.7415692       3.8856279          1907.7      7.00363268     480.6534964
  Updating neighbor list on step: 6513, with padding: 0.206
- Updating neighbor list on step: 6528, with padding: 0.202
+ Updating neighbor list on step: 6528, with padding: 0.203
  Updating neighbor list on step: 6544, with padding: 0.190
- Updating neighbor list on step: 6560, with padding: 0.174
+ Updating neighbor list on step: 6560, with padding: 0.175
  Updating neighbor list on step: 6575, with padding: 0.181
- Updating neighbor list on step: 6590, with padding: 0.186
-    6600    330.00       5.6256902      -1.7193887       3.9063015          1907.2      7.01370912     483.7620353
- Updating neighbor list on step: 6605, with padding: 0.187
+ Updating neighbor list on step: 6590, with padding: 0.187
+    6600    330.00       5.6274480      -1.7206412       3.9068068          1907.8      7.08418641     483.3062229
+ Updating neighbor list on step: 6605, with padding: 0.188
  Updating neighbor list on step: 6620, with padding: 0.187
  Updating neighbor list on step: 6635, with padding: 0.186
- Updating neighbor list on step: 6651, with padding: 0.180
- Updating neighbor list on step: 6666, with padding: 0.187
- Updating neighbor list on step: 6681, with padding: 0.193
- Updating neighbor list on step: 6696, with padding: 0.193
-    6700    335.00       5.6259666      -1.7194914       3.9064752          1907.3      7.40869866     485.7672161
- Updating neighbor list on step: 6711, with padding: 0.187
- Updating neighbor list on step: 6727, with padding: 0.179
+ Updating neighbor list on step: 6651, with padding: 0.178
+ Updating neighbor list on step: 6666, with padding: 0.184
+ Updating neighbor list on step: 6681, with padding: 0.189
+ Updating neighbor list on step: 6696, with padding: 0.190
+    6700    335.00       5.6894249      -1.7791227       3.9103023          1928.8      7.14207589     485.0771507
+ Updating neighbor list on step: 6711, with padding: 0.184
+ Updating neighbor list on step: 6727, with padding: 0.183
  Updating neighbor list on step: 6741, with padding: 0.196
- Updating neighbor list on step: 6757, with padding: 0.185
- Updating neighbor list on step: 6772, with padding: 0.183
- Updating neighbor list on step: 6787, with padding: 0.184
-    6800    340.00       5.6066526      -1.7318468       3.8748058          1900.7      7.16334352     491.0084860
- Updating neighbor list on step: 6802, with padding: 0.182
- Updating neighbor list on step: 6817, with padding: 0.184
- Updating neighbor list on step: 6831, with padding: 0.203
- Updating neighbor list on step: 6846, with padding: 0.210
- Updating neighbor list on step: 6861, with padding: 0.211
- Updating neighbor list on step: 6876, with padding: 0.210
- Updating neighbor list on step: 6891, with padding: 0.209
-    6900    345.00       5.6226430      -1.7444526       3.8781904          1906.1      7.37558843     486.0771088
- Updating neighbor list on step: 6906, with padding: 0.210
- Updating neighbor list on step: 6921, with padding: 0.210
- Updating neighbor list on step: 6936, with padding: 0.209
- Updating neighbor list on step: 6951, with padding: 0.209
- Updating neighbor list on step: 6966, with padding: 0.210
- Updating neighbor list on step: 6981, with padding: 0.210
- Updating neighbor list on step: 6996, with padding: 0.211
-    7000    350.00       5.6451360      -1.7723483       3.8727876          1913.8      7.18607102     489.2024204
- Updating neighbor list on step: 7011, with padding: 0.215
- Updating neighbor list on step: 7026, with padding: 0.221
- Updating neighbor list on step: 7041, with padding: 0.216
- Updating neighbor list on step: 7057, with padding: 0.208
- Updating neighbor list on step: 7072, with padding: 0.207
- Updating neighbor list on step: 7087, with padding: 0.207
-    7100    355.00       5.9394051      -2.0644728       3.8749324          2013.5      5.63193719     483.0538968
- Updating neighbor list on step: 7102, with padding: 0.206
- Updating neighbor list on step: 7117, with padding: 0.205
- Updating neighbor list on step: 7132, with padding: 0.208
- Updating neighbor list on step: 7147, with padding: 0.213
- Updating neighbor list on step: 7162, with padding: 0.215
- Updating neighbor list on step: 7177, with padding: 0.219
- Updating neighbor list on step: 7192, with padding: 0.229
-    7200    360.00       5.5534884      -1.6763947       3.8770937          1882.7      8.47278746     480.5145294
- Updating neighbor list on step: 7207, with padding: 0.247
- Updating neighbor list on step: 7222, with padding: 0.250
- Updating neighbor list on step: 7238, with padding: 0.231
- Updating neighbor list on step: 7254, with padding: 0.221
- Updating neighbor list on step: 7269, with padding: 0.230
- Updating neighbor list on step: 7284, with padding: 0.228
- Updating neighbor list on step: 7299, with padding: 0.224
-    7300    365.00       5.8616229      -2.0071101       3.8545129          1987.2      6.04840791     484.3980219
- Updating neighbor list on step: 7314, with padding: 0.220
- Updating neighbor list on step: 7329, with padding: 0.218
- Updating neighbor list on step: 7344, with padding: 0.217
- Updating neighbor list on step: 7359, with padding: 0.212
- Updating neighbor list on step: 7375, with padding: 0.209
- Updating neighbor list on step: 7390, with padding: 0.221
-    7400    370.00       5.8050188      -1.9597550       3.8452638          1968.0      7.24062370     476.5433414
- Updating neighbor list on step: 7405, with padding: 0.235
- Updating neighbor list on step: 7420, with padding: 0.242
- Updating neighbor list on step: 7435, with padding: 0.233
- Updating neighbor list on step: 7451, with padding: 0.222
- Updating neighbor list on step: 7466, with padding: 0.218
- Updating neighbor list on step: 7481, with padding: 0.209
- Updating neighbor list on step: 7496, with padding: 0.203
-    7500    375.00       5.6458465      -1.8276382       3.8182083          1914.0      7.59633022     484.9081186
- Updating neighbor list on step: 7511, with padding: 0.202
- Updating neighbor list on step: 7526, with padding: 0.195
- Updating neighbor list on step: 7541, with padding: 0.191
- Updating neighbor list on step: 7556, with padding: 0.196
- Updating neighbor list on step: 7571, with padding: 0.206
- Updating neighbor list on step: 7586, with padding: 0.211
-    7600    380.00       5.8310239      -2.0005848       3.8304390          1976.8      5.83045662     481.2854244
- Updating neighbor list on step: 7601, with padding: 0.216
- Updating neighbor list on step: 7616, with padding: 0.216
- Updating neighbor list on step: 7631, with padding: 0.210
- Updating neighbor list on step: 7647, with padding: 0.187
- Updating neighbor list on step: 7662, with padding: 0.189
- Updating neighbor list on step: 7677, with padding: 0.211
- Updating neighbor list on step: 7691, with padding: 0.226
-    7700    385.00       5.6209208      -1.7865652       3.8343556          1905.6      7.30271709     480.2032238
- Updating neighbor list on step: 7706, with padding: 0.226
- Updating neighbor list on step: 7721, with padding: 0.226
- Updating neighbor list on step: 7737, with padding: 0.201
- Updating neighbor list on step: 7752, with padding: 0.209
- Updating neighbor list on step: 7767, with padding: 0.213
- Updating neighbor list on step: 7782, with padding: 0.214
- Updating neighbor list on step: 7797, with padding: 0.215
-    7800    390.00       5.7314804      -1.8882629       3.8432175          1943.0      6.79026176     479.9477768
- Updating neighbor list on step: 7812, with padding: 0.219
- Updating neighbor list on step: 7827, with padding: 0.221
- Updating neighbor list on step: 7842, with padding: 0.222
- Updating neighbor list on step: 7857, with padding: 0.226
- Updating neighbor list on step: 7872, with padding: 0.221
- Updating neighbor list on step: 7887, with padding: 0.226
-    7900    395.00       5.8843341      -2.0459809       3.8383532          1994.9      6.14372551     474.6905140
- Updating neighbor list on step: 7902, with padding: 0.225
- Updating neighbor list on step: 7917, with padding: 0.224
- Updating neighbor list on step: 7932, with padding: 0.230
- Updating neighbor list on step: 7947, with padding: 0.233
- Updating neighbor list on step: 7962, with padding: 0.230
- Updating neighbor list on step: 7977, with padding: 0.228
- Updating neighbor list on step: 7992, with padding: 0.228
-    8000    400.00       6.0301600      -2.1955210       3.8346390          2044.3      5.95943891     470.3258225
- Updating neighbor list on step: 8007, with padding: 0.228
- Updating neighbor list on step: 8022, with padding: 0.225
- Updating neighbor list on step: 8037, with padding: 0.222
- Updating neighbor list on step: 8052, with padding: 0.226
- Updating neighbor list on step: 8067, with padding: 0.236
- Updating neighbor list on step: 8082, with padding: 0.239
- Updating neighbor list on step: 8098, with padding: 0.220
-    8100    405.00       5.7703781      -1.9476833       3.8226948          1956.2      8.27291999     470.9281192
- Updating neighbor list on step: 8114, with padding: 0.217
- Updating neighbor list on step: 8129, with padding: 0.237
- Updating neighbor list on step: 8144, with padding: 0.239
- Updating neighbor list on step: 8160, with padding: 0.226
- Updating neighbor list on step: 8176, with padding: 0.217
- Updating neighbor list on step: 8191, with padding: 0.216
-    8200    410.00       5.5849244      -1.8542694       3.7306550          1893.3      7.88850345     487.5644092
- Updating neighbor list on step: 8207, with padding: 0.198
- Updating neighbor list on step: 8222, with padding: 0.197
- Updating neighbor list on step: 8237, with padding: 0.204
- Updating neighbor list on step: 8251, with padding: 0.223
- Updating neighbor list on step: 8266, with padding: 0.222
- Updating neighbor list on step: 8281, with padding: 0.216
- Updating neighbor list on step: 8296, with padding: 0.214
-    8300    415.00       5.7273053      -1.9918737       3.7354316          1941.6      6.51798855     490.0730224
- Updating neighbor list on step: 8311, with padding: 0.216
- Updating neighbor list on step: 8326, with padding: 0.209
- Updating neighbor list on step: 8342, with padding: 0.202
- Updating neighbor list on step: 8357, with padding: 0.205
- Updating neighbor list on step: 8372, with padding: 0.218
- Updating neighbor list on step: 8387, with padding: 0.227
-    8400    420.00       5.7296919      -1.9725866       3.7571053          1942.4      6.33598317     487.8874544
- Updating neighbor list on step: 8402, with padding: 0.232
- Updating neighbor list on step: 8417, with padding: 0.235
- Updating neighbor list on step: 8432, with padding: 0.239
- Updating neighbor list on step: 8447, with padding: 0.242
- Updating neighbor list on step: 8462, with padding: 0.244
- Updating neighbor list on step: 8477, with padding: 0.243
- Updating neighbor list on step: 8492, with padding: 0.238
-    8500    425.00       5.6492126      -1.8769585       3.7722541          1915.1      6.88679860     485.6508946
- Updating neighbor list on step: 8508, with padding: 0.205
- Updating neighbor list on step: 8524, with padding: 0.195
- Updating neighbor list on step: 8539, with padding: 0.199
- Updating neighbor list on step: 8553, with padding: 0.230
- Updating neighbor list on step: 8567, with padding: 0.246
- Updating neighbor list on step: 8583, with padding: 0.212
- Updating neighbor list on step: 8599, with padding: 0.201
-    8600    430.00       5.2370995      -1.4655013       3.7715982          1775.4      8.73512935     492.0022502
- Updating neighbor list on step: 8614, with padding: 0.214
- Updating neighbor list on step: 8629, with padding: 0.212
- Updating neighbor list on step: 8644, with padding: 0.215
- Updating neighbor list on step: 8659, with padding: 0.217
- Updating neighbor list on step: 8674, with padding: 0.228
- Updating neighbor list on step: 8689, with padding: 0.231
-    8700    435.00       5.5002879      -1.7038820       3.7964058          1864.7      7.11761029     488.1255742
- Updating neighbor list on step: 8705, with padding: 0.219
- Updating neighbor list on step: 8721, with padding: 0.208
- Updating neighbor list on step: 8736, with padding: 0.200
- Updating neighbor list on step: 8751, with padding: 0.199
- Updating neighbor list on step: 8766, with padding: 0.222
- Updating neighbor list on step: 8780, with padding: 0.258
- Updating neighbor list on step: 8795, with padding: 0.253
-    8800    440.00       5.5121901      -1.7000795       3.8121106          1868.7      7.57080144     485.5972969
- Updating neighbor list on step: 8811, with padding: 0.236
- Updating neighbor list on step: 8826, with padding: 0.236
- Updating neighbor list on step: 8841, with padding: 0.249
- Updating neighbor list on step: 8856, with padding: 0.250
- Updating neighbor list on step: 8872, with padding: 0.238
- Updating neighbor list on step: 8887, with padding: 0.231
-    8900    445.00       5.7169954      -1.8886569       3.8283385          1938.1      6.31268586     488.9409479
- Updating neighbor list on step: 8902, with padding: 0.223
- Updating neighbor list on step: 8917, with padding: 0.222
- Updating neighbor list on step: 8932, with padding: 0.231
- Updating neighbor list on step: 8947, with padding: 0.242
- Updating neighbor list on step: 8962, with padding: 0.238
- Updating neighbor list on step: 8979, with padding: 0.188
- Updating neighbor list on step: 8994, with padding: 0.186
-    9000    450.00       5.6684055      -1.8321368       3.8362687          1921.6      6.96280088     491.9940116
- Updating neighbor list on step: 9008, with padding: 0.213
- Updating neighbor list on step: 9023, with padding: 0.225
- Updating neighbor list on step: 9038, with padding: 0.229
- Updating neighbor list on step: 9053, with padding: 0.231
- Updating neighbor list on step: 9068, with padding: 0.229
- Updating neighbor list on step: 9083, with padding: 0.225
- Updating neighbor list on step: 9098, with padding: 0.221
-    9100    455.00       5.6996121      -1.8516984       3.8479137          1932.2      7.20879419     492.0508086
- Updating neighbor list on step: 9113, with padding: 0.218
- Updating neighbor list on step: 9128, with padding: 0.219
- Updating neighbor list on step: 9143, with padding: 0.222
- Updating neighbor list on step: 9158, with padding: 0.224
- Updating neighbor list on step: 9173, with padding: 0.220
- Updating neighbor list on step: 9189, with padding: 0.206
-    9200    460.00       5.7574879      -1.9044713       3.8530166          1951.8      6.73430248     494.1180192
- Updating neighbor list on step: 9206, with padding: 0.167
- Updating neighbor list on step: 9221, with padding: 0.173
- Updating neighbor list on step: 9236, with padding: 0.174
- Updating neighbor list on step: 9251, with padding: 0.178
- Updating neighbor list on step: 9266, with padding: 0.191
- Updating neighbor list on step: 9281, with padding: 0.200
- Updating neighbor list on step: 9296, with padding: 0.203
-    9300    465.00       5.7816517      -1.9188551       3.8627966          1960.0      6.41502695     495.2967919
- Updating neighbor list on step: 9311, with padding: 0.196
- Updating neighbor list on step: 9327, with padding: 0.184
- Updating neighbor list on step: 9342, with padding: 0.191
- Updating neighbor list on step: 9357, with padding: 0.203
- Updating neighbor list on step: 9372, with padding: 0.205
- Updating neighbor list on step: 9388, with padding: 0.199
-    9400    470.00       5.5339607      -1.6600999       3.8738609          1876.1      7.46510134     496.9786237
- Updating neighbor list on step: 9403, with padding: 0.212
- Updating neighbor list on step: 9418, with padding: 0.227
- Updating neighbor list on step: 9433, with padding: 0.231
- Updating neighbor list on step: 9448, with padding: 0.226
- Updating neighbor list on step: 9463, with padding: 0.224
- Updating neighbor list on step: 9478, with padding: 0.224
- Updating neighbor list on step: 9493, with padding: 0.219
-    9500    475.00       5.7760299      -1.8822364       3.8937935          1958.1      5.89640035     491.4025739
- Updating neighbor list on step: 9508, with padding: 0.214
- Updating neighbor list on step: 9523, with padding: 0.212
- Updating neighbor list on step: 9538, with padding: 0.208
- Updating neighbor list on step: 9554, with padding: 0.199
- Updating neighbor list on step: 9569, with padding: 0.201
- Updating neighbor list on step: 9584, with padding: 0.197
- Updating neighbor list on step: 9599, with padding: 0.194
-    9600    480.00       5.7907006      -1.8938088       3.8968918          1963.1      6.26026443     484.8225229
- Updating neighbor list on step: 9614, with padding: 0.192
- Updating neighbor list on step: 9629, with padding: 0.192
- Updating neighbor list on step: 9644, with padding: 0.186
- Updating neighbor list on step: 9661, with padding: 0.163
- Updating neighbor list on step: 9676, with padding: 0.158
- Updating neighbor list on step: 9689, with padding: 0.204
-    9700    485.00       5.7657232      -1.8574358       3.9082874          1954.6      6.34661807     485.7112885
- Updating neighbor list on step: 9704, with padding: 0.217
- Updating neighbor list on step: 9719, with padding: 0.218
- Updating neighbor list on step: 9734, with padding: 0.216
- Updating neighbor list on step: 9749, with padding: 0.213
- Updating neighbor list on step: 9764, with padding: 0.213
- Updating neighbor list on step: 9779, with padding: 0.215
- Updating neighbor list on step: 9794, with padding: 0.215
-    9800    490.00       5.7760463      -1.8650482       3.9109981          1958.1      6.16886696     476.8290474
- Updating neighbor list on step: 9809, with padding: 0.215
- Updating neighbor list on step: 9824, with padding: 0.213
- Updating neighbor list on step: 9839, with padding: 0.209
- Updating neighbor list on step: 9854, with padding: 0.205
- Updating neighbor list on step: 9869, with padding: 0.204
- Updating neighbor list on step: 9884, with padding: 0.203
- Updating neighbor list on step: 9899, with padding: 0.203
-    9900    495.00       5.8726877      -1.9581110       3.9145767          1990.9      6.14714215     469.6862996
- Updating neighbor list on step: 9914, with padding: 0.203
- Updating neighbor list on step: 9929, with padding: 0.204
- Updating neighbor list on step: 9944, with padding: 0.205
- Updating neighbor list on step: 9959, with padding: 0.209
- Updating neighbor list on step: 9974, with padding: 0.212
- Updating neighbor list on step: 9989, with padding: 0.212
-   10000    500.00       5.6154549      -1.7056089       3.9098460          1903.7      7.96187255     473.4355915
- Updating neighbor list on step: 10004, with padding: 0.210
- Updating neighbor list on step: 10019, with padding: 0.209
- Updating neighbor list on step: 10034, with padding: 0.209
- Updating neighbor list on step: 10049, with padding: 0.210
- Updating neighbor list on step: 10064, with padding: 0.210
- Updating neighbor list on step: 10079, with padding: 0.205
- Updating neighbor list on step: 10095, with padding: 0.193
-   10100    505.00       5.7358432      -1.8188879       3.9169554          1944.5      7.23471017     474.0603715
- Updating neighbor list on step: 10110, with padding: 0.193
- Updating neighbor list on step: 10125, with padding: 0.206
- Updating neighbor list on step: 10140, with padding: 0.216
- Updating neighbor list on step: 10156, with padding: 0.196
- Updating neighbor list on step: 10172, with padding: 0.185
- Updating neighbor list on step: 10187, with padding: 0.194
-   10200    510.00       5.7533248      -1.8402964       3.9130284          1950.4      6.60414203     476.9032795
- Updating neighbor list on step: 10202, with padding: 0.213
- Updating neighbor list on step: 10217, with padding: 0.231
- Updating neighbor list on step: 10232, with padding: 0.246
- Updating neighbor list on step: 10247, with padding: 0.244
- Updating neighbor list on step: 10262, with padding: 0.244
- Updating neighbor list on step: 10277, with padding: 0.250
- Updating neighbor list on step: 10292, with padding: 0.244
-   10300    515.00       5.5043920      -1.6300514       3.8743406          1866.0      7.49053242     479.2032411
- Updating neighbor list on step: 10308, with padding: 0.233
- Updating neighbor list on step: 10324, with padding: 0.219
- Updating neighbor list on step: 10340, with padding: 0.210
- Updating neighbor list on step: 10356, with padding: 0.198
- Updating neighbor list on step: 10372, with padding: 0.181
- Updating neighbor list on step: 10387, with padding: 0.180
-   10400    520.00       5.7332524      -1.8698756       3.8633768          1943.6      6.62762104     473.8756922
- Updating neighbor list on step: 10401, with padding: 0.205
- Updating neighbor list on step: 10415, with padding: 0.233
- Updating neighbor list on step: 10431, with padding: 0.208
- Updating neighbor list on step: 10448, with padding: 0.190
- Updating neighbor list on step: 10463, with padding: 0.200
- Updating neighbor list on step: 10479, with padding: 0.180
- Updating neighbor list on step: 10494, with padding: 0.181
-   10500    525.00       5.5378103      -1.6747596       3.8630507          1877.4      7.71720500     479.3517232
- Updating neighbor list on step: 10509, with padding: 0.175
- Updating neighbor list on step: 10524, with padding: 0.170
- Updating neighbor list on step: 10539, with padding: 0.184
- Updating neighbor list on step: 10553, with padding: 0.205
- Updating neighbor list on step: 10568, with padding: 0.212
- Updating neighbor list on step: 10583, with padding: 0.213
- Updating neighbor list on step: 10598, with padding: 0.215
-   10600    530.00       5.7594883      -1.8836103       3.8758780          1952.5      6.62629026     474.4873457
- Updating neighbor list on step: 10613, with padding: 0.217
- Updating neighbor list on step: 10628, with padding: 0.219
- Updating neighbor list on step: 10643, with padding: 0.218
- Updating neighbor list on step: 10658, with padding: 0.218
- Updating neighbor list on step: 10673, with padding: 0.219
- Updating neighbor list on step: 10688, with padding: 0.215
-   10700    535.00       5.6720575      -1.7863848       3.8856726          1922.9      6.84957037     477.5207693
- Updating neighbor list on step: 10704, with padding: 0.204
- Updating neighbor list on step: 10720, with padding: 0.191
- Updating neighbor list on step: 10735, with padding: 0.203
- Updating neighbor list on step: 10750, with padding: 0.214
- Updating neighbor list on step: 10765, with padding: 0.218
- Updating neighbor list on step: 10780, with padding: 0.226
- Updating neighbor list on step: 10795, with padding: 0.223
-   10800    540.00       5.7196029      -1.8309277       3.8886752          1939.0      6.31966345     470.6742436
- Updating neighbor list on step: 10811, with padding: 0.211
- Updating neighbor list on step: 10826, with padding: 0.211
- Updating neighbor list on step: 10841, with padding: 0.210
- Updating neighbor list on step: 10856, with padding: 0.206
- Updating neighbor list on step: 10872, with padding: 0.197
- Updating neighbor list on step: 10888, with padding: 0.189
-   10900    545.00       5.5778665      -1.6806003       3.8972662          1891.0      7.46462883     471.0951686
- Updating neighbor list on step: 10903, with padding: 0.191
- Updating neighbor list on step: 10918, with padding: 0.191
- Updating neighbor list on step: 10933, with padding: 0.188
- Updating neighbor list on step: 10949, with padding: 0.181
- Updating neighbor list on step: 10964, with padding: 0.185
- Updating neighbor list on step: 10979, with padding: 0.180
- Updating neighbor list on step: 10994, with padding: 0.177
-   11000    550.00       5.7401101      -1.8258536       3.9142566          1946.0      6.81255618     469.3946557
- Updating neighbor list on step: 11009, with padding: 0.183
- Updating neighbor list on step: 11023, with padding: 0.204
- Updating neighbor list on step: 11038, with padding: 0.204
- Updating neighbor list on step: 11053, with padding: 0.207
- Updating neighbor list on step: 11068, with padding: 0.208
- Updating neighbor list on step: 11083, with padding: 0.209
- Updating neighbor list on step: 11098, with padding: 0.216
-   11100    555.00       5.7178585      -1.8006949       3.9171636          1938.4      7.37805574     467.5984067
- Updating neighbor list on step: 11113, with padding: 0.217
- Updating neighbor list on step: 11129, with padding: 0.205
- Updating neighbor list on step: 11145, with padding: 0.190
- Updating neighbor list on step: 11160, with padding: 0.191
- Updating neighbor list on step: 11175, with padding: 0.193
- Updating neighbor list on step: 11190, with padding: 0.196
-   11200    560.00       5.9910233      -2.0779961       3.9130271          2031.0      5.83338459     463.3823391
- Updating neighbor list on step: 11205, with padding: 0.209
- Updating neighbor list on step: 11220, with padding: 0.223
- Updating neighbor list on step: 11235, with padding: 0.227
- Updating neighbor list on step: 11250, with padding: 0.228
- Updating neighbor list on step: 11265, with padding: 0.231
- Updating neighbor list on step: 11280, with padding: 0.237
- Updating neighbor list on step: 11295, with padding: 0.235
-   11300    565.00       5.8167885      -1.9247438       3.8920447          1972.0      7.99451718     460.8778477
- Updating neighbor list on step: 11311, with padding: 0.215
- Updating neighbor list on step: 11327, with padding: 0.194
- Updating neighbor list on step: 11343, with padding: 0.183
- Updating neighbor list on step: 11358, with padding: 0.183
- Updating neighbor list on step: 11373, with padding: 0.178
- Updating neighbor list on step: 11389, with padding: 0.177
-   11400    570.00       6.0201611      -2.1843317       3.8358295          2040.9      5.72589187     468.4173063
- Updating neighbor list on step: 11404, with padding: 0.190
- Updating neighbor list on step: 11419, with padding: 0.193
- Updating neighbor list on step: 11434, with padding: 0.188
- Updating neighbor list on step: 11449, with padding: 0.184
- Updating neighbor list on step: 11464, with padding: 0.184
- Updating neighbor list on step: 11479, with padding: 0.186
- Updating neighbor list on step: 11494, with padding: 0.184
-   11500    575.00       5.8453351      -2.0127677       3.8325674          1981.6      6.79946718     466.3201555
- Updating neighbor list on step: 11510, with padding: 0.175
+ Updating neighbor list on step: 6757, with padding: 0.184
+ Updating neighbor list on step: 6773, with padding: 0.179
+ Updating neighbor list on step: 6788, with padding: 0.180
+    6800    340.00       5.6346365      -1.7519388       3.8826976          1910.2      7.16541099     490.5415776
+ Updating neighbor list on step: 6803, with padding: 0.179
+ Updating neighbor list on step: 6818, with padding: 0.197
+ Updating neighbor list on step: 6832, with padding: 0.213
+ Updating neighbor list on step: 6847, with padding: 0.217
+ Updating neighbor list on step: 6862, with padding: 0.215
+ Updating neighbor list on step: 6877, with padding: 0.213
+ Updating neighbor list on step: 6892, with padding: 0.212
+    6900    345.00       5.7749705      -1.8900349       3.8849356          1957.8      6.56288114     485.1872929
+ Updating neighbor list on step: 6907, with padding: 0.212
+ Updating neighbor list on step: 6922, with padding: 0.213
+ Updating neighbor list on step: 6937, with padding: 0.214
+ Updating neighbor list on step: 6952, with padding: 0.215
+ Updating neighbor list on step: 6967, with padding: 0.215
+ Updating neighbor list on step: 6982, with padding: 0.215
+ Updating neighbor list on step: 6997, with padding: 0.218
+    7000    350.00       5.7014841      -1.8175492       3.8839349          1932.9      6.87784436     488.1301406
+ Updating neighbor list on step: 7012, with padding: 0.224
+ Updating neighbor list on step: 7027, with padding: 0.224
+ Updating neighbor list on step: 7043, with padding: 0.215
+ Updating neighbor list on step: 7058, with padding: 0.211
+ Updating neighbor list on step: 7073, with padding: 0.213
+ Updating neighbor list on step: 7088, with padding: 0.222
+    7100    355.00       5.6997856      -1.8146293       3.8851563          1932.3      7.03551832     482.7325113
+ Updating neighbor list on step: 7103, with padding: 0.223
+ Updating neighbor list on step: 7118, with padding: 0.216
+ Updating neighbor list on step: 7133, with padding: 0.215
+ Updating neighbor list on step: 7148, with padding: 0.216
+ Updating neighbor list on step: 7163, with padding: 0.216
+ Updating neighbor list on step: 7178, with padding: 0.215
+ Updating neighbor list on step: 7193, with padding: 0.216
+    7200    360.00       5.6908832      -1.7932316       3.8976516          1929.3      7.52581464     482.5839397
+ Updating neighbor list on step: 7208, with padding: 0.218
+ Updating neighbor list on step: 7223, with padding: 0.219
+ Updating neighbor list on step: 7238, with padding: 0.216
+ Updating neighbor list on step: 7253, with padding: 0.217
+ Updating neighbor list on step: 7268, with padding: 0.216
+ Updating neighbor list on step: 7283, with padding: 0.225
+ Updating neighbor list on step: 7298, with padding: 0.237
+    7300    365.00       5.5210379      -1.6424212       3.8786167          1871.7      8.87905340     487.1264211
+ Updating neighbor list on step: 7313, with padding: 0.241
+ Updating neighbor list on step: 7328, with padding: 0.239
+ Updating neighbor list on step: 7343, with padding: 0.237
+ Updating neighbor list on step: 7358, with padding: 0.238
+ Updating neighbor list on step: 7373, with padding: 0.241
+ Updating neighbor list on step: 7388, with padding: 0.246
+    7400    370.00       5.6412128      -1.8106393       3.8305735          1912.4      7.42959722     494.2110895
+ Updating neighbor list on step: 7403, with padding: 0.251
+ Updating neighbor list on step: 7418, with padding: 0.253
+ Updating neighbor list on step: 7433, with padding: 0.246
+ Updating neighbor list on step: 7449, with padding: 0.237
+ Updating neighbor list on step: 7464, with padding: 0.229
+ Updating neighbor list on step: 7479, with padding: 0.223
+ Updating neighbor list on step: 7494, with padding: 0.219
+    7500    375.00       5.5075126      -1.7122889       3.7952237          1867.1      7.13038134     495.6267932
+ Updating neighbor list on step: 7509, with padding: 0.216
+ Updating neighbor list on step: 7524, with padding: 0.211
+ Updating neighbor list on step: 7539, with padding: 0.203
+ Updating neighbor list on step: 7555, with padding: 0.193
+ Updating neighbor list on step: 7569, with padding: 0.223
+ Updating neighbor list on step: 7584, with padding: 0.216
+ Updating neighbor list on step: 7599, with padding: 0.212
+    7600    380.00       5.6589867      -1.8508379       3.8081487          1918.5      6.25024749     490.7638024
+ Updating neighbor list on step: 7614, with padding: 0.215
+ Updating neighbor list on step: 7629, with padding: 0.212
+ Updating neighbor list on step: 7644, with padding: 0.211
+ Updating neighbor list on step: 7659, with padding: 0.215
+ Updating neighbor list on step: 7674, with padding: 0.221
+ Updating neighbor list on step: 7689, with padding: 0.220
+    7700    385.00       5.6389099      -1.8105224       3.8283875          1911.7      6.71846205     488.1808912
+ Updating neighbor list on step: 7704, with padding: 0.212
+ Updating neighbor list on step: 7719, with padding: 0.213
+ Updating neighbor list on step: 7734, with padding: 0.226
+ Updating neighbor list on step: 7749, with padding: 0.240
+ Updating neighbor list on step: 7764, with padding: 0.249
+ Updating neighbor list on step: 7779, with padding: 0.248
+ Updating neighbor list on step: 7795, with padding: 0.227
+    7800    390.00       5.4897838      -1.6557144       3.8340694          1861.1      7.73237071     489.5510808
+ Updating neighbor list on step: 7811, with padding: 0.200
+ Updating neighbor list on step: 7827, with padding: 0.187
+ Updating neighbor list on step: 7842, with padding: 0.189
+ Updating neighbor list on step: 7857, with padding: 0.202
+ Updating neighbor list on step: 7872, with padding: 0.211
+ Updating neighbor list on step: 7887, with padding: 0.210
+    7900    395.00       5.8607173      -2.0254072       3.8353102          1986.8      5.61498956     484.1153288
+ Updating neighbor list on step: 7902, with padding: 0.209
+ Updating neighbor list on step: 7917, with padding: 0.209
+ Updating neighbor list on step: 7932, with padding: 0.209
+ Updating neighbor list on step: 7947, with padding: 0.203
+ Updating neighbor list on step: 7962, with padding: 0.200
+ Updating neighbor list on step: 7977, with padding: 0.200
+ Updating neighbor list on step: 7992, with padding: 0.206
+    8000    400.00       5.8499090      -2.0201989       3.8297102          1983.2      6.11298183     477.2367395
+ Updating neighbor list on step: 8007, with padding: 0.212
+ Updating neighbor list on step: 8022, with padding: 0.206
+ Updating neighbor list on step: 8038, with padding: 0.190
+ Updating neighbor list on step: 8053, with padding: 0.198
+ Updating neighbor list on step: 8067, with padding: 0.220
+ Updating neighbor list on step: 8082, with padding: 0.231
+ Updating neighbor list on step: 8097, with padding: 0.233
+    8100    405.00       5.6098604      -1.7811474       3.8287130          1901.8      8.31591416     478.5520801
+ Updating neighbor list on step: 8112, with padding: 0.231
+ Updating neighbor list on step: 8127, with padding: 0.229
+ Updating neighbor list on step: 8142, with padding: 0.228
+ Updating neighbor list on step: 8157, with padding: 0.228
+ Updating neighbor list on step: 8172, with padding: 0.226
+ Updating neighbor list on step: 8187, with padding: 0.225
+    8200    410.00       5.7989165      -1.9761150       3.8228016          1965.9      6.78419808     483.2605932
+ Updating neighbor list on step: 8202, with padding: 0.224
+ Updating neighbor list on step: 8217, with padding: 0.221
+ Updating neighbor list on step: 8232, with padding: 0.216
+ Updating neighbor list on step: 8248, with padding: 0.195
+ Updating neighbor list on step: 8263, with padding: 0.194
+ Updating neighbor list on step: 8278, with padding: 0.194
+ Updating neighbor list on step: 8293, with padding: 0.215
+    8300    415.00       5.7033187      -1.8707862       3.8325325          1933.5      6.87821439     484.4544788
+ Updating neighbor list on step: 8307, with padding: 0.234
+ Updating neighbor list on step: 8322, with padding: 0.238
+ Updating neighbor list on step: 8337, with padding: 0.239
+ Updating neighbor list on step: 8352, with padding: 0.238
+ Updating neighbor list on step: 8367, with padding: 0.236
+ Updating neighbor list on step: 8382, with padding: 0.239
+ Updating neighbor list on step: 8397, with padding: 0.248
+    8400    420.00       5.7517165      -1.9071355       3.8445811          1949.9      5.87620294     480.7672560
+ Updating neighbor list on step: 8412, with padding: 0.254
+ Updating neighbor list on step: 8427, with padding: 0.255
+ Updating neighbor list on step: 8442, with padding: 0.252
+ Updating neighbor list on step: 8457, with padding: 0.252
+ Updating neighbor list on step: 8472, with padding: 0.253
+ Updating neighbor list on step: 8487, with padding: 0.252
+    8500    425.00       5.7842413      -1.9312592       3.8529821          1960.9      5.95106497     471.9307578
+ Updating neighbor list on step: 8502, with padding: 0.243
+ Updating neighbor list on step: 8518, with padding: 0.228
+ Updating neighbor list on step: 8534, with padding: 0.219
+ Updating neighbor list on step: 8549, with padding: 0.220
+ Updating neighbor list on step: 8564, with padding: 0.239
+ Updating neighbor list on step: 8579, with padding: 0.250
+ Updating neighbor list on step: 8594, with padding: 0.255
+    8600    430.00       5.7685479      -1.9099100       3.8586379          1955.6      6.51725653     468.8059666
+ Updating neighbor list on step: 8609, with padding: 0.259
+ Updating neighbor list on step: 8624, with padding: 0.256
+ Updating neighbor list on step: 8640, with padding: 0.240
+ Updating neighbor list on step: 8656, with padding: 0.213
+ Updating neighbor list on step: 8672, with padding: 0.203
+ Updating neighbor list on step: 8687, with padding: 0.205
+    8700    435.00       5.7047919      -1.8577890       3.8470028          1934.0      7.69338978     467.5413547
+ Updating neighbor list on step: 8702, with padding: 0.206
+ Updating neighbor list on step: 8717, with padding: 0.208
+ Updating neighbor list on step: 8732, with padding: 0.210
+ Updating neighbor list on step: 8747, with padding: 0.213
+ Updating neighbor list on step: 8762, with padding: 0.211
+ Updating neighbor list on step: 8777, with padding: 0.207
+ Updating neighbor list on step: 8792, with padding: 0.204
+    8800    440.00       5.5032578      -1.6767017       3.8265561          1865.7      7.94347146     474.6249437
+ Updating neighbor list on step: 8807, with padding: 0.199
+ Updating neighbor list on step: 8822, with padding: 0.192
+ Updating neighbor list on step: 8837, with padding: 0.190
+ Updating neighbor list on step: 8852, with padding: 0.190
+ Updating neighbor list on step: 8867, with padding: 0.200
+ Updating neighbor list on step: 8882, with padding: 0.204
+ Updating neighbor list on step: 8897, with padding: 0.205
+    8900    445.00       5.9044093      -2.0781560       3.8262534          2001.7      5.42464525     469.5201779
+ Updating neighbor list on step: 8912, with padding: 0.205
+ Updating neighbor list on step: 8927, with padding: 0.202
+ Updating neighbor list on step: 8942, with padding: 0.196
+ Updating neighbor list on step: 8958, with padding: 0.186
+ Updating neighbor list on step: 8973, with padding: 0.183
+ Updating neighbor list on step: 8988, with padding: 0.184
+    9000    450.00       5.7461937      -1.9314931       3.8147006          1948.0      7.20692505     463.3860844
+ Updating neighbor list on step: 9003, with padding: 0.183
+ Updating neighbor list on step: 9018, with padding: 0.183
+ Updating neighbor list on step: 9033, with padding: 0.187
+ Updating neighbor list on step: 9048, with padding: 0.187
+ Updating neighbor list on step: 9063, with padding: 0.190
+ Updating neighbor list on step: 9078, with padding: 0.195
+ Updating neighbor list on step: 9093, with padding: 0.201
+    9100    455.00       5.9408807      -2.1313113       3.8095694          2014.0      5.73023676     462.0235288
+ Updating neighbor list on step: 9108, with padding: 0.203
+ Updating neighbor list on step: 9123, with padding: 0.198
+ Updating neighbor list on step: 9138, with padding: 0.194
+ Updating neighbor list on step: 9153, with padding: 0.192
+ Updating neighbor list on step: 9168, with padding: 0.191
+ Updating neighbor list on step: 9183, with padding: 0.188
+ Updating neighbor list on step: 9198, with padding: 0.187
+    9200    460.00       5.6990859      -1.8880340       3.8110519          1932.1      7.22221264     460.9768351
+ Updating neighbor list on step: 9213, with padding: 0.208
+ Updating neighbor list on step: 9228, with padding: 0.219
+ Updating neighbor list on step: 9243, with padding: 0.216
+ Updating neighbor list on step: 9258, with padding: 0.210
+ Updating neighbor list on step: 9273, with padding: 0.204
+ Updating neighbor list on step: 9288, with padding: 0.199
+    9300    465.00       5.8668643      -2.0585926       3.8082717          1988.9      5.63480121     457.5070230
+ Updating neighbor list on step: 9303, with padding: 0.198
+ Updating neighbor list on step: 9318, with padding: 0.200
+ Updating neighbor list on step: 9333, with padding: 0.200
+ Updating neighbor list on step: 9348, with padding: 0.199
+ Updating neighbor list on step: 9363, with padding: 0.203
+ Updating neighbor list on step: 9378, with padding: 0.210
+ Updating neighbor list on step: 9393, with padding: 0.220
+    9400    470.00       5.5024955      -1.7080217       3.7944737          1865.4      8.41667015     451.2073059
+ Updating neighbor list on step: 9408, with padding: 0.225
+ Updating neighbor list on step: 9423, with padding: 0.215
+ Updating neighbor list on step: 9439, with padding: 0.201
+ Updating neighbor list on step: 9454, with padding: 0.197
+ Updating neighbor list on step: 9469, with padding: 0.199
+ Updating neighbor list on step: 9484, with padding: 0.199
+ Updating neighbor list on step: 9499, with padding: 0.200
+    9500    475.00       5.8988582      -2.1030485       3.7958097          1999.8      6.14488946     448.8967880
+ Updating neighbor list on step: 9514, with padding: 0.204
+ Updating neighbor list on step: 9529, with padding: 0.212
+ Updating neighbor list on step: 9544, with padding: 0.219
+ Updating neighbor list on step: 9559, with padding: 0.220
+ Updating neighbor list on step: 9574, with padding: 0.221
+ Updating neighbor list on step: 9589, with padding: 0.217
+    9600    480.00       5.5692148      -1.7798673       3.7893475          1888.0      8.67876583     450.4911969
+ Updating neighbor list on step: 9604, with padding: 0.213
+ Updating neighbor list on step: 9619, with padding: 0.208
+ Updating neighbor list on step: 9634, with padding: 0.200
+ Updating neighbor list on step: 9649, with padding: 0.196
+ Updating neighbor list on step: 9664, with padding: 0.197
+ Updating neighbor list on step: 9679, with padding: 0.197
+ Updating neighbor list on step: 9694, with padding: 0.193
+    9700    485.00       5.9334365      -2.1466963       3.7867402          2011.5      6.43893740     449.6854470
+ Updating neighbor list on step: 9709, with padding: 0.192
+ Updating neighbor list on step: 9724, with padding: 0.193
+ Updating neighbor list on step: 9739, with padding: 0.195
+ Updating neighbor list on step: 9754, with padding: 0.199
+ Updating neighbor list on step: 9769, with padding: 0.199
+ Updating neighbor list on step: 9784, with padding: 0.196
+ Updating neighbor list on step: 9799, with padding: 0.197
+    9800    490.00       5.7917380      -2.0231021       3.7686358          1963.5      6.97450996     453.0283135
+ Updating neighbor list on step: 9814, with padding: 0.191
+ Updating neighbor list on step: 9829, with padding: 0.193
+ Updating neighbor list on step: 9844, with padding: 0.204
+ Updating neighbor list on step: 9859, with padding: 0.217
+ Updating neighbor list on step: 9874, with padding: 0.221
+ Updating neighbor list on step: 9889, with padding: 0.216
+    9900    495.00       5.7496750      -1.9997252       3.7499498          1949.2      7.13936039     451.3364313
+ Updating neighbor list on step: 9905, with padding: 0.206
+ Updating neighbor list on step: 9921, with padding: 0.192
+ Updating neighbor list on step: 9936, with padding: 0.190
+ Updating neighbor list on step: 9951, with padding: 0.213
+ Updating neighbor list on step: 9966, with padding: 0.228
+ Updating neighbor list on step: 9981, with padding: 0.224
+ Updating neighbor list on step: 9997, with padding: 0.191
+   10000    500.00       5.6022874      -1.8545657       3.7477217          1899.2      7.53985711     455.6321617
+ Updating neighbor list on step: 10012, with padding: 0.204
+ Updating neighbor list on step: 10027, with padding: 0.215
+ Updating neighbor list on step: 10043, with padding: 0.203
+ Updating neighbor list on step: 10058, with padding: 0.203
+ Updating neighbor list on step: 10073, with padding: 0.197
+ Updating neighbor list on step: 10088, with padding: 0.194
+   10100    505.00       5.5259760      -1.7648815       3.7610945          1873.4      7.91357652     456.5309733
+ Updating neighbor list on step: 10103, with padding: 0.195
+ Updating neighbor list on step: 10118, with padding: 0.194
+ Updating neighbor list on step: 10133, with padding: 0.191
+ Updating neighbor list on step: 10148, with padding: 0.202
+ Updating neighbor list on step: 10162, with padding: 0.220
+ Updating neighbor list on step: 10177, with padding: 0.224
+ Updating neighbor list on step: 10193, with padding: 0.198
+   10200    510.00       5.7295459      -1.9621767       3.7673692          1942.4      6.64089526     456.0283784
+ Updating neighbor list on step: 10209, with padding: 0.194
+ Updating neighbor list on step: 10224, with padding: 0.192
+ Updating neighbor list on step: 10239, with padding: 0.197
+ Updating neighbor list on step: 10254, with padding: 0.206
+ Updating neighbor list on step: 10269, with padding: 0.207
+ Updating neighbor list on step: 10284, with padding: 0.201
+ Updating neighbor list on step: 10299, with padding: 0.204
+   10300    515.00       5.7640958      -1.9918041       3.7722917          1954.1      6.93541866     454.3485008
+ Updating neighbor list on step: 10314, with padding: 0.210
+ Updating neighbor list on step: 10330, with padding: 0.196
+ Updating neighbor list on step: 10346, with padding: 0.175
+ Updating neighbor list on step: 10361, with padding: 0.173
+ Updating neighbor list on step: 10376, with padding: 0.177
+ Updating neighbor list on step: 10391, with padding: 0.178
+   10400    520.00       5.7426306      -1.9700838       3.7725468          1946.8      7.47388397     451.7171007
+ Updating neighbor list on step: 10406, with padding: 0.179
+ Updating neighbor list on step: 10421, with padding: 0.180
+ Updating neighbor list on step: 10436, with padding: 0.183
+ Updating neighbor list on step: 10451, with padding: 0.188
+ Updating neighbor list on step: 10466, with padding: 0.198
+ Updating neighbor list on step: 10481, with padding: 0.198
+ Updating neighbor list on step: 10496, with padding: 0.194
+   10500    525.00       5.7119433      -1.9762383       3.7357050          1936.4      7.44589313     456.3953078
+ Updating neighbor list on step: 10511, with padding: 0.194
+ Updating neighbor list on step: 10526, with padding: 0.194
+ Updating neighbor list on step: 10541, with padding: 0.195
+ Updating neighbor list on step: 10556, with padding: 0.195
+ Updating neighbor list on step: 10571, with padding: 0.193
+ Updating neighbor list on step: 10586, with padding: 0.190
+   10600    530.00       5.6589483      -1.9177976       3.7411507          1918.4      7.72832600     459.5820195
+ Updating neighbor list on step: 10601, with padding: 0.186
+ Updating neighbor list on step: 10616, with padding: 0.183
+ Updating neighbor list on step: 10631, with padding: 0.186
+ Updating neighbor list on step: 10646, with padding: 0.187
+ Updating neighbor list on step: 10661, with padding: 0.188
+ Updating neighbor list on step: 10676, with padding: 0.189
+ Updating neighbor list on step: 10691, with padding: 0.186
+   10700    535.00       5.5556700      -1.8176078       3.7380621          1883.4      7.57852882     467.4688945
+ Updating neighbor list on step: 10706, with padding: 0.180
+ Updating neighbor list on step: 10721, with padding: 0.191
+ Updating neighbor list on step: 10736, with padding: 0.204
+ Updating neighbor list on step: 10751, with padding: 0.206
+ Updating neighbor list on step: 10767, with padding: 0.195
+ Updating neighbor list on step: 10783, with padding: 0.179
+ Updating neighbor list on step: 10798, with padding: 0.186
+   10800    540.00       5.5310720      -1.7851675       3.7459045          1875.1      7.95214803     464.5480374
+ Updating neighbor list on step: 10813, with padding: 0.192
+ Updating neighbor list on step: 10828, with padding: 0.194
+ Updating neighbor list on step: 10843, with padding: 0.196
+ Updating neighbor list on step: 10858, with padding: 0.197
+ Updating neighbor list on step: 10873, with padding: 0.191
+ Updating neighbor list on step: 10889, with padding: 0.182
+   10900    545.00       5.6278566      -1.8673704       3.7604861          1907.9      7.07995872     467.9494885
+ Updating neighbor list on step: 10905, with padding: 0.178
+ Updating neighbor list on step: 10920, with padding: 0.194
+ Updating neighbor list on step: 10935, with padding: 0.190
+ Updating neighbor list on step: 10950, with padding: 0.185
+ Updating neighbor list on step: 10965, with padding: 0.191
+ Updating neighbor list on step: 10980, with padding: 0.196
+ Updating neighbor list on step: 10995, with padding: 0.197
+   11000    550.00       5.6776657      -1.8965429       3.7811228          1924.8      6.66990692     467.5648727
+ Updating neighbor list on step: 11010, with padding: 0.197
+ Updating neighbor list on step: 11025, with padding: 0.197
+ Updating neighbor list on step: 11040, with padding: 0.197
+ Updating neighbor list on step: 11055, with padding: 0.207
+ Updating neighbor list on step: 11070, with padding: 0.204
+ Updating neighbor list on step: 11086, with padding: 0.195
+   11100    555.00       5.5944284      -1.8071227       3.7873057          1896.6      6.85356017     466.3046437
+ Updating neighbor list on step: 11101, with padding: 0.191
+ Updating neighbor list on step: 11116, with padding: 0.188
+ Updating neighbor list on step: 11131, with padding: 0.191
+ Updating neighbor list on step: 11146, with padding: 0.202
+ Updating neighbor list on step: 11161, with padding: 0.217
+ Updating neighbor list on step: 11176, with padding: 0.216
+ Updating neighbor list on step: 11192, with padding: 0.203
+   11200    560.00       5.8558739      -2.0838722       3.7720017          1985.2      5.56083714     454.8712712
+ Updating neighbor list on step: 11208, with padding: 0.183
+ Updating neighbor list on step: 11223, with padding: 0.185
+ Updating neighbor list on step: 11237, with padding: 0.215
+ Updating neighbor list on step: 11251, with padding: 0.235
+ Updating neighbor list on step: 11266, with padding: 0.242
+ Updating neighbor list on step: 11281, with padding: 0.236
+ Updating neighbor list on step: 11297, with padding: 0.227
+   11300    565.00       5.6710492      -1.9140281       3.7570210          1922.5      7.53983131     453.9754654
+ Updating neighbor list on step: 11312, with padding: 0.219
+ Updating neighbor list on step: 11328, with padding: 0.200
+ Updating neighbor list on step: 11345, with padding: 0.174
+ Updating neighbor list on step: 11360, with padding: 0.176
+ Updating neighbor list on step: 11375, with padding: 0.176
+ Updating neighbor list on step: 11390, with padding: 0.180
+   11400    570.00       5.7188377      -1.9685996       3.7502381          1938.7      6.98372807     460.8448322
+ Updating neighbor list on step: 11405, with padding: 0.182
+ Updating neighbor list on step: 11420, with padding: 0.178
+ Updating neighbor list on step: 11435, with padding: 0.178
+ Updating neighbor list on step: 11450, with padding: 0.177
+ Updating neighbor list on step: 11465, with padding: 0.178
+ Updating neighbor list on step: 11480, with padding: 0.182
+ Updating neighbor list on step: 11495, with padding: 0.185
+   11500    575.00       5.6065691      -1.8475166       3.7590525          1900.7      8.13894673     459.8867173
+ Updating neighbor list on step: 11510, with padding: 0.183
  Updating neighbor list on step: 11525, with padding: 0.177
- Updating neighbor list on step: 11540, with padding: 0.184
- Updating neighbor list on step: 11555, with padding: 0.178
- Updating neighbor list on step: 11570, with padding: 0.180
- Updating neighbor list on step: 11585, with padding: 0.183
-   11600    580.00       5.5311847      -1.6978915       3.8332932          1875.1      8.22682332     469.3081877
- Updating neighbor list on step: 11600, with padding: 0.179
- Updating neighbor list on step: 11615, with padding: 0.179
- Updating neighbor list on step: 11630, with padding: 0.174
- Updating neighbor list on step: 11645, with padding: 0.170
- Updating neighbor list on step: 11660, with padding: 0.178
- Updating neighbor list on step: 11675, with padding: 0.187
- Updating neighbor list on step: 11690, with padding: 0.191
-   11700    585.00       5.6002248      -1.7637749       3.8364498          1898.5      7.64100508     476.1228239
- Updating neighbor list on step: 11705, with padding: 0.187
- Updating neighbor list on step: 11720, with padding: 0.190
- Updating neighbor list on step: 11735, with padding: 0.187
- Updating neighbor list on step: 11750, with padding: 0.186
- Updating neighbor list on step: 11765, with padding: 0.182
- Updating neighbor list on step: 11780, with padding: 0.181
- Updating neighbor list on step: 11795, with padding: 0.182
-   11800    590.00       5.5547310      -1.7132563       3.8414747          1883.1      7.82250674     480.9309746
- Updating neighbor list on step: 11810, with padding: 0.184
- Updating neighbor list on step: 11824, with padding: 0.213
- Updating neighbor list on step: 11839, with padding: 0.224
- Updating neighbor list on step: 11855, with padding: 0.209
- Updating neighbor list on step: 11872, with padding: 0.178
- Updating neighbor list on step: 11887, with padding: 0.178
-   11900    595.00       5.5069943      -1.6741507       3.8328436          1866.9      7.81728012     486.3633977
- Updating neighbor list on step: 11903, with padding: 0.159
- Updating neighbor list on step: 11917, with padding: 0.192
- Updating neighbor list on step: 11931, with padding: 0.213
- Updating neighbor list on step: 11946, with padding: 0.218
- Updating neighbor list on step: 11961, with padding: 0.214
- Updating neighbor list on step: 11977, with padding: 0.204
- Updating neighbor list on step: 11993, with padding: 0.191
-   12000    600.00       5.6396673      -1.7953861       3.8442813          1911.9      7.29578382     480.8571724
- Updating neighbor list on step: 12009, with padding: 0.179
- Updating neighbor list on step: 12024, with padding: 0.177
- Updating neighbor list on step: 12039, with padding: 0.180
- Updating neighbor list on step: 12054, with padding: 0.182
- Updating neighbor list on step: 12069, with padding: 0.175
- Updating neighbor list on step: 12085, with padding: 0.167
-   12100    605.00       5.7333475      -1.8755922       3.8577553          1943.7      6.88116042     479.4752805
- Updating neighbor list on step: 12100, with padding: 0.167
- Updating neighbor list on step: 12115, with padding: 0.162
- Updating neighbor list on step: 12130, with padding: 0.162
- Updating neighbor list on step: 12145, with padding: 0.168
- Updating neighbor list on step: 12160, with padding: 0.176
- Updating neighbor list on step: 12175, with padding: 0.181
- Updating neighbor list on step: 12190, with padding: 0.186
-   12200    610.00       5.8761785      -2.0055112       3.8706673          1992.1      5.70095302     479.7059968
- Updating neighbor list on step: 12205, with padding: 0.191
- Updating neighbor list on step: 12220, with padding: 0.184
- Updating neighbor list on step: 12236, with padding: 0.173
- Updating neighbor list on step: 12251, with padding: 0.179
- Updating neighbor list on step: 12266, with padding: 0.190
- Updating neighbor list on step: 12281, with padding: 0.195
- Updating neighbor list on step: 12296, with padding: 0.192
-   12300    615.00       5.8004022      -1.9362847       3.8641175          1966.4      6.46591349     471.6781858
- Updating neighbor list on step: 12311, with padding: 0.190
- Updating neighbor list on step: 12326, with padding: 0.192
- Updating neighbor list on step: 12341, with padding: 0.190
- Updating neighbor list on step: 12356, with padding: 0.192
- Updating neighbor list on step: 12371, with padding: 0.202
- Updating neighbor list on step: 12386, with padding: 0.200
-   12400    620.00       5.8456373      -1.9717424       3.8738949          1981.7      6.49472748     470.0813094
- Updating neighbor list on step: 12401, with padding: 0.197
- Updating neighbor list on step: 12416, with padding: 0.198
- Updating neighbor list on step: 12431, with padding: 0.193
- Updating neighbor list on step: 12446, with padding: 0.189
- Updating neighbor list on step: 12461, with padding: 0.185
- Updating neighbor list on step: 12476, with padding: 0.187
- Updating neighbor list on step: 12491, with padding: 0.191
-   12500    625.00       6.0072193      -2.1312268       3.8759925          2036.5      5.72304615     466.8515295
- Updating neighbor list on step: 12506, with padding: 0.192
- Updating neighbor list on step: 12521, with padding: 0.201
- Updating neighbor list on step: 12536, with padding: 0.215
- Updating neighbor list on step: 12551, with padding: 0.209
- Updating neighbor list on step: 12567, with padding: 0.192
- Updating neighbor list on step: 12583, with padding: 0.186
- Updating neighbor list on step: 12598, with padding: 0.184
-   12600    630.00       5.8722997      -1.9983726       3.8739271          1990.8      6.42399219     464.2281372
- Updating neighbor list on step: 12613, with padding: 0.188
- Updating neighbor list on step: 12628, with padding: 0.180
- Updating neighbor list on step: 12644, with padding: 0.175
- Updating neighbor list on step: 12659, with padding: 0.172
- Updating neighbor list on step: 12674, with padding: 0.185
- Updating neighbor list on step: 12689, with padding: 0.194
-   12700    635.00       5.7023332      -1.8262863       3.8760470          1933.2      7.53099319     461.9599391
- Updating neighbor list on step: 12704, with padding: 0.198
- Updating neighbor list on step: 12719, with padding: 0.195
- Updating neighbor list on step: 12734, with padding: 0.190
- Updating neighbor list on step: 12749, with padding: 0.194
- Updating neighbor list on step: 12764, with padding: 0.210
- Updating neighbor list on step: 12779, with padding: 0.218
- Updating neighbor list on step: 12795, with padding: 0.203
-   12800    640.00       5.7647552      -1.8826365       3.8821187          1954.3      6.68711354     463.4411758
- Updating neighbor list on step: 12811, with padding: 0.184
- Updating neighbor list on step: 12826, with padding: 0.185
- Updating neighbor list on step: 12841, with padding: 0.186
- Updating neighbor list on step: 12856, with padding: 0.186
- Updating neighbor list on step: 12871, with padding: 0.189
- Updating neighbor list on step: 12886, with padding: 0.192
-   12900    645.00       5.8359365      -1.9483481       3.8875884          1978.4      6.45950310     459.2686492
- Updating neighbor list on step: 12901, with padding: 0.195
- Updating neighbor list on step: 12916, with padding: 0.196
- Updating neighbor list on step: 12931, with padding: 0.194
- Updating neighbor list on step: 12946, with padding: 0.193
- Updating neighbor list on step: 12961, with padding: 0.194
- Updating neighbor list on step: 12976, with padding: 0.193
- Updating neighbor list on step: 12991, with padding: 0.193
-   13000    650.00       5.7850860      -1.9038671       3.8812189          1961.2      6.99566891     456.3782159
- Updating neighbor list on step: 13006, with padding: 0.193
- Updating neighbor list on step: 13021, with padding: 0.193
- Updating neighbor list on step: 13036, with padding: 0.199
- Updating neighbor list on step: 13051, with padding: 0.208
- Updating neighbor list on step: 13066, with padding: 0.209
- Updating neighbor list on step: 13081, with padding: 0.212
- Updating neighbor list on step: 13096, with padding: 0.211
-   13100    655.00       5.6881067      -1.8025015       3.8856052          1928.3      7.79973096     458.0896412
- Updating neighbor list on step: 13112, with padding: 0.200
- Updating neighbor list on step: 13128, with padding: 0.195
- Updating neighbor list on step: 13143, with padding: 0.191
- Updating neighbor list on step: 13158, with padding: 0.196
- Updating neighbor list on step: 13173, with padding: 0.200
- Updating neighbor list on step: 13188, with padding: 0.207
-   13200    660.00       5.7181117      -1.8461626       3.8719491          1938.5      7.24344413     466.0605361
- Updating neighbor list on step: 13203, with padding: 0.209
+ Updating neighbor list on step: 11540, with padding: 0.173
+ Updating neighbor list on step: 11555, with padding: 0.171
+ Updating neighbor list on step: 11571, with padding: 0.161
+ Updating neighbor list on step: 11586, with padding: 0.167
+   11600    580.00       5.4879315      -1.8006320       3.6872995          1860.5      7.82728206     474.6786500
+ Updating neighbor list on step: 11600, with padding: 0.183
+ Updating neighbor list on step: 11615, with padding: 0.196
+ Updating neighbor list on step: 11630, with padding: 0.200
+ Updating neighbor list on step: 11645, with padding: 0.200
+ Updating neighbor list on step: 11660, with padding: 0.200
+ Updating neighbor list on step: 11675, with padding: 0.197
+ Updating neighbor list on step: 11691, with padding: 0.187
+   11700    585.00       5.4558141      -1.7603445       3.6954696          1849.6      7.99729061     474.9351608
+ Updating neighbor list on step: 11706, with padding: 0.197
+ Updating neighbor list on step: 11721, with padding: 0.190
+ Updating neighbor list on step: 11737, with padding: 0.178
+ Updating neighbor list on step: 11753, with padding: 0.167
+ Updating neighbor list on step: 11768, with padding: 0.171
+ Updating neighbor list on step: 11783, with padding: 0.180
+ Updating neighbor list on step: 11798, with padding: 0.188
+   11800    590.00       5.6953598      -2.0144807       3.6808791          1930.8      5.98198049     478.1020633
+ Updating neighbor list on step: 11813, with padding: 0.188
+ Updating neighbor list on step: 11828, with padding: 0.183
+ Updating neighbor list on step: 11843, with padding: 0.180
+ Updating neighbor list on step: 11858, with padding: 0.182
+ Updating neighbor list on step: 11873, with padding: 0.180
+ Updating neighbor list on step: 11888, with padding: 0.176
+   11900    595.00       5.7109096      -2.0042395       3.7066701          1936.1      5.58737295     474.9575410
+ Updating neighbor list on step: 11903, with padding: 0.178
+ Updating neighbor list on step: 11918, with padding: 0.180
+ Updating neighbor list on step: 11933, with padding: 0.177
+ Updating neighbor list on step: 11949, with padding: 0.166
+ Updating neighbor list on step: 11964, with padding: 0.170
+ Updating neighbor list on step: 11979, with padding: 0.184
+ Updating neighbor list on step: 11994, with padding: 0.192
+   12000    600.00       5.5350539      -1.8052712       3.7297827          1876.4      7.34603184     471.0154636
+ Updating neighbor list on step: 12009, with padding: 0.199
+ Updating neighbor list on step: 12024, with padding: 0.209
+ Updating neighbor list on step: 12039, with padding: 0.215
+ Updating neighbor list on step: 12054, with padding: 0.209
+ Updating neighbor list on step: 12070, with padding: 0.194
+ Updating neighbor list on step: 12086, with padding: 0.189
+   12100    605.00       5.7648852      -2.0261708       3.7387144          1954.4      6.16072568     473.1299575
+ Updating neighbor list on step: 12101, with padding: 0.192
+ Updating neighbor list on step: 12116, with padding: 0.192
+ Updating neighbor list on step: 12131, with padding: 0.188
+ Updating neighbor list on step: 12146, with padding: 0.185
+ Updating neighbor list on step: 12161, with padding: 0.181
+ Updating neighbor list on step: 12176, with padding: 0.178
+ Updating neighbor list on step: 12191, with padding: 0.178
+   12200    610.00       5.7513230      -1.9942009       3.7571221          1949.8      6.61233026     472.6757674
+ Updating neighbor list on step: 12206, with padding: 0.176
+ Updating neighbor list on step: 12222, with padding: 0.165
+ Updating neighbor list on step: 12237, with padding: 0.163
+ Updating neighbor list on step: 12252, with padding: 0.163
+ Updating neighbor list on step: 12267, with padding: 0.165
+ Updating neighbor list on step: 12282, with padding: 0.168
+ Updating neighbor list on step: 12297, with padding: 0.172
+   12300    615.00       5.6866693      -1.9112062       3.7754631          1927.8      6.85167386     472.8678732
+ Updating neighbor list on step: 12312, with padding: 0.177
+ Updating neighbor list on step: 12327, with padding: 0.181
+ Updating neighbor list on step: 12342, with padding: 0.183
+ Updating neighbor list on step: 12357, with padding: 0.184
+ Updating neighbor list on step: 12372, with padding: 0.187
+ Updating neighbor list on step: 12387, with padding: 0.189
+   12400    620.00       5.7543230      -1.9689543       3.7853687          1950.8      6.86717386     471.2936764
+ Updating neighbor list on step: 12402, with padding: 0.188
+ Updating neighbor list on step: 12417, with padding: 0.186
+ Updating neighbor list on step: 12432, with padding: 0.185
+ Updating neighbor list on step: 12447, with padding: 0.184
+ Updating neighbor list on step: 12463, with padding: 0.177
+ Updating neighbor list on step: 12478, with padding: 0.174
+ Updating neighbor list on step: 12493, with padding: 0.180
+   12500    625.00       5.8059147      -2.0327590       3.7731557          1968.3      7.15737385     475.7128556
+ Updating neighbor list on step: 12507, with padding: 0.200
+ Updating neighbor list on step: 12522, with padding: 0.211
+ Updating neighbor list on step: 12538, with padding: 0.198
+ Updating neighbor list on step: 12553, with padding: 0.211
+ Updating neighbor list on step: 12568, with padding: 0.209
+ Updating neighbor list on step: 12584, with padding: 0.197
+ Updating neighbor list on step: 12599, with padding: 0.191
+   12600    630.00       5.7638087      -2.0125808       3.7512279          1954.0      7.01667571     476.7515739
+ Updating neighbor list on step: 12614, with padding: 0.187
+ Updating neighbor list on step: 12629, with padding: 0.189
+ Updating neighbor list on step: 12644, with padding: 0.190
+ Updating neighbor list on step: 12659, with padding: 0.189
+ Updating neighbor list on step: 12674, with padding: 0.192
+ Updating neighbor list on step: 12689, with padding: 0.193
+   12700    635.00       6.0439922      -2.2973853       3.7466069          2049.0      5.12764228     469.6772161
+ Updating neighbor list on step: 12704, with padding: 0.191
+ Updating neighbor list on step: 12719, with padding: 0.188
+ Updating neighbor list on step: 12734, with padding: 0.185
+ Updating neighbor list on step: 12749, with padding: 0.181
+ Updating neighbor list on step: 12764, with padding: 0.182
+ Updating neighbor list on step: 12779, with padding: 0.187
+ Updating neighbor list on step: 12794, with padding: 0.191
+   12800    640.00       5.3626446      -1.6380329       3.7246118          1818.0      9.29666374     471.6291037
+ Updating neighbor list on step: 12809, with padding: 0.198
+ Updating neighbor list on step: 12824, with padding: 0.195
+ Updating neighbor list on step: 12840, with padding: 0.182
+ Updating neighbor list on step: 12856, with padding: 0.177
+ Updating neighbor list on step: 12871, with padding: 0.179
+ Updating neighbor list on step: 12886, with padding: 0.180
+   12900    645.00       5.5296287      -1.8097539       3.7198747          1874.6      7.83340729     478.8171956
+ Updating neighbor list on step: 12901, with padding: 0.181
+ Updating neighbor list on step: 12915, with padding: 0.198
+ Updating neighbor list on step: 12930, with padding: 0.209
+ Updating neighbor list on step: 12946, with padding: 0.196
+ Updating neighbor list on step: 12962, with padding: 0.194
+ Updating neighbor list on step: 12977, with padding: 0.191
+ Updating neighbor list on step: 12993, with padding: 0.178
+   13000    650.00       5.4396525      -1.7192402       3.7204124          1844.1      7.88907667     486.1826072
+ Updating neighbor list on step: 13009, with padding: 0.169
+ Updating neighbor list on step: 13024, with padding: 0.195
+ Updating neighbor list on step: 13038, with padding: 0.219
+ Updating neighbor list on step: 13053, with padding: 0.224
+ Updating neighbor list on step: 13068, with padding: 0.220
+ Updating neighbor list on step: 13083, with padding: 0.214
+ Updating neighbor list on step: 13098, with padding: 0.211
+   13100    655.00       5.8484415      -2.1183652       3.7300764          1982.7      4.86815998     480.1109151
+ Updating neighbor list on step: 13113, with padding: 0.210
+ Updating neighbor list on step: 13128, with padding: 0.206
+ Updating neighbor list on step: 13143, with padding: 0.211
+ Updating neighbor list on step: 13158, with padding: 0.212
+ Updating neighbor list on step: 13173, with padding: 0.209
+ Updating neighbor list on step: 13188, with padding: 0.208
+   13200    660.00       5.7735915      -2.0385116       3.7350799          1957.3      5.96845124     469.2115667
+ Updating neighbor list on step: 13203, with padding: 0.207
  Updating neighbor list on step: 13218, with padding: 0.204
- Updating neighbor list on step: 13233, with padding: 0.209
- Updating neighbor list on step: 13248, with padding: 0.218
- Updating neighbor list on step: 13263, with padding: 0.225
- Updating neighbor list on step: 13278, with padding: 0.226
- Updating neighbor list on step: 13293, with padding: 0.217
-   13300    665.00       5.7880239      -1.9157434       3.8722806          1962.2      6.84153933     463.7743431
- Updating neighbor list on step: 13308, with padding: 0.229
- Updating neighbor list on step: 13323, with padding: 0.240
- Updating neighbor list on step: 13338, with padding: 0.240
- Updating neighbor list on step: 13353, with padding: 0.237
- Updating neighbor list on step: 13368, with padding: 0.236
- Updating neighbor list on step: 13383, with padding: 0.235
- Updating neighbor list on step: 13399, with padding: 0.216
-   13400    670.00       5.8331028      -1.9610515       3.8720512          1977.5      7.05842637     459.8628985
- Updating neighbor list on step: 13415, with padding: 0.203
- Updating neighbor list on step: 13430, with padding: 0.207
- Updating neighbor list on step: 13445, with padding: 0.208
- Updating neighbor list on step: 13460, with padding: 0.207
- Updating neighbor list on step: 13475, with padding: 0.206
- Updating neighbor list on step: 13490, with padding: 0.205
-   13500    675.00       5.8176105      -1.9489619       3.8686487          1972.2      6.63240761     464.8733210
- Updating neighbor list on step: 13505, with padding: 0.205
- Updating neighbor list on step: 13520, with padding: 0.204
- Updating neighbor list on step: 13535, with padding: 0.204
- Updating neighbor list on step: 13550, with padding: 0.202
- Updating neighbor list on step: 13565, with padding: 0.198
- Updating neighbor list on step: 13580, with padding: 0.192
- Updating neighbor list on step: 13595, with padding: 0.187
-   13600    680.00       5.6987165      -1.8267657       3.8719508          1931.9      7.45626297     465.1845692
- Updating neighbor list on step: 13610, with padding: 0.183
- Updating neighbor list on step: 13625, with padding: 0.183
- Updating neighbor list on step: 13640, with padding: 0.183
- Updating neighbor list on step: 13655, with padding: 0.184
- Updating neighbor list on step: 13670, with padding: 0.186
- Updating neighbor list on step: 13685, with padding: 0.191
-   13700    685.00       5.6891698      -1.8126898       3.8764801          1928.7      7.63612884     468.0731772
- Updating neighbor list on step: 13700, with padding: 0.200
- Updating neighbor list on step: 13715, with padding: 0.209
- Updating neighbor list on step: 13730, with padding: 0.214
- Updating neighbor list on step: 13745, with padding: 0.204
- Updating neighbor list on step: 13760, with padding: 0.204
- Updating neighbor list on step: 13776, with padding: 0.188
- Updating neighbor list on step: 13791, with padding: 0.186
-   13800    690.00       5.5439414      -1.7011573       3.8427841          1879.5      7.77933396     474.6529202
- Updating neighbor list on step: 13806, with padding: 0.187
- Updating neighbor list on step: 13821, with padding: 0.190
- Updating neighbor list on step: 13836, with padding: 0.192
- Updating neighbor list on step: 13851, with padding: 0.191
- Updating neighbor list on step: 13866, with padding: 0.188
- Updating neighbor list on step: 13882, with padding: 0.173
- Updating neighbor list on step: 13897, with padding: 0.180
-   13900    695.00       5.3993554      -1.5454293       3.8539261          1830.4      8.91972814     473.5910785
- Updating neighbor list on step: 13912, with padding: 0.180
- Updating neighbor list on step: 13926, with padding: 0.211
- Updating neighbor list on step: 13941, with padding: 0.202
- Updating neighbor list on step: 13957, with padding: 0.191
- Updating neighbor list on step: 13972, with padding: 0.189
- Updating neighbor list on step: 13987, with padding: 0.195
-   14000    700.00       5.5010950      -1.6697536       3.8313414          1864.9      7.79027627     482.2648149
- Updating neighbor list on step: 14002, with padding: 0.198
- Updating neighbor list on step: 14017, with padding: 0.203
- Updating neighbor list on step: 14033, with padding: 0.189
- Updating neighbor list on step: 14048, with padding: 0.193
- Updating neighbor list on step: 14063, with padding: 0.187
- Updating neighbor list on step: 14078, with padding: 0.193
- Updating neighbor list on step: 14092, with padding: 0.234
-   14100    705.00       5.7137599      -1.8636701       3.8500899          1937.0      6.36185444     484.5802637
- Updating neighbor list on step: 14106, with padding: 0.259
- Updating neighbor list on step: 14121, with padding: 0.269
- Updating neighbor list on step: 14136, with padding: 0.266
- Updating neighbor list on step: 14151, with padding: 0.258
- Updating neighbor list on step: 14166, with padding: 0.250
- Updating neighbor list on step: 14181, with padding: 0.244
- Updating neighbor list on step: 14196, with padding: 0.238
-   14200    710.00       5.7415582      -1.8907092       3.8508489          1946.4      6.52901463     479.8066927
- Updating neighbor list on step: 14212, with padding: 0.224
- Updating neighbor list on step: 14228, with padding: 0.203
- Updating neighbor list on step: 14244, with padding: 0.189
- Updating neighbor list on step: 14259, with padding: 0.194
- Updating neighbor list on step: 14274, with padding: 0.209
- Updating neighbor list on step: 14289, with padding: 0.217
-   14300    715.00       5.8168514      -1.9502986       3.8665529          1972.0      6.35570312     479.1289889
- Updating neighbor list on step: 14304, with padding: 0.218
- Updating neighbor list on step: 14319, with padding: 0.220
- Updating neighbor list on step: 14334, with padding: 0.221
- Updating neighbor list on step: 14349, with padding: 0.221
- Updating neighbor list on step: 14364, with padding: 0.217
- Updating neighbor list on step: 14380, with padding: 0.206
- Updating neighbor list on step: 14396, with padding: 0.197
-   14400    720.00       5.6576723      -1.7887474       3.8689249          1918.0      7.81945285     476.3692862
- Updating neighbor list on step: 14411, with padding: 0.199
- Updating neighbor list on step: 14426, with padding: 0.207
- Updating neighbor list on step: 14441, with padding: 0.214
- Updating neighbor list on step: 14456, with padding: 0.212
- Updating neighbor list on step: 14472, with padding: 0.202
- Updating neighbor list on step: 14487, with padding: 0.211
-   14500    725.00       5.7862359      -1.9212513       3.8649846          1961.6      6.85279960     476.2902893
- Updating neighbor list on step: 14502, with padding: 0.213
- Updating neighbor list on step: 14517, with padding: 0.207
- Updating neighbor list on step: 14532, with padding: 0.209
- Updating neighbor list on step: 14547, with padding: 0.208
- Updating neighbor list on step: 14563, with padding: 0.198
- Updating neighbor list on step: 14578, with padding: 0.197
- Updating neighbor list on step: 14593, with padding: 0.198
-   14600    730.00       5.6961750      -1.8298944       3.8662806          1931.1      7.36225745     473.1568269
- Updating neighbor list on step: 14608, with padding: 0.199
- Updating neighbor list on step: 14623, with padding: 0.216
- Updating neighbor list on step: 14638, with padding: 0.227
- Updating neighbor list on step: 14653, with padding: 0.233
- Updating neighbor list on step: 14668, with padding: 0.231
- Updating neighbor list on step: 14684, with padding: 0.213
- Updating neighbor list on step: 14699, with padding: 0.220
-   14700    735.00       5.5117078      -1.6407331       3.8709747          1868.5      7.99788676     474.8807247
- Updating neighbor list on step: 14715, with padding: 0.194
- Updating neighbor list on step: 14730, with padding: 0.207
- Updating neighbor list on step: 14744, with padding: 0.240
- Updating neighbor list on step: 14758, with padding: 0.261
- Updating neighbor list on step: 14773, with padding: 0.265
- Updating neighbor list on step: 14788, with padding: 0.259
-   14800    740.00       5.6704539      -1.8089923       3.8614616          1922.3      6.91766820     474.9224784
- Updating neighbor list on step: 14804, with padding: 0.245
- Updating neighbor list on step: 14820, with padding: 0.222
- Updating neighbor list on step: 14836, with padding: 0.202
- Updating neighbor list on step: 14851, with padding: 0.205
- Updating neighbor list on step: 14866, with padding: 0.207
- Updating neighbor list on step: 14881, with padding: 0.203
- Updating neighbor list on step: 14896, with padding: 0.202
-   14900    745.00       5.7834966      -1.9194781       3.8640185          1960.7      6.70146629     470.1992657
- Updating neighbor list on step: 14911, with padding: 0.204
- Updating neighbor list on step: 14926, with padding: 0.200
- Updating neighbor list on step: 14941, with padding: 0.210
- Updating neighbor list on step: 14956, with padding: 0.208
- Updating neighbor list on step: 14971, with padding: 0.207
- Updating neighbor list on step: 14986, with padding: 0.208
-   15000    750.00       5.6893805      -1.8318309       3.8575497          1928.8      7.44039324     474.4358484
- Updating neighbor list on step: 15001, with padding: 0.207
- Updating neighbor list on step: 15016, with padding: 0.199
- Updating neighbor list on step: 15032, with padding: 0.190
- Updating neighbor list on step: 15048, with padding: 0.177
- Updating neighbor list on step: 15063, with padding: 0.189
- Updating neighbor list on step: 15078, with padding: 0.193
- Updating neighbor list on step: 15093, with padding: 0.200
-   15100    755.00       5.7249630      -1.8670360       3.8579270          1940.8      7.35601256     477.5156086
- Updating neighbor list on step: 15108, with padding: 0.195
- Updating neighbor list on step: 15124, with padding: 0.188
- Updating neighbor list on step: 15139, with padding: 0.194
- Updating neighbor list on step: 15154, with padding: 0.199
- Updating neighbor list on step: 15169, with padding: 0.203
- Updating neighbor list on step: 15184, with padding: 0.209
- Updating neighbor list on step: 15199, with padding: 0.212
-   15200    760.00       5.7454055      -1.8826972       3.8627083          1947.8      6.95361467     480.0729095
- Updating neighbor list on step: 15214, with padding: 0.211
- Updating neighbor list on step: 15229, with padding: 0.211
- Updating neighbor list on step: 15244, with padding: 0.203
- Updating neighbor list on step: 15259, with padding: 0.199
- Updating neighbor list on step: 15274, with padding: 0.196
- Updating neighbor list on step: 15290, with padding: 0.181
-   15300    765.00       5.7567541      -1.8878042       3.8689499          1951.6      6.61009106     478.0149658
- Updating neighbor list on step: 15305, with padding: 0.182
- Updating neighbor list on step: 15320, with padding: 0.191
- Updating neighbor list on step: 15335, with padding: 0.199
- Updating neighbor list on step: 15351, with padding: 0.187
- Updating neighbor list on step: 15366, with padding: 0.193
- Updating neighbor list on step: 15381, with padding: 0.190
- Updating neighbor list on step: 15396, with padding: 0.188
-   15400    770.00       5.8285093      -1.9519811       3.8765282          1975.9      6.11811827     478.8580982
- Updating neighbor list on step: 15411, with padding: 0.191
- Updating neighbor list on step: 15426, with padding: 0.188
- Updating neighbor list on step: 15441, with padding: 0.188
- Updating neighbor list on step: 15456, with padding: 0.188
- Updating neighbor list on step: 15471, with padding: 0.196
- Updating neighbor list on step: 15486, with padding: 0.196
-   15500    775.00       5.6921541      -1.8111681       3.8809860          1929.7      7.47278192     476.3482958
- Updating neighbor list on step: 15501, with padding: 0.201
- Updating neighbor list on step: 15516, with padding: 0.214
- Updating neighbor list on step: 15531, with padding: 0.228
- Updating neighbor list on step: 15546, with padding: 0.225
- Updating neighbor list on step: 15562, with padding: 0.212
- Updating neighbor list on step: 15578, with padding: 0.197
- Updating neighbor list on step: 15594, with padding: 0.190
-   15600    780.00       5.8150416      -1.9358473       3.8791943          1971.4      6.77176864     477.5470999
- Updating neighbor list on step: 15609, with padding: 0.193
- Updating neighbor list on step: 15624, with padding: 0.196
- Updating neighbor list on step: 15639, with padding: 0.192
- Updating neighbor list on step: 15654, with padding: 0.190
- Updating neighbor list on step: 15669, with padding: 0.190
- Updating neighbor list on step: 15684, with padding: 0.192
- Updating neighbor list on step: 15699, with padding: 0.205
-   15700    785.00       5.6945722      -1.8303167       3.8642555          1930.5      8.09666704     477.1312268
- Updating neighbor list on step: 15713, with padding: 0.242
- Updating neighbor list on step: 15728, with padding: 0.230
- Updating neighbor list on step: 15745, with padding: 0.195
- Updating neighbor list on step: 15760, with padding: 0.198
- Updating neighbor list on step: 15775, with padding: 0.200
- Updating neighbor list on step: 15790, with padding: 0.195
-   15800    790.00       5.7258617      -1.8801325       3.8457292          1941.1      6.90917042     483.6387418
- Updating neighbor list on step: 15805, with padding: 0.195
- Updating neighbor list on step: 15820, with padding: 0.200
- Updating neighbor list on step: 15835, with padding: 0.209
- Updating neighbor list on step: 15850, with padding: 0.217
- Updating neighbor list on step: 15865, with padding: 0.221
- Updating neighbor list on step: 15880, with padding: 0.219
- Updating neighbor list on step: 15896, with padding: 0.190
-   15900    795.00       5.6009089      -1.7403552       3.8605538          1898.8      7.40172274     484.0034865
- Updating neighbor list on step: 15912, with padding: 0.179
- Updating neighbor list on step: 15927, with padding: 0.177
- Updating neighbor list on step: 15942, with padding: 0.181
- Updating neighbor list on step: 15957, with padding: 0.195
- Updating neighbor list on step: 15972, with padding: 0.193
- Updating neighbor list on step: 15988, with padding: 0.183
-   16000    800.00       5.7187100      -1.8416890       3.8770210          1938.7      6.18867823     486.5917551
- Updating neighbor list on step: 16003, with padding: 0.178
- Updating neighbor list on step: 16018, with padding: 0.179
- Updating neighbor list on step: 16033, with padding: 0.186
- Updating neighbor list on step: 16048, with padding: 0.196
- Updating neighbor list on step: 16063, with padding: 0.205
- Updating neighbor list on step: 16078, with padding: 0.203
- Updating neighbor list on step: 16093, with padding: 0.204
-   16100    805.00       5.6888671      -1.7893940       3.8994731          1928.6      6.76035931     484.3453460
- Updating neighbor list on step: 16108, with padding: 0.208
- Updating neighbor list on step: 16123, with padding: 0.213
- Updating neighbor list on step: 16138, with padding: 0.216
- Updating neighbor list on step: 16153, with padding: 0.215
- Updating neighbor list on step: 16168, with padding: 0.216
- Updating neighbor list on step: 16183, with padding: 0.235
- Updating neighbor list on step: 16198, with padding: 0.235
-   16200    810.00       5.4214877      -1.5297692       3.8917186          1837.9      8.32902135     490.7620292
- Updating neighbor list on step: 16214, with padding: 0.199
- Updating neighbor list on step: 16230, with padding: 0.176
- Updating neighbor list on step: 16245, with padding: 0.185
- Updating neighbor list on step: 16260, with padding: 0.187
- Updating neighbor list on step: 16275, with padding: 0.188
- Updating neighbor list on step: 16290, with padding: 0.197
-   16300    815.00       5.6745511      -1.7764540       3.8980971          1923.7      7.02670649     489.7032834
- Updating neighbor list on step: 16305, with padding: 0.197
- Updating neighbor list on step: 16321, with padding: 0.189
- Updating neighbor list on step: 16336, with padding: 0.193
- Updating neighbor list on step: 16351, with padding: 0.196
- Updating neighbor list on step: 16366, with padding: 0.198
- Updating neighbor list on step: 16382, with padding: 0.182
- Updating neighbor list on step: 16398, with padding: 0.171
-   16400    820.00       5.8264310      -1.9301419       3.8962891          1975.2      5.99697108     491.3723292
- Updating neighbor list on step: 16413, with padding: 0.171
- Updating neighbor list on step: 16428, with padding: 0.172
- Updating neighbor list on step: 16442, with padding: 0.191
- Updating neighbor list on step: 16457, with padding: 0.195
- Updating neighbor list on step: 16473, with padding: 0.178
- Updating neighbor list on step: 16488, with padding: 0.174
-   16500    825.00       5.8725016      -1.9694595       3.9030421          1990.8      6.03521085     486.5661230
- Updating neighbor list on step: 16503, with padding: 0.175
- Updating neighbor list on step: 16518, with padding: 0.186
- Updating neighbor list on step: 16533, with padding: 0.187
- Updating neighbor list on step: 16549, with padding: 0.177
- Updating neighbor list on step: 16564, with padding: 0.181
- Updating neighbor list on step: 16579, with padding: 0.185
- Updating neighbor list on step: 16594, with padding: 0.187
-   16600    830.00       5.7195005      -1.8144323       3.9050682          1939.0      7.14376132     482.3081566
- Updating neighbor list on step: 16609, with padding: 0.190
- Updating neighbor list on step: 16624, with padding: 0.189
- Updating neighbor list on step: 16639, with padding: 0.194
- Updating neighbor list on step: 16654, with padding: 0.213
- Updating neighbor list on step: 16669, with padding: 0.229
- Updating neighbor list on step: 16684, with padding: 0.222
-   16700    835.00       5.5684765      -1.6569494       3.9115272          1887.8      7.76539861     484.9507289
- Updating neighbor list on step: 16700, with padding: 0.212
- Updating neighbor list on step: 16715, with padding: 0.207
- Updating neighbor list on step: 16730, with padding: 0.204
- Updating neighbor list on step: 16745, with padding: 0.200
- Updating neighbor list on step: 16760, with padding: 0.194
- Updating neighbor list on step: 16775, with padding: 0.192
- Updating neighbor list on step: 16790, with padding: 0.201
-   16800    840.00       5.6339170      -1.7122561       3.9216610          1910.0      7.43023455     483.2891173
- Updating neighbor list on step: 16805, with padding: 0.214
- Updating neighbor list on step: 16820, with padding: 0.208
- Updating neighbor list on step: 16836, with padding: 0.179
- Updating neighbor list on step: 16850, with padding: 0.198
- Updating neighbor list on step: 16865, with padding: 0.214
- Updating neighbor list on step: 16880, with padding: 0.215
- Updating neighbor list on step: 16895, with padding: 0.212
-   16900    845.00       5.7071501      -1.7962553       3.9108948          1934.8      7.01673437     486.8952076
- Updating neighbor list on step: 16910, with padding: 0.209
- Updating neighbor list on step: 16926, with padding: 0.197
- Updating neighbor list on step: 16941, with padding: 0.214
- Updating neighbor list on step: 16956, with padding: 0.229
- Updating neighbor list on step: 16971, with padding: 0.228
- Updating neighbor list on step: 16986, with padding: 0.225
-   17000    850.00       5.8560642      -1.9463243       3.9097398          1985.3      6.18416226     484.7827083
+ Updating neighbor list on step: 13233, with padding: 0.205
+ Updating neighbor list on step: 13248, with padding: 0.204
+ Updating neighbor list on step: 13263, with padding: 0.199
+ Updating neighbor list on step: 13278, with padding: 0.198
+ Updating neighbor list on step: 13293, with padding: 0.198
+   13300    665.00       5.6867666      -1.9493269       3.7374397          1927.9      7.26621200     463.8118808
+ Updating neighbor list on step: 13308, with padding: 0.198
+ Updating neighbor list on step: 13323, with padding: 0.198
+ Updating neighbor list on step: 13338, with padding: 0.198
+ Updating neighbor list on step: 13353, with padding: 0.200
+ Updating neighbor list on step: 13368, with padding: 0.200
+ Updating neighbor list on step: 13383, with padding: 0.198
+ Updating neighbor list on step: 13398, with padding: 0.196
+   13400    670.00       5.6552953      -1.9316629       3.7236324          1917.2      7.34759510     471.3817664
+ Updating neighbor list on step: 13413, with padding: 0.195
+ Updating neighbor list on step: 13428, with padding: 0.196
+ Updating neighbor list on step: 13442, with padding: 0.242
+ Updating neighbor list on step: 13456, with padding: 0.292
+ Updating neighbor list on step: 13472, with padding: 0.242
+ Updating neighbor list on step: 13488, with padding: 0.229
+   13500    675.00       5.5925488      -1.9125099       3.6800389          1895.9      7.06473528     476.0967386
+ Updating neighbor list on step: 13503, with padding: 0.227
+ Updating neighbor list on step: 13519, with padding: 0.217
+ Updating neighbor list on step: 13535, with padding: 0.207
+ Updating neighbor list on step: 13550, with padding: 0.206
+ Updating neighbor list on step: 13565, with padding: 0.218
+ Updating neighbor list on step: 13580, with padding: 0.215
+ Updating neighbor list on step: 13596, with padding: 0.190
+   13600    680.00       5.7561243      -2.0632623       3.6928620          1951.4      6.16219005     470.2701964
+ Updating neighbor list on step: 13612, with padding: 0.186
+ Updating neighbor list on step: 13627, with padding: 0.195
+ Updating neighbor list on step: 13642, with padding: 0.203
+ Updating neighbor list on step: 13657, with padding: 0.199
+ Updating neighbor list on step: 13673, with padding: 0.189
+ Updating neighbor list on step: 13689, with padding: 0.174
+   13700    685.00       5.7026303      -2.0253599       3.6772705          1933.3      6.28102064     466.4358575
+ Updating neighbor list on step: 13704, with padding: 0.183
+ Updating neighbor list on step: 13718, with padding: 0.200
+ Updating neighbor list on step: 13733, with padding: 0.208
+ Updating neighbor list on step: 13748, with padding: 0.205
+ Updating neighbor list on step: 13764, with padding: 0.194
+ Updating neighbor list on step: 13779, with padding: 0.201
+ Updating neighbor list on step: 13794, with padding: 0.202
+   13800    690.00       5.5027635      -1.7968304       3.7059330          1865.5      7.02417433     465.5337914
+ Updating neighbor list on step: 13809, with padding: 0.202
+ Updating neighbor list on step: 13824, with padding: 0.198
+ Updating neighbor list on step: 13839, with padding: 0.199
+ Updating neighbor list on step: 13854, with padding: 0.213
+ Updating neighbor list on step: 13869, with padding: 0.219
+ Updating neighbor list on step: 13884, with padding: 0.225
+ Updating neighbor list on step: 13899, with padding: 0.229
+   13900    695.00       5.8041855      -2.0968795       3.7073060          1967.7      4.91812191     456.5800715
+ Updating neighbor list on step: 13914, with padding: 0.225
+ Updating neighbor list on step: 13929, with padding: 0.221
+ Updating neighbor list on step: 13944, with padding: 0.225
+ Updating neighbor list on step: 13959, with padding: 0.226
+ Updating neighbor list on step: 13974, with padding: 0.224
+ Updating neighbor list on step: 13989, with padding: 0.218
+   14000    700.00       5.5702468      -1.8633604       3.7068864          1888.4      7.07737847     453.8395822
+ Updating neighbor list on step: 14005, with padding: 0.207
+ Updating neighbor list on step: 14021, with padding: 0.198
+ Updating neighbor list on step: 14036, with padding: 0.194
+ Updating neighbor list on step: 14051, with padding: 0.192
+ Updating neighbor list on step: 14066, with padding: 0.196
+ Updating neighbor list on step: 14081, with padding: 0.204
+ Updating neighbor list on step: 14096, with padding: 0.212
+   14100    705.00       5.7607384      -2.0524950       3.7082434          1953.0      6.48156387     445.7566739
+ Updating neighbor list on step: 14111, with padding: 0.207
+ Updating neighbor list on step: 14127, with padding: 0.185
+ Updating neighbor list on step: 14142, with padding: 0.192
+ Updating neighbor list on step: 14157, with padding: 0.194
+ Updating neighbor list on step: 14172, with padding: 0.191
+ Updating neighbor list on step: 14187, with padding: 0.192
+   14200    710.00       5.5562538      -1.8396278       3.7166260          1883.6      8.07192699     451.6596941
+ Updating neighbor list on step: 14202, with padding: 0.186
+ Updating neighbor list on step: 14218, with padding: 0.171
+ Updating neighbor list on step: 14232, with padding: 0.186
+ Updating neighbor list on step: 14247, with padding: 0.188
+ Updating neighbor list on step: 14263, with padding: 0.176
+ Updating neighbor list on step: 14278, with padding: 0.189
+ Updating neighbor list on step: 14293, with padding: 0.202
+   14300    715.00       5.4481664      -1.7708928       3.6772736          1847.0      7.85893759     464.9748867
+ Updating neighbor list on step: 14308, with padding: 0.214
+ Updating neighbor list on step: 14323, with padding: 0.223
+ Updating neighbor list on step: 14338, with padding: 0.221
+ Updating neighbor list on step: 14354, with padding: 0.203
+ Updating neighbor list on step: 14370, with padding: 0.199
+ Updating neighbor list on step: 14385, with padding: 0.204
+   14400    720.00       5.5974483      -1.8983496       3.6990987          1897.6      6.95761918     464.2000187
+ Updating neighbor list on step: 14400, with padding: 0.210
+ Updating neighbor list on step: 14415, with padding: 0.214
+ Updating neighbor list on step: 14430, with padding: 0.212
+ Updating neighbor list on step: 14446, with padding: 0.194
+ Updating neighbor list on step: 14462, with padding: 0.185
+ Updating neighbor list on step: 14477, with padding: 0.185
+ Updating neighbor list on step: 14492, with padding: 0.192
+   14500    725.00       5.5964871      -1.8841934       3.7122937          1897.3      7.54362696     465.8302749
+ Updating neighbor list on step: 14507, with padding: 0.200
+ Updating neighbor list on step: 14522, with padding: 0.209
+ Updating neighbor list on step: 14537, with padding: 0.214
+ Updating neighbor list on step: 14553, with padding: 0.195
+ Updating neighbor list on step: 14569, with padding: 0.187
+ Updating neighbor list on step: 14585, with padding: 0.181
+   14600    730.00       5.5619162      -1.8553241       3.7065921          1885.5      7.52517182     473.8202723
+ Updating neighbor list on step: 14600, with padding: 0.181
+ Updating neighbor list on step: 14615, with padding: 0.181
+ Updating neighbor list on step: 14630, with padding: 0.179
+ Updating neighbor list on step: 14645, with padding: 0.179
+ Updating neighbor list on step: 14660, with padding: 0.179
+ Updating neighbor list on step: 14675, with padding: 0.177
+ Updating neighbor list on step: 14690, with padding: 0.174
+   14700    735.00       5.4797963      -1.7552094       3.7245869          1857.7      8.32235025     475.1332088
+ Updating neighbor list on step: 14705, with padding: 0.197
+ Updating neighbor list on step: 14720, with padding: 0.207
+ Updating neighbor list on step: 14736, with padding: 0.189
+ Updating neighbor list on step: 14752, with padding: 0.169
+ Updating neighbor list on step: 14767, with padding: 0.180
+ Updating neighbor list on step: 14782, with padding: 0.187
+ Updating neighbor list on step: 14797, with padding: 0.185
+   14800    740.00       5.5832248      -1.8912186       3.6920062          1892.8      7.44056725     482.2889199
+ Updating neighbor list on step: 14812, with padding: 0.180
+ Updating neighbor list on step: 14827, with padding: 0.173
+ Updating neighbor list on step: 14843, with padding: 0.163
+ Updating neighbor list on step: 14858, with padding: 0.160
+ Updating neighbor list on step: 14872, with padding: 0.188
+ Updating neighbor list on step: 14886, with padding: 0.209
+   14900    745.00       5.6924795      -2.0052335       3.6872459          1929.8      5.90886354     487.9335439
+ Updating neighbor list on step: 14901, with padding: 0.213
+ Updating neighbor list on step: 14916, with padding: 0.213
+ Updating neighbor list on step: 14931, with padding: 0.215
+ Updating neighbor list on step: 14946, with padding: 0.220
+ Updating neighbor list on step: 14961, with padding: 0.225
+ Updating neighbor list on step: 14976, with padding: 0.230
+ Updating neighbor list on step: 14991, with padding: 0.228
+   15000    750.00       5.5076982      -1.7998373       3.7078609          1867.2      7.31781826     483.4387715
+ Updating neighbor list on step: 15006, with padding: 0.218
+ Updating neighbor list on step: 15023, with padding: 0.179
+ Updating neighbor list on step: 15037, with padding: 0.197
+ Updating neighbor list on step: 15052, with padding: 0.208
+ Updating neighbor list on step: 15067, with padding: 0.217
+ Updating neighbor list on step: 15082, with padding: 0.223
+ Updating neighbor list on step: 15097, with padding: 0.221
+   15100    755.00       5.3462330      -1.6519262       3.6943069          1812.4      7.28822599     492.7480461
+ Updating neighbor list on step: 15112, with padding: 0.220
+ Updating neighbor list on step: 15127, with padding: 0.220
+ Updating neighbor list on step: 15142, with padding: 0.219
+ Updating neighbor list on step: 15157, with padding: 0.218
+ Updating neighbor list on step: 15172, with padding: 0.217
+ Updating neighbor list on step: 15187, with padding: 0.213
+   15200    760.00       5.2835574      -1.5636229       3.7199345          1791.2      7.74419859     488.8821376
+ Updating neighbor list on step: 15202, with padding: 0.212
+ Updating neighbor list on step: 15217, with padding: 0.205
+ Updating neighbor list on step: 15232, with padding: 0.202
+ Updating neighbor list on step: 15248, with padding: 0.191
+ Updating neighbor list on step: 15264, with padding: 0.186
+ Updating neighbor list on step: 15279, with padding: 0.187
+ Updating neighbor list on step: 15294, with padding: 0.191
+   15300    765.00       5.4866298      -1.7416504       3.7449794          1860.0      6.31754719     490.9757461
+ Updating neighbor list on step: 15309, with padding: 0.198
+ Updating neighbor list on step: 15324, with padding: 0.204
+ Updating neighbor list on step: 15339, with padding: 0.210
+ Updating neighbor list on step: 15354, with padding: 0.216
+ Updating neighbor list on step: 15369, with padding: 0.223
+ Updating neighbor list on step: 15384, with padding: 0.223
+ Updating neighbor list on step: 15399, with padding: 0.216
+   15400    770.00       5.6313869      -1.8527854       3.7786015          1909.1      5.98955381     482.6239062
+ Updating neighbor list on step: 15415, with padding: 0.205
+ Updating neighbor list on step: 15430, with padding: 0.203
+ Updating neighbor list on step: 15445, with padding: 0.208
+ Updating neighbor list on step: 15460, with padding: 0.213
+ Updating neighbor list on step: 15475, with padding: 0.226
+ Updating neighbor list on step: 15490, with padding: 0.240
+   15500    775.00       5.5194832      -1.7219197       3.7975634          1871.2      7.19757647     478.5227272
+ Updating neighbor list on step: 15505, with padding: 0.238
+ Updating neighbor list on step: 15521, with padding: 0.214
+ Updating neighbor list on step: 15537, with padding: 0.189
+ Updating neighbor list on step: 15552, with padding: 0.194
+ Updating neighbor list on step: 15567, with padding: 0.201
+ Updating neighbor list on step: 15582, with padding: 0.208
+ Updating neighbor list on step: 15597, with padding: 0.216
+   15600    780.00       5.9084217      -2.0919314       3.8164904          2003.0      5.16452843     474.5149908
+ Updating neighbor list on step: 15612, with padding: 0.223
+ Updating neighbor list on step: 15627, with padding: 0.225
+ Updating neighbor list on step: 15642, with padding: 0.220
+ Updating neighbor list on step: 15658, with padding: 0.206
+ Updating neighbor list on step: 15674, with padding: 0.191
+ Updating neighbor list on step: 15689, with padding: 0.185
+   15700    785.00       5.4964213      -1.7061594       3.7902619          1863.3      8.42838231     469.4534486
+ Updating neighbor list on step: 15704, with padding: 0.181
+ Updating neighbor list on step: 15719, with padding: 0.177
+ Updating neighbor list on step: 15734, with padding: 0.191
+ Updating neighbor list on step: 15749, with padding: 0.185
+ Updating neighbor list on step: 15764, with padding: 0.181
+ Updating neighbor list on step: 15779, with padding: 0.180
+ Updating neighbor list on step: 15794, with padding: 0.177
+   15800    790.00       5.4912171      -1.7007874       3.7904297          1861.6      7.72683247     475.3586817
+ Updating neighbor list on step: 15809, with padding: 0.179
+ Updating neighbor list on step: 15824, with padding: 0.180
+ Updating neighbor list on step: 15839, with padding: 0.184
+ Updating neighbor list on step: 15854, with padding: 0.189
+ Updating neighbor list on step: 15869, with padding: 0.191
+ Updating neighbor list on step: 15884, with padding: 0.196
+ Updating neighbor list on step: 15899, with padding: 0.208
+   15900    795.00       5.7376909      -1.9449722       3.7927187          1945.1      6.64527848     469.6368778
+ Updating neighbor list on step: 15914, with padding: 0.211
+ Updating neighbor list on step: 15930, with padding: 0.194
+ Updating neighbor list on step: 15946, with padding: 0.189
+ Updating neighbor list on step: 15961, with padding: 0.205
+ Updating neighbor list on step: 15976, with padding: 0.211
+ Updating neighbor list on step: 15991, with padding: 0.209
+   16000    800.00       5.4796215      -1.7008064       3.7788151          1857.6      7.72551011     479.0841779
+ Updating neighbor list on step: 16006, with padding: 0.204
+ Updating neighbor list on step: 16021, with padding: 0.202
+ Updating neighbor list on step: 16036, with padding: 0.202
+ Updating neighbor list on step: 16051, with padding: 0.202
+ Updating neighbor list on step: 16066, with padding: 0.202
+ Updating neighbor list on step: 16081, with padding: 0.202
+ Updating neighbor list on step: 16096, with padding: 0.201
+   16100    805.00       5.6727454      -1.8727881       3.7999573          1923.1      6.46439782     474.8402992
+ Updating neighbor list on step: 16111, with padding: 0.201
+ Updating neighbor list on step: 16126, with padding: 0.201
+ Updating neighbor list on step: 16141, with padding: 0.197
+ Updating neighbor list on step: 16156, with padding: 0.190
+ Updating neighbor list on step: 16172, with padding: 0.182
+ Updating neighbor list on step: 16187, with padding: 0.186
+   16200    810.00       5.8455782      -2.0306494       3.8149288          1981.7      5.24134091     473.7030067
+ Updating neighbor list on step: 16202, with padding: 0.194
+ Updating neighbor list on step: 16217, with padding: 0.184
+ Updating neighbor list on step: 16231, with padding: 0.213
+ Updating neighbor list on step: 16245, with padding: 0.234
+ Updating neighbor list on step: 16261, with padding: 0.231
+ Updating neighbor list on step: 16276, with padding: 0.227
+ Updating neighbor list on step: 16291, with padding: 0.222
+   16300    815.00       5.7046846      -1.8787404       3.8259441          1933.9      5.60205094     471.2939012
+ Updating neighbor list on step: 16306, with padding: 0.221
+ Updating neighbor list on step: 16321, with padding: 0.225
+ Updating neighbor list on step: 16336, with padding: 0.231
+ Updating neighbor list on step: 16351, with padding: 0.234
+ Updating neighbor list on step: 16366, with padding: 0.233
+ Updating neighbor list on step: 16381, with padding: 0.229
+ Updating neighbor list on step: 16396, with padding: 0.220
+   16400    820.00       5.6812962      -1.8637275       3.8175687          1926.0      6.69339602     459.1625754
+ Updating neighbor list on step: 16411, with padding: 0.225
+ Updating neighbor list on step: 16426, with padding: 0.238
+ Updating neighbor list on step: 16441, with padding: 0.238
+ Updating neighbor list on step: 16457, with padding: 0.226
+ Updating neighbor list on step: 16473, with padding: 0.195
+ Updating neighbor list on step: 16489, with padding: 0.182
+   16500    825.00       5.4648807      -1.6588955       3.8059851          1852.7      8.94711495     462.3514289
+ Updating neighbor list on step: 16504, with padding: 0.185
+ Updating neighbor list on step: 16519, with padding: 0.189
+ Updating neighbor list on step: 16534, with padding: 0.201
+ Updating neighbor list on step: 16549, with padding: 0.201
+ Updating neighbor list on step: 16564, with padding: 0.193
+ Updating neighbor list on step: 16579, with padding: 0.196
+ Updating neighbor list on step: 16594, with padding: 0.202
+   16600    830.00       5.5126819      -1.7188710       3.7938110          1868.9      8.78932628     470.3873230
+ Updating neighbor list on step: 16609, with padding: 0.206
+ Updating neighbor list on step: 16624, with padding: 0.212
+ Updating neighbor list on step: 16639, with padding: 0.206
+ Updating neighbor list on step: 16654, with padding: 0.211
+ Updating neighbor list on step: 16669, with padding: 0.211
+ Updating neighbor list on step: 16685, with padding: 0.187
+   16700    835.00       5.5067261      -1.7346700       3.7720562          1866.8      7.79634764     478.4426316
+ Updating neighbor list on step: 16701, with padding: 0.172
+ Updating neighbor list on step: 16716, with padding: 0.186
+ Updating neighbor list on step: 16731, with padding: 0.187
+ Updating neighbor list on step: 16746, with padding: 0.200
+ Updating neighbor list on step: 16761, with padding: 0.204
+ Updating neighbor list on step: 16776, with padding: 0.202
+ Updating neighbor list on step: 16791, with padding: 0.194
+   16800    840.00       5.6661316      -1.8728634       3.7932683          1920.9      6.55968004     480.0699053
+ Updating neighbor list on step: 16807, with padding: 0.185
+ Updating neighbor list on step: 16822, with padding: 0.183
+ Updating neighbor list on step: 16837, with padding: 0.188
+ Updating neighbor list on step: 16852, with padding: 0.191
+ Updating neighbor list on step: 16867, with padding: 0.193
+ Updating neighbor list on step: 16882, with padding: 0.195
+ Updating neighbor list on step: 16897, with padding: 0.202
+   16900    845.00       5.7057194      -1.8898583       3.8158610          1934.3      6.55427597     476.2226381
+ Updating neighbor list on step: 16912, with padding: 0.205
+ Updating neighbor list on step: 16927, with padding: 0.203
+ Updating neighbor list on step: 16942, with padding: 0.200
+ Updating neighbor list on step: 16956, with padding: 0.223
+ Updating neighbor list on step: 16971, with padding: 0.234
+ Updating neighbor list on step: 16986, with padding: 0.232
+   17000    850.00       5.6833392      -1.8584282       3.8249110          1926.7      7.11201324     473.7614827
  Updating neighbor list on step: 17001, with padding: 0.225
- Updating neighbor list on step: 17016, with padding: 0.225
- Updating neighbor list on step: 17031, with padding: 0.218
- Updating neighbor list on step: 17047, with padding: 0.189
- Updating neighbor list on step: 17061, with padding: 0.200
- Updating neighbor list on step: 17076, with padding: 0.223
- Updating neighbor list on step: 17090, with padding: 0.244
-   17100    855.00       5.7408751      -1.8406794       3.9001957          1946.2      7.31220323     484.0542374
- Updating neighbor list on step: 17105, with padding: 0.249
- Updating neighbor list on step: 17120, with padding: 0.251
- Updating neighbor list on step: 17135, with padding: 0.241
- Updating neighbor list on step: 17151, with padding: 0.215
- Updating neighbor list on step: 17167, with padding: 0.207
- Updating neighbor list on step: 17182, with padding: 0.229
- Updating neighbor list on step: 17197, with padding: 0.250
-   17200    860.00       5.8352237      -1.9416441       3.8935796          1978.2      6.67763739     486.8165614
- Updating neighbor list on step: 17212, with padding: 0.258
- Updating neighbor list on step: 17227, with padding: 0.257
- Updating neighbor list on step: 17242, with padding: 0.250
- Updating neighbor list on step: 17258, with padding: 0.238
- Updating neighbor list on step: 17274, with padding: 0.229
- Updating neighbor list on step: 17289, with padding: 0.233
-   17300    865.00       5.8179496      -1.9164132       3.9015364          1972.3      6.57521316     484.8347875
- Updating neighbor list on step: 17304, with padding: 0.248
- Updating neighbor list on step: 17319, with padding: 0.261
- Updating neighbor list on step: 17334, with padding: 0.268
- Updating neighbor list on step: 17349, with padding: 0.262
- Updating neighbor list on step: 17365, with padding: 0.223
- Updating neighbor list on step: 17381, with padding: 0.196
- Updating neighbor list on step: 17396, with padding: 0.196
-   17400    870.00       5.6173089      -1.7164272       3.9008818          1904.3      7.66219574     483.1223309
- Updating neighbor list on step: 17411, with padding: 0.216
- Updating neighbor list on step: 17426, with padding: 0.227
- Updating neighbor list on step: 17442, with padding: 0.206
- Updating neighbor list on step: 17459, with padding: 0.173
- Updating neighbor list on step: 17474, with padding: 0.187
- Updating neighbor list on step: 17489, with padding: 0.197
-   17500    875.00       5.8710613      -1.9573143       3.9137469          1990.4      5.84305062     481.8723390
- Updating neighbor list on step: 17504, with padding: 0.199
- Updating neighbor list on step: 17519, with padding: 0.205
- Updating neighbor list on step: 17534, with padding: 0.222
- Updating neighbor list on step: 17549, with padding: 0.227
- Updating neighbor list on step: 17564, with padding: 0.220
- Updating neighbor list on step: 17580, with padding: 0.211
- Updating neighbor list on step: 17595, with padding: 0.213
-   17600    880.00       5.8786777      -1.9910923       3.8875854          1992.9      6.09324726     470.3955134
- Updating neighbor list on step: 17610, with padding: 0.211
- Updating neighbor list on step: 17626, with padding: 0.200
- Updating neighbor list on step: 17641, with padding: 0.202
- Updating neighbor list on step: 17656, with padding: 0.201
- Updating neighbor list on step: 17671, with padding: 0.198
- Updating neighbor list on step: 17686, with padding: 0.209
-   17700    885.00       5.6651233      -1.7781361       3.8869872          1920.5      7.79581996     472.9733334
- Updating neighbor list on step: 17701, with padding: 0.210
- Updating neighbor list on step: 17716, with padding: 0.212
- Updating neighbor list on step: 17731, with padding: 0.216
- Updating neighbor list on step: 17747, with padding: 0.203
- Updating neighbor list on step: 17763, with padding: 0.193
- Updating neighbor list on step: 17778, with padding: 0.194
- Updating neighbor list on step: 17793, with padding: 0.213
-   17800    890.00       5.7930995      -1.9075280       3.8855715          1963.9      6.56804266     476.0026187
- Updating neighbor list on step: 17807, with padding: 0.237
- Updating neighbor list on step: 17822, with padding: 0.243
- Updating neighbor list on step: 17837, with padding: 0.241
- Updating neighbor list on step: 17852, with padding: 0.238
- Updating neighbor list on step: 17867, with padding: 0.235
- Updating neighbor list on step: 17882, with padding: 0.233
- Updating neighbor list on step: 17897, with padding: 0.231
-   17900    895.00       5.7016656      -1.8284539       3.8732117          1932.9      7.13762647     470.3614709
- Updating neighbor list on step: 17912, with padding: 0.229
- Updating neighbor list on step: 17927, with padding: 0.228
- Updating neighbor list on step: 17942, with padding: 0.228
- Updating neighbor list on step: 17957, with padding: 0.230
- Updating neighbor list on step: 17972, with padding: 0.231
- Updating neighbor list on step: 17987, with padding: 0.231
-   18000    900.00       5.5906007      -1.7167097       3.8738910          1895.3      8.03501987     472.3994369
- Updating neighbor list on step: 18002, with padding: 0.234
- Updating neighbor list on step: 18017, with padding: 0.239
- Updating neighbor list on step: 18032, with padding: 0.238
- Updating neighbor list on step: 18047, with padding: 0.237
- Updating neighbor list on step: 18062, with padding: 0.233
- Updating neighbor list on step: 18078, with padding: 0.219
- Updating neighbor list on step: 18093, with padding: 0.224
-   18100    905.00       5.8409625      -1.9740900       3.8668725          1980.1      6.44631180     474.6002267
- Updating neighbor list on step: 18108, with padding: 0.217
- Updating neighbor list on step: 18123, with padding: 0.224
- Updating neighbor list on step: 18138, with padding: 0.232
- Updating neighbor list on step: 18153, with padding: 0.231
- Updating neighbor list on step: 18168, with padding: 0.232
- Updating neighbor list on step: 18183, with padding: 0.231
- Updating neighbor list on step: 18198, with padding: 0.229
-   18200    910.00       5.7884064      -1.9298031       3.8586033          1962.3      6.70368301     479.7677670
- Updating neighbor list on step: 18213, with padding: 0.227
- Updating neighbor list on step: 18228, with padding: 0.227
- Updating neighbor list on step: 18243, with padding: 0.226
- Updating neighbor list on step: 18258, with padding: 0.227
- Updating neighbor list on step: 18273, with padding: 0.228
- Updating neighbor list on step: 18288, with padding: 0.228
-   18300    915.00       5.6101878      -1.7498809       3.8603069          1901.9      7.89074499     480.9659228
- Updating neighbor list on step: 18303, with padding: 0.229
- Updating neighbor list on step: 18318, with padding: 0.231
- Updating neighbor list on step: 18333, with padding: 0.231
- Updating neighbor list on step: 18348, with padding: 0.231
- Updating neighbor list on step: 18363, with padding: 0.233
- Updating neighbor list on step: 18378, with padding: 0.235
- Updating neighbor list on step: 18393, with padding: 0.237
-   18400    920.00       5.5820358      -1.7175776       3.8644582          1892.4      7.94116355     485.6862844
- Updating neighbor list on step: 18408, with padding: 0.236
- Updating neighbor list on step: 18424, with padding: 0.218
- Updating neighbor list on step: 18441, with padding: 0.190
- Updating neighbor list on step: 18456, with padding: 0.205
- Updating neighbor list on step: 18472, with padding: 0.193
- Updating neighbor list on step: 18487, with padding: 0.190
-   18500    925.00       5.8683988      -1.9984044       3.8699943          1989.4      5.67721191     483.6399115
- Updating neighbor list on step: 18502, with padding: 0.186
- Updating neighbor list on step: 18517, with padding: 0.185
- Updating neighbor list on step: 18532, with padding: 0.177
- Updating neighbor list on step: 18547, with padding: 0.194
- Updating neighbor list on step: 18561, with padding: 0.218
- Updating neighbor list on step: 18577, with padding: 0.186
- Updating neighbor list on step: 18590, with padding: 0.230
-   18600    930.00       5.8509611      -1.9857789       3.8651822          1983.5      6.03835641     479.6023794
- Updating neighbor list on step: 18605, with padding: 0.240
- Updating neighbor list on step: 18621, with padding: 0.228
- Updating neighbor list on step: 18637, with padding: 0.220
- Updating neighbor list on step: 18652, with padding: 0.231
- Updating neighbor list on step: 18666, with padding: 0.260
- Updating neighbor list on step: 18680, with padding: 0.282
- Updating neighbor list on step: 18696, with padding: 0.262
-   18700    935.00       5.7433277      -1.8758827       3.8674450          1947.0      7.74941668     477.2840904
- Updating neighbor list on step: 18712, with padding: 0.236
- Updating neighbor list on step: 18728, with padding: 0.216
- Updating neighbor list on step: 18744, with padding: 0.211
- Updating neighbor list on step: 18759, with padding: 0.219
- Updating neighbor list on step: 18774, with padding: 0.219
- Updating neighbor list on step: 18790, with padding: 0.201
-   18800    940.00       5.8283804      -1.9701911       3.8581893          1975.9      6.90514995     481.3554767
- Updating neighbor list on step: 18805, with padding: 0.196
- Updating neighbor list on step: 18820, with padding: 0.192
- Updating neighbor list on step: 18836, with padding: 0.177
- Updating neighbor list on step: 18852, with padding: 0.173
- Updating neighbor list on step: 18867, with padding: 0.174
- Updating neighbor list on step: 18882, with padding: 0.174
- Updating neighbor list on step: 18897, with padding: 0.177
-   18900    945.00       6.0311743      -2.1840895       3.8470848          2044.6      5.16765951     475.0187596
- Updating neighbor list on step: 18912, with padding: 0.181
- Updating neighbor list on step: 18927, with padding: 0.181
- Updating neighbor list on step: 18942, with padding: 0.177
- Updating neighbor list on step: 18957, with padding: 0.177
- Updating neighbor list on step: 18972, with padding: 0.177
- Updating neighbor list on step: 18987, with padding: 0.181
-   19000    950.00       5.9464825      -2.1255166       3.8209658          2015.9      6.25134690     465.0673111
- Updating neighbor list on step: 19002, with padding: 0.192
- Updating neighbor list on step: 19017, with padding: 0.202
- Updating neighbor list on step: 19032, with padding: 0.213
- Updating neighbor list on step: 19047, with padding: 0.219
- Updating neighbor list on step: 19062, with padding: 0.212
- Updating neighbor list on step: 19078, with padding: 0.194
- Updating neighbor list on step: 19094, with padding: 0.189
-   19100    955.00       5.6791766      -1.8721495       3.8070271          1925.3      7.99922461     465.7265109
- Updating neighbor list on step: 19109, with padding: 0.209
- Updating neighbor list on step: 19124, with padding: 0.219
- Updating neighbor list on step: 19140, with padding: 0.196
- Updating neighbor list on step: 19155, with padding: 0.209
- Updating neighbor list on step: 19170, with padding: 0.215
- Updating neighbor list on step: 19185, with padding: 0.207
-   19200    960.00       5.7694854      -1.9705073       3.7989782          1955.9      7.37770880     467.0336672
- Updating neighbor list on step: 19200, with padding: 0.220
- Updating neighbor list on step: 19215, with padding: 0.219
- Updating neighbor list on step: 19230, with padding: 0.227
- Updating neighbor list on step: 19245, with padding: 0.216
- Updating neighbor list on step: 19261, with padding: 0.197
- Updating neighbor list on step: 19276, with padding: 0.200
- Updating neighbor list on step: 19291, with padding: 0.199
-   19300    965.00       5.6777560      -1.8929547       3.7848012          1924.8      7.12589910     470.4743416
- Updating neighbor list on step: 19306, with padding: 0.201
- Updating neighbor list on step: 19321, with padding: 0.211
- Updating neighbor list on step: 19336, with padding: 0.219
- Updating neighbor list on step: 19352, with padding: 0.201
- Updating neighbor list on step: 19367, with padding: 0.213
- Updating neighbor list on step: 19382, with padding: 0.220
- Updating neighbor list on step: 19397, with padding: 0.223
-   19400    970.00       5.8387696      -2.0497029       3.7890667          1979.4      5.51624324     468.9857900
- Updating neighbor list on step: 19412, with padding: 0.223
- Updating neighbor list on step: 19427, with padding: 0.219
- Updating neighbor list on step: 19442, with padding: 0.214
- Updating neighbor list on step: 19457, with padding: 0.212
- Updating neighbor list on step: 19472, with padding: 0.213
- Updating neighbor list on step: 19487, with padding: 0.213
-   19500    975.00       5.7761024      -1.9829793       3.7931230          1958.2      5.99479461     460.8906253
- Updating neighbor list on step: 19502, with padding: 0.213
- Updating neighbor list on step: 19517, with padding: 0.213
- Updating neighbor list on step: 19532, with padding: 0.215
- Updating neighbor list on step: 19547, with padding: 0.218
- Updating neighbor list on step: 19562, with padding: 0.219
- Updating neighbor list on step: 19577, with padding: 0.218
- Updating neighbor list on step: 19592, with padding: 0.215
-   19600    980.00       5.8456872      -2.0586831       3.7870041          1981.8      5.95029741     453.3951549
- Updating neighbor list on step: 19607, with padding: 0.212
- Updating neighbor list on step: 19622, with padding: 0.212
- Updating neighbor list on step: 19637, with padding: 0.213
- Updating neighbor list on step: 19652, with padding: 0.212
- Updating neighbor list on step: 19667, with padding: 0.210
- Updating neighbor list on step: 19682, with padding: 0.204
- Updating neighbor list on step: 19698, with padding: 0.192
-   19700    985.00       5.7544934      -1.9689473       3.7855461          1950.8      7.22871668     450.9442776
- Updating neighbor list on step: 19714, with padding: 0.175
- Updating neighbor list on step: 19729, with padding: 0.184
- Updating neighbor list on step: 19744, with padding: 0.199
- Updating neighbor list on step: 19759, with padding: 0.206
- Updating neighbor list on step: 19774, with padding: 0.210
- Updating neighbor list on step: 19789, with padding: 0.209
-   19800    990.00       5.9412432      -2.1593553       3.7818879          2014.1      6.40969629     452.0620840
- Updating neighbor list on step: 19804, with padding: 0.209
- Updating neighbor list on step: 19819, with padding: 0.207
- Updating neighbor list on step: 19834, with padding: 0.207
- Updating neighbor list on step: 19849, with padding: 0.212
- Updating neighbor list on step: 19864, with padding: 0.216
- Updating neighbor list on step: 19879, with padding: 0.217
- Updating neighbor list on step: 19894, with padding: 0.216
-   19900    995.00       5.9321292      -2.1530030       3.7791262          2011.1      6.56737931     449.6913471
- Updating neighbor list on step: 19909, with padding: 0.214
- Updating neighbor list on step: 19924, with padding: 0.214
- Updating neighbor list on step: 19939, with padding: 0.222
- Updating neighbor list on step: 19954, with padding: 0.229
- Updating neighbor list on step: 19969, with padding: 0.233
- Updating neighbor list on step: 19984, with padding: 0.235
- Updating neighbor list on step: 19999, with padding: 0.238
-   20000   1000.00       5.7378434      -1.9685581       3.7692853          1945.2      8.29445273     449.3060760
+ Updating neighbor list on step: 17017, with padding: 0.197
+ Updating neighbor list on step: 17032, with padding: 0.209
+ Updating neighbor list on step: 17047, with padding: 0.215
+ Updating neighbor list on step: 17062, with padding: 0.231
+ Updating neighbor list on step: 17077, with padding: 0.231
+ Updating neighbor list on step: 17093, with padding: 0.215
+   17100    855.00       5.5243973      -1.7178419       3.8065554          1872.8      7.60582609     481.2099486
+ Updating neighbor list on step: 17109, with padding: 0.201
+ Updating neighbor list on step: 17125, with padding: 0.191
+ Updating neighbor list on step: 17140, with padding: 0.188
+ Updating neighbor list on step: 17155, with padding: 0.202
+ Updating neighbor list on step: 17169, with padding: 0.227
+ Updating neighbor list on step: 17185, with padding: 0.212
+   17200    860.00       5.8372380      -2.0149535       3.8222846          1978.9      5.67180440     483.1731083
+ Updating neighbor list on step: 17201, with padding: 0.208
+ Updating neighbor list on step: 17216, with padding: 0.210
+ Updating neighbor list on step: 17232, with padding: 0.199
+ Updating neighbor list on step: 17248, with padding: 0.188
+ Updating neighbor list on step: 17263, with padding: 0.190
+ Updating neighbor list on step: 17278, with padding: 0.204
+ Updating neighbor list on step: 17292, with padding: 0.226
+   17300    865.00       5.4894216      -1.6570487       3.8323729          1861.0      7.85136354     480.9738997
+ Updating neighbor list on step: 17306, with padding: 0.260
+ Updating neighbor list on step: 17320, with padding: 0.281
+ Updating neighbor list on step: 17336, with padding: 0.253
+ Updating neighbor list on step: 17352, with padding: 0.226
+ Updating neighbor list on step: 17368, with padding: 0.214
+ Updating neighbor list on step: 17383, with padding: 0.209
+ Updating neighbor list on step: 17398, with padding: 0.207
+   17400    870.00       5.6706848      -1.8288754       3.8418095          1922.4      6.02841148     479.0665104
+ Updating neighbor list on step: 17413, with padding: 0.210
+ Updating neighbor list on step: 17428, with padding: 0.217
+ Updating neighbor list on step: 17443, with padding: 0.233
+ Updating neighbor list on step: 17458, with padding: 0.245
+ Updating neighbor list on step: 17474, with padding: 0.224
+ Updating neighbor list on step: 17490, with padding: 0.196
+   17500    875.00       5.6493176      -1.7932379       3.8560796          1915.2      6.82577556     475.9546525
+ Updating neighbor list on step: 17505, with padding: 0.208
+ Updating neighbor list on step: 17520, with padding: 0.208
+ Updating neighbor list on step: 17535, with padding: 0.209
+ Updating neighbor list on step: 17550, with padding: 0.203
+ Updating neighbor list on step: 17565, with padding: 0.204
+ Updating neighbor list on step: 17580, with padding: 0.201
+ Updating neighbor list on step: 17595, with padding: 0.197
+   17600    880.00       5.6608303      -1.7868754       3.8739549          1919.1      6.96413620     476.1359405
+ Updating neighbor list on step: 17610, with padding: 0.196
+ Updating neighbor list on step: 17626, with padding: 0.190
+ Updating neighbor list on step: 17641, with padding: 0.194
+ Updating neighbor list on step: 17656, with padding: 0.195
+ Updating neighbor list on step: 17671, with padding: 0.192
+ Updating neighbor list on step: 17686, with padding: 0.189
+   17700    885.00       5.5341094      -1.6493272       3.8847822          1876.1      7.92981378     479.6446847
+ Updating neighbor list on step: 17701, with padding: 0.194
+ Updating neighbor list on step: 17716, with padding: 0.196
+ Updating neighbor list on step: 17732, with padding: 0.186
+ Updating neighbor list on step: 17748, with padding: 0.182
+ Updating neighbor list on step: 17763, with padding: 0.198
+ Updating neighbor list on step: 17778, with padding: 0.215
+ Updating neighbor list on step: 17793, with padding: 0.221
+   17800    890.00       5.7616645      -1.8836798       3.8779847          1953.3      6.27752906     485.9512140
+ Updating neighbor list on step: 17808, with padding: 0.217
+ Updating neighbor list on step: 17823, with padding: 0.209
+ Updating neighbor list on step: 17838, with padding: 0.205
+ Updating neighbor list on step: 17853, with padding: 0.205
+ Updating neighbor list on step: 17868, with padding: 0.203
+ Updating neighbor list on step: 17883, with padding: 0.207
+ Updating neighbor list on step: 17898, with padding: 0.207
+   17900    895.00       5.5896130      -1.7023579       3.8872551          1894.9      7.55096913     486.2853376
+ Updating neighbor list on step: 17913, with padding: 0.211
+ Updating neighbor list on step: 17928, with padding: 0.208
+ Updating neighbor list on step: 17944, with padding: 0.195
+ Updating neighbor list on step: 17960, with padding: 0.173
+ Updating neighbor list on step: 17975, with padding: 0.185
+ Updating neighbor list on step: 17990, with padding: 0.188
+   18000    900.00       5.7016061      -1.8066961       3.8949099          1932.9      7.20618674     483.2203145
+ Updating neighbor list on step: 18005, with padding: 0.186
+ Updating neighbor list on step: 18020, with padding: 0.189
+ Updating neighbor list on step: 18035, with padding: 0.195
+ Updating neighbor list on step: 18050, with padding: 0.196
+ Updating neighbor list on step: 18065, with padding: 0.196
+ Updating neighbor list on step: 18080, with padding: 0.195
+ Updating neighbor list on step: 18095, with padding: 0.195
+   18100    905.00       5.8343354      -1.9599229       3.8744125          1977.9      6.23127795     485.7459086
+ Updating neighbor list on step: 18110, with padding: 0.195
+ Updating neighbor list on step: 18125, with padding: 0.194
+ Updating neighbor list on step: 18140, with padding: 0.194
+ Updating neighbor list on step: 18155, with padding: 0.212
+ Updating neighbor list on step: 18170, with padding: 0.219
+ Updating neighbor list on step: 18185, with padding: 0.224
+   18200    910.00       5.7028859      -1.8333361       3.8695499          1933.3      6.71293313     486.8475468
+ Updating neighbor list on step: 18200, with padding: 0.226
+ Updating neighbor list on step: 18215, with padding: 0.224
+ Updating neighbor list on step: 18230, with padding: 0.222
+ Updating neighbor list on step: 18245, with padding: 0.221
+ Updating neighbor list on step: 18260, with padding: 0.222
+ Updating neighbor list on step: 18275, with padding: 0.224
+ Updating neighbor list on step: 18290, with padding: 0.223
+   18300    915.00       5.8110695      -1.9250046       3.8860648          1970.0      6.44391962     482.2527977
+ Updating neighbor list on step: 18306, with padding: 0.207
+ Updating neighbor list on step: 18323, with padding: 0.169
+ Updating neighbor list on step: 18338, with padding: 0.180
+ Updating neighbor list on step: 18353, with padding: 0.192
+ Updating neighbor list on step: 18367, with padding: 0.217
+ Updating neighbor list on step: 18382, with padding: 0.229
+ Updating neighbor list on step: 18397, with padding: 0.229
+   18400    920.00       5.9259851      -2.0398707       3.8861144          2009.0      6.17963275     484.4011267
+ Updating neighbor list on step: 18413, with padding: 0.214
+ Updating neighbor list on step: 18429, with padding: 0.191
+ Updating neighbor list on step: 18445, with padding: 0.174
+ Updating neighbor list on step: 18460, with padding: 0.176
+ Updating neighbor list on step: 18475, with padding: 0.185
+ Updating neighbor list on step: 18489, with padding: 0.201
+   18500    925.00       5.7028397      -1.8280854       3.8747543          1933.3      7.23688643     490.2819760
+ Updating neighbor list on step: 18504, with padding: 0.198
+ Updating neighbor list on step: 18520, with padding: 0.175
+ Updating neighbor list on step: 18535, with padding: 0.173
+ Updating neighbor list on step: 18550, with padding: 0.175
+ Updating neighbor list on step: 18565, with padding: 0.177
+ Updating neighbor list on step: 18580, with padding: 0.178
+ Updating neighbor list on step: 18594, with padding: 0.200
+   18600    930.00       5.6611405      -1.7835034       3.8776371          1919.2      7.54336399     490.3483323
+ Updating neighbor list on step: 18609, with padding: 0.213
+ Updating neighbor list on step: 18624, with padding: 0.216
+ Updating neighbor list on step: 18639, with padding: 0.211
+ Updating neighbor list on step: 18655, with padding: 0.197
+ Updating neighbor list on step: 18671, with padding: 0.196
+ Updating neighbor list on step: 18686, with padding: 0.199
+   18700    935.00       5.6065990      -1.7331332       3.8734658          1900.7      7.46665861     495.9250276
+ Updating neighbor list on step: 18701, with padding: 0.194
+ Updating neighbor list on step: 18717, with padding: 0.190
+ Updating neighbor list on step: 18732, with padding: 0.191
+ Updating neighbor list on step: 18747, with padding: 0.194
+ Updating neighbor list on step: 18762, with padding: 0.194
+ Updating neighbor list on step: 18777, with padding: 0.195
+ Updating neighbor list on step: 18791, with padding: 0.240
+   18800    940.00       5.8671102      -1.9771823       3.8899279          1989.0      5.87243832     494.1234054
+ Updating neighbor list on step: 18806, with padding: 0.253
+ Updating neighbor list on step: 18821, with padding: 0.253
+ Updating neighbor list on step: 18836, with padding: 0.255
+ Updating neighbor list on step: 18851, with padding: 0.250
+ Updating neighbor list on step: 18867, with padding: 0.235
+ Updating neighbor list on step: 18883, with padding: 0.222
+ Updating neighbor list on step: 18898, with padding: 0.221
+   18900    945.00       5.7125679      -1.8217450       3.8908230          1936.6      7.45164429     488.0962696
+ Updating neighbor list on step: 18913, with padding: 0.225
+ Updating neighbor list on step: 18928, with padding: 0.232
+ Updating neighbor list on step: 18943, with padding: 0.240
+ Updating neighbor list on step: 18958, with padding: 0.237
+ Updating neighbor list on step: 18973, with padding: 0.229
+ Updating neighbor list on step: 18988, with padding: 0.225
+   19000    950.00       5.8549772      -1.9685429       3.8864343          1984.9      6.24460149     488.1169669
+ Updating neighbor list on step: 19003, with padding: 0.227
+ Updating neighbor list on step: 19018, with padding: 0.232
+ Updating neighbor list on step: 19033, with padding: 0.237
+ Updating neighbor list on step: 19048, with padding: 0.239
+ Updating neighbor list on step: 19063, with padding: 0.242
+ Updating neighbor list on step: 19078, with padding: 0.246
+ Updating neighbor list on step: 19093, with padding: 0.246
+   19100    955.00       5.7596790      -1.8627081       3.8969709          1952.6      6.84617832     486.7187528
+ Updating neighbor list on step: 19108, with padding: 0.241
+ Updating neighbor list on step: 19123, with padding: 0.237
+ Updating neighbor list on step: 19138, with padding: 0.234
+ Updating neighbor list on step: 19153, with padding: 0.237
+ Updating neighbor list on step: 19168, with padding: 0.243
+ Updating neighbor list on step: 19183, with padding: 0.241
+ Updating neighbor list on step: 19198, with padding: 0.234
+   19200    960.00       5.8830829      -1.9783634       3.9047195          1994.4      6.13392426     483.5992278
+ Updating neighbor list on step: 19213, with padding: 0.228
+ Updating neighbor list on step: 19228, with padding: 0.227
+ Updating neighbor list on step: 19243, with padding: 0.217
+ Updating neighbor list on step: 19259, with padding: 0.198
+ Updating neighbor list on step: 19274, with padding: 0.197
+ Updating neighbor list on step: 19289, with padding: 0.206
+   19300    965.00       5.8656824      -1.9640285       3.9016539          1988.5      5.58982725     479.9855528
+ Updating neighbor list on step: 19304, with padding: 0.211
+ Updating neighbor list on step: 19319, with padding: 0.213
+ Updating neighbor list on step: 19334, with padding: 0.217
+ Updating neighbor list on step: 19349, with padding: 0.226
+ Updating neighbor list on step: 19364, with padding: 0.248
+ Updating neighbor list on step: 19378, with padding: 0.274
+ Updating neighbor list on step: 19393, with padding: 0.259
+   19400    970.00       5.7928065      -1.9144407       3.8783658          1963.8      6.66168568     470.9607560
+ Updating neighbor list on step: 19410, with padding: 0.209
+ Updating neighbor list on step: 19425, with padding: 0.213
+ Updating neighbor list on step: 19440, with padding: 0.213
+ Updating neighbor list on step: 19455, with padding: 0.211
+ Updating neighbor list on step: 19471, with padding: 0.190
+ Updating neighbor list on step: 19487, with padding: 0.178
+   19500    975.00       5.7462621      -1.8617687       3.8844934          1948.0      7.03136973     474.1941182
+ Updating neighbor list on step: 19502, with padding: 0.190
+ Updating neighbor list on step: 19517, with padding: 0.203
+ Updating neighbor list on step: 19532, with padding: 0.205
+ Updating neighbor list on step: 19547, with padding: 0.205
+ Updating neighbor list on step: 19562, with padding: 0.201
+ Updating neighbor list on step: 19577, with padding: 0.196
+ Updating neighbor list on step: 19592, with padding: 0.194
+   19600    980.00       5.9425918      -2.0564727       3.8861192          2014.6      6.11900740     470.7066699
+ Updating neighbor list on step: 19607, with padding: 0.195
+ Updating neighbor list on step: 19622, with padding: 0.197
+ Updating neighbor list on step: 19637, with padding: 0.200
+ Updating neighbor list on step: 19652, with padding: 0.208
+ Updating neighbor list on step: 19668, with padding: 0.194
+ Updating neighbor list on step: 19683, with padding: 0.192
+ Updating neighbor list on step: 19698, with padding: 0.201
+   19700    985.00       5.7746442      -1.9040768       3.8705674          1957.7      7.23626616     475.6179410
+ Updating neighbor list on step: 19713, with padding: 0.210
+ Updating neighbor list on step: 19728, with padding: 0.213
+ Updating neighbor list on step: 19743, with padding: 0.206
+ Updating neighbor list on step: 19758, with padding: 0.202
+ Updating neighbor list on step: 19773, with padding: 0.209
+ Updating neighbor list on step: 19788, with padding: 0.214
+   19800    990.00       5.7285780      -1.8956943       3.8328836          1942.0      6.96463984     482.5020419
+ Updating neighbor list on step: 19803, with padding: 0.210
+ Updating neighbor list on step: 19819, with padding: 0.197
+ Updating neighbor list on step: 19834, with padding: 0.204
+ Updating neighbor list on step: 19849, with padding: 0.209
+ Updating neighbor list on step: 19864, with padding: 0.211
+ Updating neighbor list on step: 19879, with padding: 0.209
+ Updating neighbor list on step: 19894, with padding: 0.206
+   19900    995.00       5.7624558      -1.9296930       3.8327628          1953.5      7.33898537     476.9288972
+ Updating neighbor list on step: 19909, with padding: 0.221
+ Updating neighbor list on step: 19924, with padding: 0.229
+ Updating neighbor list on step: 19940, with padding: 0.202
+ Updating neighbor list on step: 19955, with padding: 0.198
+ Updating neighbor list on step: 19970, with padding: 0.195
+ Updating neighbor list on step: 19985, with padding: 0.195
+   20000   1000.00       5.8318655      -2.0297999       3.8020656          1977.1      6.18366890     481.7156069
 END SIMULATION
-	Average temperature over run = 1948.1614 K
-	Average pressure    over run = 6.9698 GPa
-	Pressures from diagonal stress tensors over run: 6.9698
+	Average temperature over run = 1934.7312 K
+	Average pressure    over run = 6.9939 GPa
+	Pressures from diagonal stress tensors over run: 6.9939
 	Average stress tensors over run: 
-		sigma_xx: 7.0158 GPa
-		sigma_yy: 6.8062 GPa
-		sigma_zz: 7.0874 GPa
-		sigma_xy: -0.2408 GPa
-		sigma_xz: 0.0309 GPa
-		sigma_yz: 0.0041 GPa
-        Average volume over run = 481.0009 Ang.^3
-        Average PV over run     = 482.5759 kcal/mol 
+		sigma_xx: 7.1340 GPa
+		sigma_yy: 6.8322 GPa
+		sigma_zz: 7.0155 GPa
+		sigma_xy: 0.0105 GPa
+		sigma_xz: 0.1386 GPa
+		sigma_yz: 0.0418 GPa
+        Average volume over run = 479.0325 Ang.^3
+        Average PV over run     = 482.2068 kcal/mol 
+TACC:  Shutdown complete. Exiting. 

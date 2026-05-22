@@ -1,3 +1,5 @@
+TACC:  Starting up job 3141531 
+TACC:  Starting parallel tasks... 
 Code compiled in MPI mode. Will run on 36 processor(s).
 
 Reading the simulation control input file...
@@ -736,38 +738,38 @@ Number of 4-body interactions = 496953
       38      4.75       4.8080202     -11.3918813      -6.5838611          1630.0     26.61335751     -6.8734727
       39      4.88       5.0159662     -11.5691413      -6.5531750          1700.5     25.07096122     -6.8601745
       40      5.00       5.5948470     -12.0681015      -6.4732546          1896.7     21.88065866     -6.7992846
-Warning: (Step 40) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.891308209602889 0.910000000000000  13 82
-	...Penalty potential = 0.065305943323484
+Warning: (Step 40) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.891308209602895 0.910000000000000  13 82
+	...Penalty potential = 0.065305943323416
       41      5.12       6.6464912     -13.7379298      -7.0914386          2253.2     23.97735578     -7.4395139
 Number of 3-body interactions = 471642
+Warning: (Step 41) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.812514804038895 0.910000000000000  13 82
+	...Penalty potential = 9.264372464166938
 Number of 4-body interactions = 2651375
  Updating neighbor list on step: 41, with padding: 1.391
-Warning: (Step 41) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.812514804038897 0.910000000000000  13 82
-	...Penalty potential = 9.264372464166463
       42      5.25       7.1928219     -13.8979728      -6.7051509          2438.4     29.29601091     -7.0778716
-Warning: (Step 42) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.736061452577590 0.910000000000000  13 82
-	...Penalty potential = 52.624443563414857
+Warning: (Step 42) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.736061452577579 0.910000000000000  13 82
+	...Penalty potential = 52.624443563424322
       43      5.38       6.8626361     -13.5553275      -6.6926915          2326.5     30.27943450     -7.0899736
-Warning: (Step 43) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.670174834409332 0.910000000000000  13 82
-	...Penalty potential = 137.938106170142106
+Warning: (Step 43) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.670174834409314 0.910000000000000  13 82
+	...Penalty potential = 137.938106170173143
       44      5.50       6.1175543     -12.7681192      -6.6505649          2073.9     31.14790506     -7.0701995
-Warning: (Step 44) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.625639420109812 0.910000000000000  13 82
-	...Penalty potential = 229.936636169652672
+Warning: (Step 44) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.625639420109791 0.910000000000000  13 82
+	...Penalty potential = 229.936636169702979
       45      5.62       5.3075844     -11.8951808      -6.5875964          1799.3     31.50228538     -7.0268325
-Warning: (Step 45) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.611719670379622 0.910000000000000  13 82
-	...Penalty potential = 265.383454515719450
+Warning: (Step 45) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.611719670379602 0.910000000000000  13 82
+	...Penalty potential = 265.383454515773678
       46      5.75       5.0376249     -11.5868251      -6.5492001          1707.8     31.34102120     -7.0063464
-Warning: (Step 46) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.631686541432386 0.910000000000000  13 82
-	...Penalty potential = 215.577099723498065
+Warning: (Step 46) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.631686541432372 0.910000000000000  13 82
+	...Penalty potential = 215.577099723532370
       47      5.88       5.5793346     -12.1383058      -6.5589711          1891.5     30.74592465     -7.0347472
-Warning: (Step 47) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.681036764579574 0.910000000000000  13 82
-	...Penalty potential = 120.032060145707348
+Warning: (Step 47) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.681036764579568 0.910000000000000  13 82
+	...Penalty potential = 120.032060145716954
       48      6.00       6.5606323     -13.1404932      -6.5798609          2224.1     29.64743886     -7.0770352
-Warning: (Step 48) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.749840543796511 0.910000000000000  13 82
-	...Penalty potential = 41.082584450971098
+Warning: (Step 48) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.749840543796515 0.910000000000000  13 82
+	...Penalty potential = 41.082584450968099
       49      6.12       7.3806286     -13.9495784      -6.5689499          2502.1     28.12402870     -7.0904442
-Warning: (Step 49) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.827330554438372 0.910000000000000  13 82
-	...Penalty potential = 5.649826025966630
+Warning: (Step 49) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.827330554438386 0.910000000000000  13 82
+	...Penalty potential = 5.649826025963784
       50      6.25       7.7625206     -14.2899785      -6.5274578          2631.6     26.63931519     -7.0747790
 END SIMULATION
 	Average temperature over run = 1562.7970 K
@@ -780,3 +782,4 @@ END SIMULATION
 		sigma_xy: 0.3066 GPa
 		sigma_xz: 1.9805 GPa
 		sigma_yz: 0.0933 GPa
+TACC:  Shutdown complete. Exiting. 

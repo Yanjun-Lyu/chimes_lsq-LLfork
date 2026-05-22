@@ -1,3 +1,5 @@
+TACC:  Starting up job 3141531 
+TACC:  Starting parallel tasks... 
 Code compiled in MPI mode. Will run on 36 processor(s).
 
 Reading the simulation control input file...
@@ -7071,3 +7073,4 @@ END SIMULATION
 		sigma_xy: -0.2188 GPa
 		sigma_xz: -0.3582 GPa
 		sigma_yz: 0.2447 GPa
+TACC:  Shutdown complete. Exiting. 
