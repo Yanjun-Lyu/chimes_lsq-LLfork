@@ -69,7 +69,7 @@ elif [[ "$hosttype" == "JHU-ARCH" ]] ; then
     MPI=`which mpicxx`   
 elif [[ "$hosttype" == "UT-TACC" ]] ; then
     source ${TESTSU_BASE}/../modfiles/UT-TACC.mod
-    RUN_JOB="ibrun" 
+    RUN_JOB="ibrun -n $NP" 
 else
     echo ""
     echo "ERROR: Unknown hosttype ($hosttype) specified"

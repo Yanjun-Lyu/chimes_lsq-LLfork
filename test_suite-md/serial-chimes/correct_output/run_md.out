@@ -1,3 +1,5 @@
+TACC:  Starting up job 3141531 
+TACC:  Starting parallel tasks... 
 Code compiled in MPI mode. Will run on 36 processor(s).
 
 Reading the simulation control input file...
@@ -206,6 +208,8 @@ chimesFF: 	H H r_cut_in: 0.75000 r_cut_out: 6.00000 MORSE 1.25000
 chimesFF: 	O H r_cut_in: 0.75000 r_cut_out: 6.00000 MORSE 1.25000
 chimesFF: Will use cutoff style CUBIC
 
+chimesFF: Will use default penalty distance: 0.01000
+chimesFF: Will use default penalty scaling: 10000.00000
 chimesFF: Read 2B parameters for pair: 0 O O
 chimesFF: 	0 -139.86847
 chimesFF: 	1 -21.69124
@@ -472,3 +476,4 @@ END SIMULATION
 		sigma_xy: 0.4916 GPa
 		sigma_xz: 0.3839 GPa
 		sigma_yz: -1.4772 GPa
+TACC:  Shutdown complete. Exiting. 

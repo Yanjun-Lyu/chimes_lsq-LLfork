@@ -1,3 +1,5 @@
+TACC:  Starting up job 3141531 
+TACC:  Starting parallel tasks... 
 Code compiled in MPI mode. Will run on 36 processor(s).
 
 Reading the simulation control input file...
@@ -1175,37 +1177,37 @@ Number of 3-body interactions = 35347
      270     33.75       6.1222917     -55.8471074     -49.7248157          2075.5     14.77278242    -51.4507083
 Number of 3-body interactions = 39407
  Updating neighbor list on step: 270, with padding: 0.625
-Warning: (Step 277) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 1.073846375944191 1.082000000000000  20 64
-	...Penalty potential = 0.054206585270943
-Warning: (Step 278) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 1.062210393797120 1.082000000000000  20 64
-	...Penalty potential = 0.775017406325108
-Warning: (Step 279) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 1.050859271727464 1.082000000000000  20 64
-	...Penalty potential = 3.019856421031041
+Warning: (Step 277) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 1.073846375944187 1.082000000000000  20 64
+	...Penalty potential = 0.054206585271036
+Warning: (Step 278) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 1.062210393797114 1.082000000000000  20 64
+	...Penalty potential = 0.775017406325786
+Warning: (Step 279) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 1.050859271727458 1.082000000000000  20 64
+	...Penalty potential = 3.019856421032785
      280     35.00       5.6161336     -55.4433148     -49.8271812          1903.9     15.69444741    -51.4512236
-Warning: (Step 280) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 1.041291528918658 1.082000000000000  20 64
-	...Penalty potential = 6.746124854700687
-Warning: (Step 280) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.818517383539498 0.820000000000000  45 68
-	...Penalty potential = 0.000325901569881
-Warning: (Step 281) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 1.035418147053706 1.082000000000000  20 64
-	...Penalty potential = 10.107651978450166
-Warning: (Step 281) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.815508620611631 0.820000000000000  45 68
-	...Penalty potential = 0.009060230045456
+Warning: (Step 280) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 1.041291528918654 1.082000000000000  20 64
+	...Penalty potential = 6.746124854702784
+Warning: (Step 280) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.818517383539494 0.820000000000000  45 68
+	...Penalty potential = 0.000325901569883
+Warning: (Step 281) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 1.035418147053704 1.082000000000000  20 64
+	...Penalty potential = 10.107651978451468
+Warning: (Step 281) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.815508620611629 0.820000000000000  45 68
+	...Penalty potential = 0.009060230045465
 Warning: (Step 282) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 1.034706448545232 1.082000000000000  20 64
-Warning: (Step 282) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.814547945470942 0.820000000000000  45 68
-	...Penalty potential = 0.016206176797152
-	...Penalty potential = 10.578054110317979
-Warning: (Step 283) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 1.039373847271860 1.082000000000000  20 64
-	...Penalty potential = 7.745124620339658
-Warning: (Step 283) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.815652732743046 0.820000000000000  45 68
-	...Penalty potential = 0.008215784144465
-Warning: (Step 284) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 1.048263378713320 1.082000000000000  20 64
-	...Penalty potential = 3.839765992341770
-Warning: (Step 284) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.818764408230302 0.820000000000000  45 68
-	...Penalty potential = 0.000188636191848
-Warning: (Step 285) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 1.059511414115297 1.082000000000000  20 64
-	...Penalty potential = 1.137329860494190
-Warning: (Step 286) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 1.071464916374115 1.082000000000000  20 64
-	...Penalty potential = 0.116926772455991
+	...Penalty potential = 10.578054110317682
+Warning: (Step 282) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.814547945470943 0.820000000000000  45 68
+	...Penalty potential = 0.016206176797144
+Warning: (Step 283) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 1.039373847271862 1.082000000000000  20 64
+	...Penalty potential = 7.745124620338448
+Warning: (Step 283) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.815652732743048 0.820000000000000  45 68
+	...Penalty potential = 0.008215784144451
+Warning: (Step 284) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 1.048263378713324 1.082000000000000  20 64
+	...Penalty potential = 3.839765992340405
+Warning: (Step 284) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 0.818764408230306 0.820000000000000  45 68
+	...Penalty potential = 0.000188636191846
+Warning: (Step 285) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 1.059511414115302 1.082000000000000  20 64
+	...Penalty potential = 1.137329860493550
+Warning: (Step 286) Adding penalty in 2B Cheby calc, r < rmin+penalty_dist 1.071464916374121 1.082000000000000  20 64
+	...Penalty potential = 0.116926772455791
 Number of 3-body interactions = 32207
  Updating neighbor list on step: 289, with padding: 0.463
      290     36.25       5.6012475     -55.5151610     -49.9139135          1898.9     16.51007289    -51.4499360
@@ -1335,7 +1337,7 @@ Number of 3-body interactions = 33234
      830    103.75       5.4550685     -55.6707598     -50.2156912          1849.3     11.93466697    -51.4502750
 Number of 3-body interactions = 33066
  Updating neighbor list on step: 833, with padding: 0.494
-     840    105.00       5.5068814     -55.8204183     -50.3135369          1866.9     12.79672669    -51.4501792
+     840    105.00       5.5068814     -55.8204183     -50.3135369          1866.9     12.79672668    -51.4501792
 Number of 3-body interactions = 33392
  Updating neighbor list on step: 848, with padding: 0.498
      850    106.25       5.6329413     -56.0347509     -50.4018096          1909.6     13.74173976    -51.4503529
@@ -1385,3 +1387,4 @@ END SIMULATION
 		sigma_xy: -0.2190 GPa
 		sigma_xz: 0.0956 GPa
 		sigma_yz: -0.2202 GPa
+TACC:  Shutdown complete. Exiting. 
