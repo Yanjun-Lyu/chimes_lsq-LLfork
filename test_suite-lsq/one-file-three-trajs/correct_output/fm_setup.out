@@ -1,3 +1,5 @@
+TACC:  Starting up job 3141241 
+TACC:  Starting parallel tasks... 
 
 Reading input file...
 Will read from file: fm_setup.in
@@ -172,3 +174,4 @@ Values will correspond to the following atom types, in order:
 		3	HH HH HH 24868
 ...matrix printing complete: 
 
+TACC:  Shutdown complete. Exiting. 

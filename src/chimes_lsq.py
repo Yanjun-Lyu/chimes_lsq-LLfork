@@ -1012,8 +1012,7 @@ def main():
         TEMP = hf[i].split()
         
         if "EXCL_2B" in hf[i]:
-            line = line.split()
-            EXCL_2B = line[1:]
+            EXCL_2B = hf[i].split()[1:]
 
         if len(TEMP)>3:
             if (TEMP[2] == "TRIPLETS:"):
@@ -1032,10 +1031,27 @@ def main():
             if (BREAK_COND):
                  break
 
+    # Locate key header lines (do not use fixed indices; EXCLD1B/EXCLD2B shifted the format)
+    PAIRTYP_LINE = -1
+    ATOM_TYPES_LINE = -1
+    ATOM_PAIRS_LINE = -1
+
+    for i, line in enumerate(hf):
+        parts = line.split()
+        if len(parts) >= 2 and parts[0] == "PAIRTYP:":
+            PAIRTYP_LINE = i
+        elif len(parts) >= 3 and parts[0] == "ATOM" and parts[1] == "TYPES:":
+            ATOM_TYPES_LINE = i
+        elif len(parts) >= 3 and parts[0] == "ATOM" and parts[1] == "PAIRS:":
+            ATOM_PAIRS_LINE = i
+
+    if PAIRTYP_LINE < 0 or ATOM_TYPES_LINE < 0 or ATOM_PAIRS_LINE < 0:
+        sys.stderr.write("Error: could not parse params.header (need PAIRTYP, ATOM TYPES, ATOM PAIRS lines)\n")
+        exit(1)
+
     # 1. Figure out what potential type we have
 
-    POTENTIAL = hf[5].split()
-    POTENTIAL = POTENTIAL[1]
+    POTENTIAL = hf[PAIRTYP_LINE].split()[1]
 
     print ("")
 
@@ -1048,7 +1064,7 @@ def main():
 
     if POTENTIAL == "CHEBYSHEV":
         
-        TMP = hf[5].split()
+        TMP = hf[PAIRTYP_LINE].split()
 
         if len(TMP) >= 4:
             if len(TMP) >= 5:
@@ -1062,12 +1078,8 @@ def main():
     FIT_COUL = hf[1].split()
     FIT_COUL = FIT_COUL[1]
 
-    ATOM_TYPES_LINE  = 7
-    TOTAL_ATOM_TYPES = hf[ATOM_TYPES_LINE].split()
-    TOTAL_ATOM_TYPES = int(TOTAL_ATOM_TYPES[2])
-    ATOM_PAIRS_LINE  = ATOM_TYPES_LINE+2+TOTAL_ATOM_TYPES+2
-    TOTAL_PAIRS      = hf[ATOM_PAIRS_LINE].split()
-    TOTAL_PAIRS      = int(TOTAL_PAIRS[2])
+    TOTAL_ATOM_TYPES = int(hf[ATOM_TYPES_LINE].split()[2])
+    TOTAL_PAIRS      = int(hf[ATOM_PAIRS_LINE].split()[2])
     
     # Remove excluded 2b interactions from accounting
     
@@ -1282,7 +1294,7 @@ def main():
 
     total_params = TOTAL_PAIRS * SNUM_2B + COUNTED_TRIP_PARAMS + COUNTED_QUAD_PARAMS + COUNTED_COUL_PARAMS 
 
-    N_ENER_OFFSETS = int(hf[7].split()[2])
+    N_ENER_OFFSETS = TOTAL_ATOM_TYPES
 
 ## Parameter count could be off by natom_types, if energies are included in the fit
     if (total_params != len(x)) and (len(x) != (total_params+N_ENER_OFFSETS)) :

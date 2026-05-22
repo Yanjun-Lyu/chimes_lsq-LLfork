@@ -50,7 +50,7 @@ elif [[ "$hosttype" == "JHU-ARCH" ]] ; then
     MPI=`which mpicxx`   
 elif [[ "$hosttype" == "UT-TACC" ]] ; then
     source ${TESTSU_BASE}/../modfiles/UT-TACC.mod
-    RUN_JOB="ibrun" 
+    RUN_JOB="ibrun -n $NP" 
 else
     echo ""
     echo "ERROR: Unknown hosttype ($hosttype) specified"
@@ -168,10 +168,9 @@ do
         
 	if [[ $SUCCESS -eq 1 ]] ; then
 	
-		# Break up  A.txt file into 95M chunks, i.e., < Github's 100M file size limit
-		# Then remove the big single A.txt file
-		
-		split -b95M A.txt A.txt.
+		# Break A.txt into <50M chunks for git; remove monolithic A.txt before commit
+		split -b49M A.txt A.txt.
+		rm -f A.txt
 	
  		 cp A.txt.* b.txt params.header fm_setup.out ff_groups.map ../correct_output
 	fi

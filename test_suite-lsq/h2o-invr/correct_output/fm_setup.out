@@ -1,3 +1,5 @@
+TACC:  Starting up job 3141241 
+TACC:  Starting parallel tasks... 
 
 Reading input file...
 Will read from file: fm_setup.in
@@ -167,3 +169,4 @@ Printing matrices...
 		3	HH HH HH 2751450
 ...matrix printing complete: 
 
+TACC:  Shutdown complete. Exiting. 

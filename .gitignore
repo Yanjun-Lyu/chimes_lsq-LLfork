@@ -32,6 +32,8 @@
 /test_suite-lsq/*/correct_output/natoms.txt
 /test_suite-lsq/*/correct_output/fm_setup.in
 /test_suite-lsq/*/correct_output/input.xyzf
+/test_suite-lsq/*/correct_output/A.txt
+/test_suite-lsq/*/correct_output/current_output/
 /test_suite-lsq/lsq2/A.*.txt
 /test_suite-lsq/lsq2/A.txt
 /test_suite-lsq/lsq2/Ax.txt
