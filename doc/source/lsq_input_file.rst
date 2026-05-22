@@ -116,7 +116,7 @@ Control  variables	Description                                       Value/Optio
 ``FITCOUL`` *       ``true``/``false``: Fit/use charges              See below for details. 
 ``FITSTRS`` *       Whether/how to include stresses                  See below for details. 
 ``FITENER`` *       Whether/how to include energies                  See below for details. 
-``PAIRTYP``         Chebyshev polynomial orders                      Expects ``<O2B> <O3B+1> <O4B+1> -1 1``
+``PAIRTYP``         Chebyshev polynomial orders                      Expects ``<O2B> <O3B+1> <O4B+1> -1 1``. Setting an order to zero is equivalent to excluding the corresponding interaction. For example, ``12 5 0 -1 1`` is equivalent to excluding 4-body interactions. 
 ``CHBTYPE`` *       Pair distance transformation type                See below for details. 
 ``USENEIG``         Neighbor list/distance convention                Auto-select algorithm (``true``) or use small-cell friendly method (``true SMALL``)  
 ``FITPOVR``         ReaxFF linear overcoordination parameters use    Boolean to decide if using ReaxFF linear overcoordination parameters. If this is false and parameters are provided below, those parameters will be subtracted from forces.              
@@ -129,11 +129,11 @@ Note: Asterisks (*) indicate options described in greater detail below
 Topology variables      Description                                 Value/Options/Notes
 ======================  =========================================== ====================================
 ``NATMTYP``             Number of atom types                        Number of unique atom types in trajectory.
-``TYPEIDX``             Atom type index                             Integers, ranging from 1 to ``NATMTYP``. Values form a column below ``# TYPEIDX #``.
+``TYPEIDX``             Atom type index                             Integers, ranging from 1 to ``NATMTYP``. Values form a column below ``# TYPEIDX #``. Make sure the element order in ``fm_setup.in`` matches with the order in the topological file.  
 ``ATM_TYP``             Atom type chemical symbol                   Any string. Chemical symbol for each unique atom type.  Values form a column below ``# ATM_TYP #``.
-``ATMCHRG``             Atom type charge                            If ``FITCOUL`` is false: a partial atomic charge for each atom type. If ``FITCOUL`` is true: a positive or negative sign, to indicate how pair charge signs should be assigned.
+``ATMCHRG``             Atom type charge                            If ``FITCOUL`` is false: a partial atomic charge for each atom type. If ``FITCOUL`` is true: a positive or negative sign, to indicate how pair charge signs should be assigned. If ``ATMCHRG`` is set to zero, ChIMES is fit normally. 
 ``ATMMASS``             Atom type mass                              Floats > 0.
-``EXCLUDE`` *           Interaction to exclude/ignore               Sets of n-body ``ATM_TYP``s. Rarely used.
+``EXCLUDE`` *           Interaction to exclude/ignore               Sets of n-body ``ATM_TYP`` s. Rarely used.
 ``PAIRIDX``             Pair type index                             Ascending integers from 1 to the number of unique atom pair types. Values form a column below ``# PAIRIDX #``.
 ``ATM_TYX``             ``ATM_TYP`` of atom X in pair ``PAIRIDX``   Used to define interaction pair types. Order does not matter.
 ``S_MINIM``             Inner cutoff for pair ``PAIRIDX``           Generally taken as slightly less than smallest distance sampled in DFT-MD trajectory.
@@ -246,7 +246,6 @@ This keyword defined the pair distance transformation method (i.e. for compatibi
 
 ``EXCLUDE``
 """"""""""""
-(Ancillary support)
 
 Interactions corresponding to specific atom triplets can be excluded from the fitting process by including the following lines above the ``NATMTYP`` entry in the input file, e.g. to exclude O-O-O  (comprised of OO, OO, and OO atom pairs) and C-O-O 3-body interactions (comprised of CO, CO, and OO pairs) from the fit:
 
@@ -256,6 +255,7 @@ Interactions corresponding to specific atom triplets can be excluded from the fi
   O O O 
   C O O
   
+Note: under certain circumstances, users might want to exclude 1- and 2-body interactions, see more details on the `ChIMES Active Learning Driver documentation <https://al-driver.readthedocs.io/en/latest/options.html>`_.
 
 ``CHGCONS``
 """"""""""""
@@ -290,7 +290,7 @@ Otherwise, each cutoff can be specified separately through syntax similar to the
   HHOHOH OH OH HH 0.80000 0.80000 1.00000
   HHHHHH HH HH HH 1.00000 1.00000 1.00000
 
-Where the “4” is the number of cutoffs to be listed. Any many-body type for which a line is not provided will use the same ``S_MINIM`` as the 2-body interactions, where constituent pairs determine the cutoff. 
+Where the “4” is the number of cutoffs to be listed. For example, for 3-body interactions, the first column specifies the syntax order of all three pairs. The next three columns specifies the syntax of all three pairs. The last three columns specifies the special cutoff values. Any many-body type for which a line is not provided will use the same ``S_MINIM`` as the 2-body interactions, where constituent pairs determine the cutoff. 
 
 
 ``SPECIAL XB MAXIM``
@@ -312,13 +312,14 @@ Otherwise, each cutoff can be specified separately through syntax similar to the
   OOCOCO CO CO OO 4.0 4.0 6.5
   OOOOOO OO OO OO 6.5 6.5 6.5
 
-Where the “4” is the number of cutoffs to be listed. Any many-body type for which a line is not provided will use the same ``S_MAXIM`` as the 2-body interactions, where constituent pairs determine the cutoff. 
+Where the “4” is the number of cutoffs to be listed. For example, for 3-body interactions, the first column specifies the syntax order of all three pairs. The next three columns specifies the syntax of all three pairs. The last three columns specifies the special cutoff values. Any many-body type for which a line is not provided will use the same ``S_MAXIM`` as the 2-body interactions, where constituent pairs determine the cutoff. 
 
+Note: ChIMES does not currently support many-body cutoffs to be larger than 2-body cutoffs. In addition, this specification is not compatible with LAMMPS.
 
 ``FCUTTYP``
 """"""""""""
 
-This keyword specifies Chebyshev potential cutoff function types and corresponding parameters. ``FCUTTYP`` should be specified on its own line, under ``# PAIRIDX #`` entries. Currently supported options include ``CUBIC`` and ``TERSOFF <float>``, where ``<float>`` gives the cutoff function kick-in distance as: :math:`r_\mathrm{cut} - <\mathrm{float}>r_\mathrm{cut}`, and should take on values between 0 and 1.
+This keyword specifies Chebyshev potential cutoff function types and corresponding parameters. ``FCUTTYP`` should be specified on its own line, under ``# PAIRIDX #`` entries. Currently supported options include ``CUBIC`` and ``TERSOFF <float>``, where ``<float>`` gives the cutoff function kick-in distance as: :math:`r_\mathrm{cut} - <\mathrm{float}>r_\mathrm{cut}`, and should take on values between 0 and 1. For example, ``TERSOFF 0.3`` modified the last ``30%`` of the interaction. 
 
 -----------------
 
@@ -350,7 +351,7 @@ Output files
 
     * If energies are included in the fit, the final columns are the number of atoms of each type in corresponding training trajectory frame
         
-* Each row corresponds to the :math:`i`, :math:`j`, or :math:`k^{\mathrm{th}}` force component of a given atom in the corresponding training trajectory frame
+* Each row corresponds to the :math:`i`, :math:`j`, or :math:`k^{\mathrm{th}}` force component of a given atom followed by the 0 (False), 3 (True), or 9 (ALL) stress components and the 0 (False) or 3 (True) energy values in the corresponding training trajectory frame. For easier mapping see the b-labeled.txt file
     
     * Thus, 2-body only, force-only fit with polynomial order 10 for a 25 frame trajectory containing 300 atoms, ``A.txt`` would contain :math:`25 \times 300 \times 3 = 22,500` rows and 10 columns. 
         
@@ -363,7 +364,7 @@ Output files
 
 * This file contains the DFT per-atom forces and optionally configuration stresses and energies extracted from the training trajectory
 
-* Each row corresponds to the :math:`i`, :math:`j`, or :math:`k^{\mathrm{th}}` for component of a given atom in the corresponding training trajectory frame
+* Each row corresponds to the :math:`i`, :math:`j`, or :math:`k^{\mathrm{th}}` force component of a given atom followed by the 0 (False), 3 (True), or 9 (ALL) stress components and the 0 (False) or 3 (True) energy values in the corresponding training trajectory frame.
     
     * Thus, 2-body only, force-only fit for a 25 frame trajectory containing 300 atoms, ``b.txt`` would contain :math:`25 \times 300 \times 3 = 22,500` rows, irrespective of model complexity (i.e. bodiedness and polynomial order).  
 
@@ -427,7 +428,7 @@ Tips and tricks
      
 * The "Morse parameter" is usually set to the distance corresponding to the the first (bonding) peak in the in the pair RDF
 * There is no hard-and-fast rule for setting the 2/3/4-body polynomial orders, but 12/7/3 is generally a good starting point
-* Weighting is often needed when energies and stresses tensors are included in the fit. Typical respective weighting factors are 0.1 – 5.0 and 200 – 500
+* Weighting is often needed when energies and stresses tensors are included in the fit. Typical respective weighting factors are 0.1 – 5.0 for energy and 200 – 500 for stress
 * If a Tersoff-style cutoff function is used, a Tersoff variable of between 0.25 and 0.75 is reasonable, where larger values modify the interaction at shorter distances, but can make it easier to obtain a smooth interaction
 * Be mindful of outer cutoff distances with respect to box lengths. Training data are typically generated with small (i.e. DFT-friendly) cells
 * If you don’t want to determine all pair/triplet/quadruplet interaction types and inner cutoffs for ``fm_setup.in`` by hand, setup a dummy ``fm_setup.in`` file with: 
@@ -455,7 +456,7 @@ Once a ChIMES design matrix has been generated, parameters can be obtained by ru
 
 .. code-block:: bash
     
-    python3.x /path/to/repo/src/chimes_lsq.py > params.txt
+    python3.x /path/to/repo/build/chimes_lsq.py > params.txt
 
 however we note that ``chimes_lsq`` supports many other solvers, summarized below:
 
@@ -468,6 +469,7 @@ Note: Asterisks (*) indicate options described in greater detail below
 Method      Additional dependencies                        Related ``chimes_lsq.py`` flags
 ========== ==============================================  =======================================================
 SVD         None                                           ``--eps`` ``--weights``
+Fast SVD    None                                           ``--eps`` ``--weights``
 LASSO       `sklearn <https://scikit-learn.org/stable/>`_  ``--alpha`` ``--normalize`` ``--weights``
 LASSOLARS   `sklearn <https://scikit-learn.org/stable/>`_  ``--alpha`` ``--normalize`` ``--weights``
 DLARS*      DLARS                                          ``--alpha`` ``--normalize`` ``--weights`` (``--dlasso_dlars_path``) ``--nodes`` ``--cores`` ``--read_output`` ``--restart`` ``--split_files``
@@ -512,23 +514,23 @@ All solvers support regularization (i.e. via ``--eps`` or ``--alpha``), which ca
 
 .. code-block:: bash
 
-    python2.x /path/to/repo/src/post_proc_chimes_lsq.py <parameter_file>
+    python3.x /path/to/repo/build/post_proc_chimes_lsq.py <parameter_file>
     
-which produces a new parameter file named ``<parameter_file>.reduced``.
+which produces a new parameter file named ``<parameter_file>.reduced``. Doing so speeds up the sum over Chebyshev coefficients increasing computational efficiency.
 
 
 Weighting
 """""""""""""""""""""""""""""""
 
-Weighting is often needed when energies and stresses tensors are included in the fit. Typical respective weighting factors are 0.1 – 5.0 and 200 – 500. Weights can be rapidly generated through:
+Weighting is often needed when energies and stresses tensors are included in the fit. Typical respective weighting factors are 0.1 – 5.0 for energy and 200 – 500 for stress. Weights can be rapidly generated through:
 
 .. code-block:: bash
 
     wF=1.0
-    wE=5.0
-    wS=250.0
+    wE=0.1
+    wS=100.0
     
-    paste b-labeled.txt force.txt | awk -v wF="$wF" -v wE="$wE" -v wS="$wS" '{if($1=="+1"){print wE}elseif($1~"s_"){print wS}else{print wF}}' > weights.txt
+    paste b-labeled.txt | awk -v wF="$wF" -v wE="$wE" -v wS="$wS" '{if($1=="+1"){print wE}else if($1~"s_"){print wS}else{print wF}}' > weights.txt
 
 
 Anatomy of ChIMES parameter file 
@@ -631,7 +633,7 @@ Though it is critical to evaluate model performance on the basis of physical pre
 
     paste b-labeled.txt force.txt | awk '{if($1=="+1")              {print ($2,$3)}}' > compare-energies.txt
     paste b-labeled.txt force.txt | awk '{if($1~ "s_")              {print ($2,$3)}}' > compare-stresses.txt
-    paste b-labeled.txt force.txt | awk '{if(($1!~"+1")&&($1!="+1")){print ($2,$3)}}' > compare-forces.txt
+    paste b-labeled.txt force.txt | awk '{if(($1!~"s_")&&($1!="+1")){print ($2,$3)}}' > compare-forces.txt
 
     xmgrace compare*txt
     

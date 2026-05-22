@@ -707,6 +707,20 @@ def main():
         x = reg.coef_
         nvars = np
         print ("! Ridge alpha = %11.4e" % args.alpha)
+        
+    elif args.algorithm == 'fast_ridge':
+        print ('! fast ridge regression used')
+
+        ATA = A.T @ A
+        ATb = A.T @ b
+
+        ATA_reg = ATA.copy()
+        numpy.fill_diagonal(ATA_reg, ATA_reg.diagonal() + args.alpha)
+
+        x = numpy.linalg.solve(ATA_reg, ATb)
+        
+        nvars = np
+        print ("! Ridge alpha = %11.4e" % args.alpha)
 
     elif args.algorithm == 'ridgecv':
         alpha_ar = [1.0e-06, 3.2e-06, 1.0e-05, 3.2e-05, 1.0e-04, 3.2e-04, 1.0e-03, 3.2e-03]
@@ -966,7 +980,7 @@ def main():
     # Setup output
     #############################################
     
-    print ("! RMS force error                = %11.4e" % sqrt(Z/float(nlines)))
+    print ("! RMSE                           = %11.4e" % sqrt(Z/float(nlines)))
     print ("! max abs variable               = %11.4e" %  max(abs(x)))
     print ("! number of fitting vars         = ", nvars)
     print ("! Bayesian Information Criterion = %11.4e" % bic)
