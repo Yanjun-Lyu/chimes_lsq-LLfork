@@ -5,450 +5,12 @@ import math as m
 import subprocess
 import os
 import argparse
-import contextlib
-import random
-
 
 from numpy        import *
 from numpy.linalg import lstsq
 from numpy.linalg import LinAlgError
 from datetime     import *
 from subprocess   import call
-import scipy.sparse.linalg as spla
-from scipy.optimize import minimize
-from scipy.optimize import least_squares
-from scipy.optimize import newton_krylov
-from scipy.sparse.linalg import gmres
-import multiprocessing as mp
-
-try:
-    from pyswarms.single import GlobalBestPSO
-    PYSWARMS_AVAILABLE = True
-except ImportError:
-    PYSWARMS_AVAILABLE = False
-    GlobalBestPSO = None
-    print("! Warning: pyswarms not available. Install with: pip install pyswarms")
-
-try:
-    import deap
-    from deap import base, creator, tools, algorithms
-    DEAP_AVAILABLE = True
-except ImportError:
-    DEAP_AVAILABLE = False
-    print("! Warning: DEAP not available. Install with: pip install deap")
-
-
-#############################################
-#############################################
-# Particle Swarm Optimization (PSO) Solver
-#############################################
-#############################################
-
-def pso_solve(A_file,
-              b_file,
-              weights_file=None,
-              swarm_size=80,
-              iters=200,
-              inertia=0.7298,
-              c1=1.49618,
-              c2=1.49618,
-              l2_reg=1.0e-4,
-              nlines=None,
-              n_params=None,
-              num_cores=1,
-              seed=None,
-              init_scale=0.1,
-              bounds=(-1.0, 1.0),
-              vmax_frac=0.2,
-              tol=1.0e-10,
-              stall_iters=30):
-    """
-    Memory-efficient Particle Swarm Optimization for (optionally weighted) linear least-squares with L2 regularization.
-    Uses pyswarms library for efficient distributed PSO computation.
-
-    Objective for a parameter vector x is:
-        fitness(x) = sum_i ( w_i * (A_i dot x - b_i) )^2 + l2_reg * ||x||^2
-
-    Reads A, b, and weights directly from disk in chunks — no large arrays in memory.
-    Parallel across num_cores using multiprocessing (same chunking strategy as GA).
-    """
-    if not PYSWARMS_AVAILABLE:
-        raise ImportError("pyswarms library is required. Install with: pip install pyswarms")
-    
-    if seed is not None:
-        numpy.random.seed(seed)
-
-    if nlines is None or n_params is None:
-        raise ValueError("nlines and n_params must be provided")
-
-    lo, hi = float(bounds[0]), float(bounds[1])
-    if hi <= lo:
-        raise ValueError("PSO bounds must satisfy hi > lo")
-
-    # Determine if pyswarms will handle parallelization
-    # If pyswarms uses n_processes > 1, disable internal multiprocessing to avoid nested parallelization
-    pyswarms_parallel = (num_cores > 1)
-    use_internal_mp = not pyswarms_parallel  # Only use internal MP if pyswarms isn't parallelizing
-    
-    if pyswarms_parallel:
-        print(f"! Pyswarms parallelization enabled ({num_cores} processes) - disabling internal multiprocessing")
-    else:
-        print(f"! Pyswarms running serially - internal multiprocessing {'enabled' if num_cores > 1 else 'disabled'}")
-
-    # Create a wrapper function that captures the parameters for pyswarms
-    # Use functools.partial or lambda to create a callable that pyswarms can pickle
-    from functools import partial
-    objective_function = partial(
-        pso_objective_function,
-        A_file=A_file,
-        b_file=b_file,
-        weights_file=weights_file,
-        nlines=nlines,
-        l2_reg=l2_reg,
-        num_cores=num_cores,
-        use_internal_mp=use_internal_mp
-    )
-
-    # Initialize optimizer with pyswarms
-    # Set up options for PSO
-    options = {'c1': c1, 'c2': c2, 'w': inertia}
-    
-    # Calculate velocity clamp if specified
-    velocity_clamp_tuple = None
-    if vmax_frac is not None:
-        box = (hi - lo)
-        vmax = vmax_frac * box
-        velocity_clamp_tuple = (-vmax, vmax)
-    
-    # Create bounds array with explicit shape (2, n_params) to avoid IndexError
-    # pyswarms periodic boundary handler requires bounds to have shape (2, dimensions)
-    # where first row is lower bounds and second row is upper bounds
-    bounds_array = numpy.array([[lo] * n_params, [hi] * n_params])
-    
-    # Set initial positions with init_scale if specified
-    init_pos = None
-    if init_scale is not None:
-        init_pos = numpy.random.randn(swarm_size, n_params) * init_scale
-        init_pos = numpy.clip(init_pos, lo, hi)
-    
-    # Create optimizer instance
-    # Using GlobalBestPSO for standard PSO behavior
-    # Use explicit bounds array to ensure correct shape for boundary handlers
-    optimizer = GlobalBestPSO(
-        n_particles=swarm_size,
-        dimensions=n_params,
-        options=options,
-        bounds=bounds_array,  # Use explicit array format to avoid shape issues
-        init_pos=init_pos,
-        velocity_clamp=velocity_clamp_tuple
-    )
-
-    print(f"! PSO started (using pyswarms): swarm_size={swarm_size}, iters={iters}, cores={num_cores}, bounds=[{lo},{hi}]")
-    
-    # Run optimization
-    # pyswarms handles parallelization internally via n_processes
-    # When pyswarms parallelizes, internal multiprocessing is disabled to avoid nested parallelization
-    cost, pos = optimizer.optimize(
-        objective_function,
-        iters=iters,
-        n_processes=num_cores if pyswarms_parallel else None,
-        verbose=False
-    )
-    
-    # Print progress from cost history if available
-    if hasattr(optimizer, 'cost_history') and optimizer.cost_history:
-        # Print periodic updates from history
-        history_len = len(optimizer.cost_history)
-        for i in range(0, history_len, max(1, history_len // 5)):  # Print ~5 updates
-            if i < history_len:
-                print(f"! PSO iter {i:4d} | best fitness = {optimizer.cost_history[i]:.10e}")
-        # Always print final
-        if history_len > 0:
-            print(f"! PSO iter {history_len-1:4d} | best fitness = {optimizer.cost_history[-1]:.10e}")
-    
-    print(f"! PSO finished. Final best fitness = {cost:.10e}")
-    
-    return pos
-
-
-#############################################
-#############################################
-# Nonlinear residual and loss functions
-#############################################
-#############################################
-
-def nonlinear_residual(x, A, b):
-    """
-    Nonlinear residual for force matching:
-    r = A x - b + nonlinear correction
-    """
-    return A @ x - b + numpy.sin(x)
-
-
-def nonlinear_loss(x, A, b, alpha=0.0):
-    """
-    Scalar loss for L-BFGS
-    """
-    r = nonlinear_residual(x, A, b)
-    return 0.5 * numpy.dot(r, r) + 0.5 * alpha * numpy.dot(x, x)
-
-#############################################
-# Genetic Algorithm Solver
-#############################################
-#############################################
-# Genetic Algorithm Solver — Memory Efficient & Parallel
-#############################################
-
-# ------------------------------------------------------------------
-# Worker function: compute partial fitness for a chunk of rows
-# Must be module-level for multiprocessing pickling
-# ------------------------------------------------------------------
-def chunk_fitness(start, end, A_file, b_file, weights_file, population):
-    n_ind = population.shape[0]
-    partial_scores = numpy.zeros(n_ind, dtype=float)
-
-    # Open files — each process opens its own handles (safe)
-    with open(A_file, 'r') as Af, \
-         open(b_file, 'r') as bf, \
-         (open(weights_file, 'r') if weights_file else contextlib.nullcontext()) as wf:
-
-        # Skip to starting line
-        for _ in range(start):
-            Af.readline()
-            bf.readline()
-            if weights_file:
-                wf.readline()
-
-        for _ in range(start, end):
-            A_line = Af.readline()
-            b_line = bf.readline()
-            if not A_line or not b_line:
-                break  # safety
-
-            Arow = numpy.fromstring(A_line, sep=' ', dtype=float)
-            bi = float(b_line.strip())
-            if weights_file:
-                wi = float(wf.readline().strip())
-            else:
-                wi = 1.0
-
-            # residuals = Arow @ individual - bi   for all individuals
-            residuals = Arow @ population.T - bi
-            residuals *= wi
-            partial_scores += residuals ** 2
-
-    return partial_scores
-
-
-# ------------------------------------------------------------------
-# Module-level objective function for pyswarms
-# Must be module-level for multiprocessing pickling
-# ------------------------------------------------------------------
-def pso_objective_function(swarm_positions, A_file, b_file, weights_file, nlines, l2_reg, num_cores, use_internal_mp):
-    """
-    Objective function for pyswarms (module-level for pickling).
-    swarm_positions: array of shape (n_particles, n_dimensions)
-    Returns: array of shape (n_particles,) with fitness values
-    """
-    reg_term = l2_reg * numpy.sum(swarm_positions ** 2, axis=1)
-    
-    # Use internal multiprocessing only if pyswarms is not handling parallelization
-    if not use_internal_mp or num_cores <= 1:
-        # Serial evaluation (pyswarms will parallelize across particles if enabled)
-        scores = chunk_fitness(0, nlines, A_file, b_file, weights_file, swarm_positions)
-    else:
-        # Internal multiprocessing for chunking (only when pyswarms is serial)
-        chunk_size = nlines // num_cores
-        chunks = []
-        for i in range(num_cores):
-            s = i * chunk_size
-            e = (i + 1) * chunk_size if i < num_cores - 1 else nlines
-            chunks.append((s, e))
-
-        with mp.Pool(processes=num_cores) as pool:
-            results = pool.starmap(
-                chunk_fitness,
-                [(s, e, A_file, b_file, weights_file, swarm_positions) for s, e in chunks]
-            )
-        scores = numpy.zeros(swarm_positions.shape[0], dtype=float)
-        for r in results:
-            scores += r
-    
-    return scores + reg_term
-
-
-def ga_solve(A_file,
-             b_file,
-             weights_file=None,
-             pop_size=100,
-             generations=1000,
-             mutation_rate=0.05,
-             crossover_rate=0.8,
-             elite_frac=0.1,
-             l2_reg=1.0e-4,
-             nlines=None,
-             n_params=None,
-             num_cores=1,
-             seed=None):
-    """
-    Memory-efficient Genetic Algorithm for linear least-squares with optional weighting and L2 regularization.
-    Uses DEAP library for efficient distributed GA computation.
-    Reads A, b, and weights directly from disk in chunks — no large arrays in memory.
-    """
-    if not DEAP_AVAILABLE:
-        raise ImportError("DEAP library is required. Install with: pip install deap")
-    
-    if seed is not None:
-        numpy.random.seed(seed)
-        random.seed(seed)
-
-    if nlines is None or n_params is None:
-        raise ValueError("nlines and n_params must be provided")
-
-    # Determine if DEAP will handle parallelization
-    # If DEAP uses multiple processes, disable internal multiprocessing to avoid nested parallelization
-    deap_parallel = (num_cores > 1)
-    use_internal_mp = not deap_parallel  # Only use internal MP if DEAP isn't parallelizing
-    
-    if deap_parallel:
-        print(f"! DEAP parallelization enabled ({num_cores} processes) - disabling internal multiprocessing")
-    else:
-        print(f"! DEAP running serially - internal multiprocessing {'enabled' if num_cores > 1 else 'disabled'}")
-
-    # Create fitness class and individual class (only if they don't exist)
-    if not hasattr(creator, "FitnessMin"):
-        creator.create("FitnessMin", base.Fitness, weights=(-1.0,))  # Minimize fitness
-    if not hasattr(creator, "Individual"):
-        creator.create("Individual", list, fitness=creator.FitnessMin)
-
-    # Create toolbox
-    toolbox = base.Toolbox()
-    
-    # Register attribute generator (individual genes)
-    toolbox.register("attr_float", numpy.random.randn)  # Will be scaled in individual creation
-    
-    # Register individual creator
-    def create_individual():
-        """Create an individual with small initial values"""
-        ind = creator.Individual(numpy.random.randn(n_params) * 0.1)
-        return ind
-    
-    toolbox.register("individual", create_individual)
-    toolbox.register("population", tools.initRepeat, list, toolbox.individual)
-
-    # Define fitness evaluation function
-    def evaluate_individual(individual):
-        """
-        Evaluate fitness of a single individual.
-        individual: DEAP Individual (list-like)
-        Returns: tuple (fitness,) for DEAP
-        """
-        # Convert individual to numpy array (2D for chunk_fitness compatibility)
-        ind_array = numpy.array(individual).reshape(1, -1)
-        
-        # Compute fitness using chunk_fitness
-        reg_term = l2_reg * numpy.sum(ind_array ** 2)
-        
-        if not use_internal_mp or num_cores <= 1:
-            # Serial evaluation (DEAP will parallelize across individuals if enabled)
-            # chunk_fitness returns array of shape (1,), so take first element
-            score = float(chunk_fitness(0, nlines, A_file, b_file, weights_file, ind_array)[0])
-        else:
-            # Internal multiprocessing for chunking (only when DEAP is serial)
-            chunk_size = nlines // num_cores
-            chunks = []
-            for i in range(num_cores):
-                s = i * chunk_size
-                e = (i + 1) * chunk_size if i < num_cores - 1 else nlines
-                chunks.append((s, e))
-
-            with mp.Pool(processes=num_cores) as pool:
-                results = pool.starmap(
-                    chunk_fitness,
-                    [(s, e, A_file, b_file, weights_file, ind_array) for s, e in chunks]
-                )
-            # Sum results (each result is array of shape (1,))
-            score = float(sum(r[0] for r in results))
-        
-        return (score + reg_term,)
-
-    # Register fitness evaluation
-    toolbox.register("evaluate", evaluate_individual)
-    
-    # Register genetic operators
-    toolbox.register("mate", tools.cxTwoPoint)  # Two-point crossover
-    toolbox.register("mutate", tools.mutGaussian, mu=0.0, sigma=0.1, indpb=mutation_rate)
-    toolbox.register("select", tools.selTournament, tournsize=2)  # Tournament selection
-
-    # Create initial population
-    population = toolbox.population(n=pop_size)
-    
-    # Evaluate initial population
-    fitnesses = list(map(toolbox.evaluate, population))
-    for ind, fit in zip(population, fitnesses):
-        ind.fitness.values = fit
-
-    # Extract initial best fitness
-    initial_best = min(fit[0] for fit in fitnesses)
-    print(f"! GA started (using DEAP): pop_size={pop_size}, generations={generations}, cores={num_cores}")
-    print(f"! Initial best fitness = {initial_best:.6e}")
-
-    # Statistics for tracking
-    stats = tools.Statistics(lambda ind: ind.fitness.values)
-    stats.register("min", numpy.min)
-    stats.register("max", numpy.max)
-    stats.register("avg", numpy.mean)
-
-    # Hall of fame for elites
-    hof = tools.HallOfFame(maxsize=max(1, int(elite_frac * pop_size)))
-
-    # Setup parallelization if enabled
-    if deap_parallel:
-        # DEAP handles parallelization internally
-        pool = mp.Pool(processes=num_cores)
-        toolbox.register("map", pool.map)
-    else:
-        # Use standard map (serial)
-        toolbox.register("map", map)
-
-    # Run evolution
-    try:
-        population, logbook = algorithms.eaSimple(
-            population,
-            toolbox,
-            cxpb=crossover_rate,      # Crossover probability
-            mutpb=mutation_rate,      # Mutation probability
-            ngen=generations,         # Number of generations
-            stats=stats,
-            halloffame=hof,
-            verbose=False
-        )
-    finally:
-        # Clean up pool if created
-        if deap_parallel:
-            pool.close()
-            pool.join()
-
-    # Get best individual from hall of fame
-    best_individual = hof[0]
-    best_fitness = best_individual.fitness.values[0]
-    
-    # Print progress from logbook
-    if logbook:
-        gen_entries = logbook.select("gen", "min")
-        for i in range(0, len(gen_entries), max(1, len(gen_entries) // 5)):  # Print ~5 updates
-            if i < len(gen_entries):
-                gen, min_fit = gen_entries[i]
-                print(f"! GA generation {gen:4d} | best fitness = {min_fit:.10e}")
-        # Always print final
-        if len(gen_entries) > 0:
-            gen, min_fit = gen_entries[-1]
-            print(f"! GA generation {gen:4d} | best fitness = {min_fit:.10e}")
-
-    print(f"! GA finished. Final best fitness = {best_fitness:.10e}")
-    
-    # Return as numpy array for compatibility
-    return numpy.array(best_individual)
 
 
 
@@ -470,8 +32,8 @@ def main():
     parser = argparse.ArgumentParser(description='Least-squares force matching based on output of chimes_lsq')
 
     parser.add_argument("--A",                    type=str,      default='A.txt',         help='A (derivative) matrix') 
-    parser.add_argument("--algorithm",            type=str,      default='svd',           help='fitting algorithm: svd, fast_svd, ridge, lasso, lbfgs, gauss_newton, jfnk, ga, pso')
-    parser.add_argument("--dlasso_dlars_path",    type=str     , default=loc+'/../contrib/dlars/src/',              help='Path to DLARS and/or DLASSO solver')
+    parser.add_argument("--algorithm",            type=str,      default='svd',           help='fitting algorithm')
+    parser.add_argument("--dlasso_dlars_path",    type=str,      default=loc+'/../contrib/dlars/src/', help='Path to DLARS and/or DLASSO solver')
     parser.add_argument("--alpha",                type=float,    default=1.0e-04,         help='Lasso regularization')
     parser.add_argument("--b",                    type=str,      default='b.txt',         help='b (force) file')
     parser.add_argument("--cores",                type=int,      default=8,               help='DLARS number of cores')
@@ -487,25 +49,12 @@ def main():
     parser.add_argument("--test_suite",           type=str2bool, default=False,           help='output for test suite')
     parser.add_argument("--weights",              type=str,      default="None",          help='weight file')
     parser.add_argument("--active",               type=str2bool, default=False,           help='is this a DLARS/DLASSO run from the active learning driver?')
-    parser.add_argument("--folds",type=int, default=4,help="Number of CV folds")
-    parser.add_argument("--hyper_sets",           type=str2bool, default=False,           help='Are you trying to fit a model with multiple hyperparameter sets?')
-    parser.add_argument("--seed",                 type=int,      default=None,            help='Random seed for GA/PSO (and any stochastic solver)')
-
-    # PSO options (used when --algorithm pso)
-    parser.add_argument("--pso_swarm_size",       type=int,      default=80,              help='PSO swarm size')
-    parser.add_argument("--pso_iters",            type=int,      default=200,             help='PSO iterations')
-    parser.add_argument("--pso_inertia",          type=float,    default=0.7298,          help='PSO inertia weight (w)')
-    parser.add_argument("--pso_c1",               type=float,    default=1.49618,         help='PSO cognitive coefficient (c1)')
-    parser.add_argument("--pso_c2",               type=float,    default=1.49618,         help='PSO social coefficient (c2)')
-    parser.add_argument("--pso_init_scale",       type=float,    default=0.1,             help='PSO init stddev (positions ~ N(0, scale))')
-    parser.add_argument("--pso_bounds",           type=float,    nargs=2, default=[-1.0, 1.0], help='PSO box bounds: min max (applied to all params)')
-    parser.add_argument("--pso_vmax_frac",        type=float,    default=0.2,             help='PSO max velocity as fraction of (max-min) bound range')
-    parser.add_argument("--pso_tol",              type=float,    default=1.0e-10,         help='PSO improvement tolerance for early stopping')
-    parser.add_argument("--pso_stall_iters",      type=int,      default=30,              help='PSO early stop after this many stall iterations')
+    parser.add_argument("--folds",                type=int,      default=4,               help="Number of CV folds")
+    
     # Actually parse the arguments
 
     args        = parser.parse_args()
-    print(args.hyper_sets)
+    
     dlasso_dlars_path = args.dlasso_dlars_path
 
     #############################################
@@ -518,109 +67,101 @@ def main():
     if args.algorithm in sk_algos:
         from sklearn import linear_model
         from sklearn import preprocessing
+        from sklearn.pipeline import make_pipeline
         
     #############################################
     # Read weights, if used
     #############################################        
-
         
-    WEIGHTS = None    
-    if args.weights == "None":
+        
+    if ( args.weights == "None" ):
         DO_WEIGHTING = False 
     else:
         DO_WEIGHTING = True
-        if not args.split_files:
-            WEIGHTS = numpy.genfromtxt(args.weights, dtype='float')
+        if ( not args.split_files ):
+            WEIGHTS= numpy.genfromtxt(args.weights,dtype='float')
 
     #################################
-    # Process A and b matrices — smart loading
+    #   Process A and b matrices, sanity check weight dimensions
     #################################
 
-    # Always load b — it's 1D and small
-    b = numpy.genfromtxt(args.b, dtype='float')
-    nlines = b.shape[0]
+    # Use genfromtxt to avoid parsing large files. Note that the AL driver does not use split matrices
+    
+    if (args.active  and not args.split_files) or ((args.algorithm == "dlasso") and not args.split_files): 
+    
+        A      = numpy.zeros((1,1),dtype=float)
+        b      = numpy.genfromtxt(args.b, dtype='float') 
+        np     = "undefined"
+        nlines = b.shape[0]
 
-    # Special cases: active learning or dlasso without split files
-    if (args.active and not args.split_files) or (args.algorithm == "dlasso" and not args.split_files):
-        A = numpy.zeros((1,1), dtype=float)  # Dummy
-        np = "undefined"
-    
-    # Case: split_files or read_output → don't load A, get dims from file
-    elif args.split_files or args.read_output:
-        if not args.read_output:
-            with open("dim.0000.txt", "r") as dimf:
-                line = next(dimf)
-                np, nstart, nend, nlines_from_dim = (int(x) for x in line.split())
-            A = numpy.zeros((1,1), dtype=float)  # Dummy
-        else:
-            np = "undefined"
-            A = None  # Not needed
-        # Note: nlines already from b
-    
-    # Default case: not split, not read_output, not special → load full A
-    # BUT: if algorithm is 'ga', we SKIP loading full A to save memory
-    elif args.algorithm in ["ga", "pso"]:
-        print("! GA/PSO algorithm detected: skipping full load of A matrix (memory-efficient mode)")
-        A = None  # Will read rows on-demand in ga_solve
-        
-        # Infer number of parameters (np) from first row of A.txt
-        with open(args.A) as f:
-            first_line = f.readline().strip()
-            if not first_line:
-                print("Error: A file is empty")
+    elif ( (not args.split_files) and (not args.read_output) ) :
+        A       = numpy.genfromtxt(args.A , dtype='float')
+        nlines  = A.shape[0] 
+        np      = A.shape[1] 
+        b       = numpy.genfromtxt(args.b, dtype='float') 
+        nlines2 = b.shape[0] 
+
+        if ( nlines != nlines2 ):
+            print ("Error: the number of lines in the input files do not match\n")
+            exit(1) 
+
+            if np > nlines:
+                print ("Error: number of variables > number of equations")
                 exit(1)
-            np = len(first_line.split())
-        print(f"! Inferred number of parameters (np) = {np} from first row of {args.A}")
-
     else:
-        # Original behavior: load full A for all other algorithms
-        print("! Loading full A matrix into memory...")
-        A = numpy.genfromtxt(args.A, dtype='float')
         
-        if A.shape[0] != nlines:
-            print("Error: A and b have mismatched number of rows")
-            exit(1)
-        
-        np = A.shape[1]
+        if not args.read_output:
+            dimf = open("dim.0000.txt", "r") ;
+            line = next(dimf) 
+            dim  = (int(x) for x in line.split())
+            A    = numpy.zeros((1,1),dtype=float)           # Dummy A matrix - NOT read in.
+            b    = numpy.genfromtxt(args.b, dtype='float')  # Dummy b matrix - NOT read in.
+            (np, nstart, nend, nlines) = dim
+        else:
+            b      = numpy.genfromtxt(args.b, dtype='float') 
+            np     = "undefined"
+            nlines = b.shape[0]
+            
+    # Sanity check weight dimensions        
+    
+    if DO_WEIGHTING and not args.split_files:
+        if ( WEIGHTS.shape[0] != nlines ):
+            print ("Wrong number of lines in WEIGHTS file")
+            exit(1)  
 
-        if np > nlines:
-            print("Error: number of variables > number of equations")
-            exit(1)
-
-    # Sanity check weights length
-    if DO_WEIGHTING and not args.split_files and WEIGHTS is not None:
-        if WEIGHTS.shape[0] != nlines:
-            print("Error: Wrong number of lines in WEIGHTS file")
-            exit(1)
-
+    
     #################################
-    # Apply weighting to A and b (only if A was loaded)
+    # Apply weighting to A and b
     #################################
 
     weightedA = None
     weightedb = None
 
-    if DO_WEIGHTING and not args.split_files and not args.active and args.algorithm != "dlasso":
-        if A is None:
-            print("! Warning: Weighting requested but A not loaded (GA/PSO mode) — skipping weightedA creation")
-        else:
-            weightedA = numpy.zeros_like(A)
-            weightedb = numpy.zeros_like(b)
-            for i in range(nlines):
-                weightedA[i] = A[i] * WEIGHTS[i]
-                weightedb[i] = b[i] * WEIGHTS[i]
+    if DO_WEIGHTING and not args.split_files and not args.active  and not (args.algorithm == "dlasso"):
+
+        # This way requires too much memory for long A-mat's
+        # to avoid a memory error, we will do it the slow way:
+
+        weightedA = numpy.zeros((A.shape[0],A.shape[1]),dtype=float)
+        weightedb = numpy.zeros((A.shape[0],),dtype=float)
+
+        for i in range(A.shape[0]):     # Loop over rows (atom force components)
+            for j in range(A.shape[1]): # Loop over cols (variables in fit)
+                weightedA[i][j] = A[i][j]*WEIGHTS[i]
+                weightedb[i]    = b[i]   *WEIGHTS[i]
+
 
     ################################                
-    # Header for output
+    #  Header for output
     ################################
     
-    print("! Date ", date.today())
-    print("!")
+    print ("! Date ", date.today())
+    print ("!")
 
-    if np != "undefined":
-        print("! Number of variables            = ", np)
+    if np != "undefined" :
+        print ("! Number of variables            = ", np)
 
-    print("! Number of equations            = ", nlines)
+    print ("! Number of equations            = ", nlines)
 
     
                 
@@ -634,41 +175,19 @@ def main():
         
         print ('! svd algorithm used')
         try:
-            print(args.hyper_sets)
-            if DO_WEIGHTING and args.hyper_sets is False: # Then it's OK to overwrite weightedA.  It is not used to calculate y (predicted forces) below.
+            if DO_WEIGHTING: # Then it's OK to overwrite weightedA.  It is not used to calculate y (predicted forces) below.
                 U,D,VT = scipy.linalg.svd(weightedA,overwrite_a=True)
                 Dmat   = array((transpose(weightedA)))
-                dmax = 0.0
-                
-            elif DO_WEIGHTING and args.hyper_sets is True :            #  Then do not overwrite A.  It is used to calculate y (predicted forces) below.
-                
-                min_shape = min(weightedA.shape)
-                k = min(max(1, min_shape // 10), min_shape)
-                U, D, VT = spla.svds(weightedA, k=k)
-                Dmat = numpy.zeros((len(D), len(D)))
-                dmax = numpy.max(numpy.abs(D))
-                
-            elif args.weights == "None" and args.hyper_sets is True :            #  Then do not overwrite A.  It is used to calculate y (predicted forces) below.
-                min_shape = min(A.shape)
-                k = min(max(1, min_shape // 10), min_shape)
-                U, D, VT = spla.svds(A, k=k)
-                Dmat = numpy.zeros((len(D), len(D)))
-                dmax = numpy.max(numpy.abs(D))
-                
-            else :   # Previous Method
-                min_shape = min(A.shape)
-                k = min(max(1, min_shape // 10), min_shape)
-                U, D, VT = spla.svds(A, k=k)
-                Dmat = numpy.zeros((len(D), len(D)))
-                dmax = numpy.max(numpy.abs(D))
-                
+            else:            #  Then do not overwrite A.  It is used to calculate y (predicted forces) below.
+                U,D,VT = scipy.linalg.svd(A,overwrite_a=False)
+                Dmat   = array((transpose(A))) 
         except LinAlgError:
             sys.stderr.write("SVD algorithm failed")
             exit(1)
             
         # Process output
 
-        #dmax = numpy.max(numpy.abs(D))
+        dmax = 0.0
 
         for i in range(0,len(Dmat)):
             if ( abs(D[i]) > dmax ) :
@@ -696,6 +215,65 @@ def main():
             x = dot(x,dot(transpose(U),weightedb))
         else:
             x = dot(x,dot(transpose(U),b))
+
+    elif args.algorithm == 'fast_svd':
+        
+        # Modify A and b matrix to reduce A matrix dimension during calculation
+        # now 
+        if DO_WEIGHTING:
+            weightedATA = dot(transpose(weightedA), weightedA)
+            weightedATb = dot(transpose(weightedA), weightedb)
+            eps_sq = args.eps * args.eps
+        else:
+            ATA = dot(transpose(A), A)
+            ATb = dot(transpose(A), b)
+            eps_sq = args.eps * args.eps      
+        
+        # Make the scipy call
+        
+        print ('! fast_svd algorithm used')
+        try:
+            if DO_WEIGHTING: # Then it's OK to overwrite weightedA.  It is not used to calculate y (predicted forces) below.
+                U,D,VT = scipy.linalg.svd(weightedATA,overwrite_a=True)
+                Dmat   = array((transpose(weightedATA)))
+            else:            #  Then do not overwrite A.  It is used to calculate y (predicted forces) below.
+                U,D,VT = scipy.linalg.svd(ATA,overwrite_a=False)
+                Dmat   = array((transpose(ATA)))
+        except LinAlgError:
+            sys.stderr.write("fast SVD algorithm failed")
+            exit(1)
+            
+        # Process output
+
+        dmax = 0.0
+
+        for i in range(0,len(Dmat)):
+            if ( abs(D[i]) > dmax ) :
+                dmax = abs(D[i])
+
+            for j in range(0,len(Dmat[i])):
+                Dmat[i][j]=0.0
+
+        # Cut off singular values based on fraction of maximum value as per numerical recipes.
+        
+        eps = eps_sq * dmax
+        nvars = 0
+
+        for i in range(0,len(D)):
+            if abs(D[i]) > eps:
+                Dmat[i][i]=1.0/D[i]
+                nvars += 1
+
+        print ("! eps (= args.eps*dmax)          =  %11.4e" % eps)        
+        print ("! SVD regularization factor      = %11.4e" % args.eps)
+
+        x=dot(transpose(VT),Dmat)
+
+        if DO_WEIGHTING:
+            x = dot(x,dot(transpose(U),weightedATb))
+        else:
+            x = dot(x,dot(transpose(U),ATb))
+
 
     elif args.algorithm == 'ridge':
         print ('! ridge regression used')
@@ -751,12 +329,27 @@ def main():
         print ('! LASSO alpha = %11.4e' % args.alpha)
 
         if DO_WEIGHTING:
-            reg = linear_model.LassoLars(alpha=args.alpha,fit_intercept=False,fit_path=False,verbose=True,max_iter=100000, copy_X=False)
+            reg = make_pipeline(preprocessing.StandardScaler(with_mean=False, with_std=False), 
+                              linear_model.LassoLars(
+                                  alpha=args.alpha,
+                                  fit_intercept=False,
+                                  fit_path=False,
+                                  verbose=True,
+                                  max_iter=100000,
+                                  copy_X=False)
+                              )
             reg.fit(weightedA,weightedb)
         else:
-            reg = linear_model.LassoLars(alpha=args.alpha,fit_intercept=False,fit_path=False,verbose=True,max_iter=100000)
+            reg = make_pipeline(preprocessing.StandardScaler(with_mean=False, with_std=False), 
+                                linear_model.LassoLars(
+                                    alpha=args.alpha,
+                                    fit_intercept=False,
+                                    fit_path=False,
+                                    verbose=True,
+                                    max_iter=100000)
+                                )
             reg.fit(A,b)
-        x       = reg.coef_[0]
+        x       = reg.steps[1][1].coef_[0] # 1st [1] refers to chain index, 2nd [1] parse out second element in tuple, i.e., linear_model.LassoLars()
         np      = count_nonzero_vars(x)
         nvars   = np
 
@@ -767,174 +360,9 @@ def main():
         x,y = fit_dlars(dlasso_dlars_path, args.nodes, args.cores, args.alpha, args.split_files, args.algorithm, args.read_output, args.weights, args.normalize, args.A , args.b ,args.restart_dlasso_dlars, args.mpistyle)
         np = count_nonzero_vars(x)
         nvars = np
-
-    elif args.algorithm == 'lbfgs':
-
-        print('! L-BFGS nonlinear optimization used')
-
-        if DO_WEIGHTING:
-            A_use = weightedA
-            b_use = weightedb
-        else:
-            A_use = A
-            b_use = b
-
-        x0 = zeros(A_use.shape[1])
-
-
-        res = minimize(
-            nonlinear_loss,
-            x0,
-            args=(A_use, b_use, args.alpha),
-            method='L-BFGS-B',
-            options={'maxiter': 500, 'disp': True}
-        )
-        x = res.x
-        nvars = count_nonzero_vars(x)
-        nvars = np
-
-
-    elif args.algorithm == 'gauss_newton':
-
-        print('! Gauss–Newton nonlinear least squares used')
-
-        if DO_WEIGHTING:
-            A_use = weightedA
-            b_use = weightedb
-        else:
-            A_use = A
-            b_use = b
-
-        x0 = zeros(A_use.shape[1])
-
-        res = least_squares(
-            nonlinear_residual,
-            x0,
-            args=(A_use, b_use),
-            method='trf',
-            max_nfev=500
-        )
-        x = res.x
-        nvars = count_nonzero_vars(x)
-        nvars = np
-
-
-    elif args.algorithm == 'jfnk':
-
-        print('! Jacobian-Free Newton–Krylov used')
-
-        if DO_WEIGHTING:
-            A_use = weightedA
-            b_use = weightedb
-        else:
-            A_use = A
-            b_use = b
-
-
-        def F(x):
-            return nonlinear_residual(x, A_use, b_use)
-
-        x0 = zeros(A_use.shape[1])
-
-        try:
-            x = newton_krylov(
-                F,
-                x0,
-                method='gmres',
-                f_tol=1e-8,
-                maxiter=50
-            )
         
-        except Exception as e:
-            print("JFNK failed:", e)
-            exit(1)
-
-        nvars = count_nonzero_vars(x)
-        nvars = np
-    
-    #################################
-    # Solve the matrix equation
-    #################################
-    elif args.algorithm == 'ga':
-        print('! Genetic Algorithm solver used')
-        if DO_WEIGHTING:
-            w = WEIGHTS
-        else:
-            w = None
-        if args.split_files:
-            print("! Warning: split_files not fully supported for GA; assuming single A.txt")
-        if A is not None and hasattr(A, 'shape') and A.shape[1] > 0:
-            np = A.shape[1]
-        else:
-            with open(args.A) as f:
-                first_line = f.readline().strip()
-                if not first_line:
-                    print("Error: Cannot read first line of A file or file is empty")
-                    exit(1)
-                np = len(first_line.split())
-            print(f"! Inferred number of parameters (np) = {np} from first row of A file")
-        nlines = len(b)  
-        x = ga_solve(
-            A_file=args.A,
-            b_file=args.b,
-            weights_file=args.weights if DO_WEIGHTING else None,
-            pop_size=50,
-            generations=100,
-            mutation_rate=0.05,
-            crossover_rate=0.8,
-            elite_frac=0.1,
-            l2_reg=args.alpha,
-            nlines=nlines,
-            n_params=np,
-            num_cores=args.cores  
-        )
-        nvars = count_nonzero_vars(x)
-        nvars = np 
-
-    elif args.algorithm == 'pso':
-        print('! Particle Swarm Optimization solver used')
-        if args.split_files:
-            print("! Warning: split_files not fully supported for PSO; assuming single A.txt")
-
-        # Ensure np is inferred even if A was not loaded
-        if A is not None and hasattr(A, 'shape') and A.shape[1] > 0:
-            np = A.shape[1]
-        else:
-            with open(args.A) as f:
-                first_line = f.readline().strip()
-                if not first_line:
-                    print("Error: Cannot read first line of A file or file is empty")
-                    exit(1)
-                np = len(first_line.split())
-            print(f"! Inferred number of parameters (np) = {np} from first row of A file")
-
-        nlines = len(b)
-        bounds = (float(args.pso_bounds[0]), float(args.pso_bounds[1]))
-
-        x = pso_solve(
-            A_file=args.A,
-            b_file=args.b,
-            weights_file=args.weights if DO_WEIGHTING else None,
-            swarm_size=args.pso_swarm_size,
-            iters=args.pso_iters,
-            inertia=args.pso_inertia,
-            c1=args.pso_c1,
-            c2=args.pso_c2,
-            l2_reg=args.alpha,
-            nlines=nlines,
-            n_params=np,
-            num_cores=args.cores,
-            seed=args.seed,
-            init_scale=args.pso_init_scale,
-            bounds=bounds,
-            vmax_frac=args.pso_vmax_frac,
-            tol=args.pso_tol,
-            stall_iters=args.pso_stall_iters
-        )
-        nvars = count_nonzero_vars(x)
-        nvars = np
-
     else:
+
         print ("Unrecognized fitting algorithm") 
         exit(1)
 
@@ -943,27 +371,10 @@ def main():
     #################################
 
     # If split_files, A is not read in ...This conditional should really be set by the algorithm, since many set  y themselves...  
-    
-    # y = 0.0
-    print("DEBUG:", args.algorithm, args.split_files, args.read_output, args.active)
+      
     if ( (not args.split_files) and (not args.read_output) and (not args.active ) and (args.algorithm != "dlasso") ):
-        if A is not None:
-            y=dot(A,x)
-        elif args.algorithm in ["ga", "pso"]:
-            # For GA mode, compute y on-demand by reading A file row-by-row
-            print("! Computing y = A*x on-demand (GA/PSO mode, A not in memory)")
-            y = numpy.zeros(len(b), dtype=float)
-            with open(args.A, 'r') as Af:
-                for i in range(len(b)):
-                    A_line = Af.readline()
-                    if not A_line:
-                        break
-                    Arow = numpy.fromstring(A_line, sep=' ', dtype=float)
-                    y[i] = numpy.dot(Arow, x)
-        else:
-            print("! Warning: A is None but algorithm is not GA - cannot compute y")
-            y = numpy.zeros(len(b), dtype=float)
-
+        y=dot(A,x)
+        
     Z=0.0
 
     # Put calculated forces in force.txt
@@ -997,6 +408,7 @@ def main():
     BREAK_COND = False
     
     EXCL_2B = []
+    EXCL_1B = []
 
     # Figure out whether we have triplets and/or quadruplets
     # Find the ATOM_TRIPS_LINE and ATOM_QUADS_LINE
@@ -1011,8 +423,20 @@ def main():
         print (hf[i].rstrip('\n'))
         TEMP = hf[i].split()
         
-        if "EXCL_2B" in hf[i]:
-            EXCL_2B = hf[i].split()[1:]
+        if "EXCLD2B" in hf[i]:
+            line = hf[i].split()
+            if (len(line) == 2) and (line[1] == "false"):
+            	EXCL_2B = []
+            else:
+            	EXCL_2B = list(map(int, line[1:]))	
+	    
+	    
+        if "EXCLD1B" in hf[i]:
+            line = hf[i].split()
+            if (len(line) == 2) and (line[1] == "false"):
+            	EXCL_1B = []
+            else:
+            	EXCL_1B = list(map(int, line[1:]))	    
 
         if len(TEMP)>3:
             if (TEMP[2] == "TRIPLETS:"):
@@ -1031,27 +455,10 @@ def main():
             if (BREAK_COND):
                  break
 
-    # Locate key header lines (do not use fixed indices; EXCLD1B/EXCLD2B shifted the format)
-    PAIRTYP_LINE = -1
-    ATOM_TYPES_LINE = -1
-    ATOM_PAIRS_LINE = -1
-
-    for i, line in enumerate(hf):
-        parts = line.split()
-        if len(parts) >= 2 and parts[0] == "PAIRTYP:":
-            PAIRTYP_LINE = i
-        elif len(parts) >= 3 and parts[0] == "ATOM" and parts[1] == "TYPES:":
-            ATOM_TYPES_LINE = i
-        elif len(parts) >= 3 and parts[0] == "ATOM" and parts[1] == "PAIRS:":
-            ATOM_PAIRS_LINE = i
-
-    if PAIRTYP_LINE < 0 or ATOM_TYPES_LINE < 0 or ATOM_PAIRS_LINE < 0:
-        sys.stderr.write("Error: could not parse params.header (need PAIRTYP, ATOM TYPES, ATOM PAIRS lines)\n")
-        exit(1)
-
     # 1. Figure out what potential type we have
 
-    POTENTIAL = hf[PAIRTYP_LINE].split()[1]
+    POTENTIAL = hf[7].split()
+    POTENTIAL = POTENTIAL[1]
 
     print ("")
 
@@ -1064,7 +471,8 @@ def main():
 
     if POTENTIAL == "CHEBYSHEV":
         
-        TMP = hf[PAIRTYP_LINE].split()
+        TMP = hf[7].split()
+
 
         if len(TMP) >= 4:
             if len(TMP) >= 5:
@@ -1078,12 +486,16 @@ def main():
     FIT_COUL = hf[1].split()
     FIT_COUL = FIT_COUL[1]
 
-    TOTAL_ATOM_TYPES = int(hf[ATOM_TYPES_LINE].split()[2])
-    TOTAL_PAIRS      = int(hf[ATOM_PAIRS_LINE].split()[2])
+    ATOM_TYPES_LINE  = 9
+    TOTAL_ATOM_TYPES = hf[ATOM_TYPES_LINE].split()
+    TOTAL_ATOM_TYPES = int(TOTAL_ATOM_TYPES[2])
+    ATOM_PAIRS_LINE  = ATOM_TYPES_LINE+2+TOTAL_ATOM_TYPES+2
+    TOTAL_PAIRS      = hf[ATOM_PAIRS_LINE].split()
+    TOTAL_PAIRS      = int(TOTAL_PAIRS[2])
     
     # Remove excluded 2b interactions from accounting
     
-    TOTAL_PAIRS -= len(EXCL_2B) 
+    # TOTAL_PAIRS -= len(EXCL_2B) 
 
     A1 = ""
     A2 = ""
@@ -1136,6 +548,8 @@ def main():
                 for i in range(0,int(TOTL)):
                     ADD_LINES += 1
 
+    effective_pair = 0
+
     for i in range(0,TOTAL_PAIRS):
 
         A1 = hf[ATOM_PAIRS_LINE+2+i+1].split()
@@ -1144,11 +558,19 @@ def main():
 
         #print ("PAIRTYPE PARAMS: " + `i` + " " + A1 + " " + A2 + "\n")
         print ("PAIRTYPE PARAMS: " + str(i) + " " + A1 + " " + A2 + "\n")
-
-        for j in range(0, int(SNUM_2B)):
-            print ("%3d %21.13e" % (j,x[i*SNUM_2B+j]))
+	
+        if i in EXCL_2B:
+            for j in range(0, int(SNUM_2B)):
+                print ("%3d %21.13e" % (j,0.0))	
+        else:
+            for j in range(0, int(SNUM_2B)):
+                print ("%3d %21.13e" % (j,x[effective_pair*SNUM_2B+j]))
+            effective_pair += 1    
 
         if FIT_COUL == "true":
+            if len(EXCL_2B) > 0:
+                print("ERROR: cannot use hierarchical learning with charge fitting.")
+                exit(0)		
             print ("q_%s x q_%s %21.13e" % (A1,A2,x[TOTAL_PAIRS*SNUM_2B + SNUM_3B + SNUM_4B + i]))
             COUNTED_COUL_PARAMS += 1
 
@@ -1202,7 +624,7 @@ def main():
                     LINE       = hf[ATOM_TRIPS_LINE+2+ADD_LINES].rstrip('\n')
                     LINE_SPLIT = LINE.split()
 
-                    print ("%s %21.13e" % (LINE, x[TOTAL_PAIRS*SNUM_2B + TRIP_PAR_IDX+int(LINE_SPLIT[5])]))
+                    print ("%s %21.13e" % (LINE, x[effective_pair*SNUM_2B + TRIP_PAR_IDX+int(LINE_SPLIT[5])]))
 
                 TRIP_PAR_IDX += int(UNIQ)
                 COUNTED_TRIP_PARAMS += int(UNIQ)
@@ -1272,7 +694,7 @@ def main():
                     UNIQ_QUAD_IDX = int(LINE_SPLIT[8])
                     #print 'UNIQ_QUAD_IDX', str(UNIQ_QUAD_IDX)
 
-                    print ("%s %21.13e" % (LINE,x[TOTAL_PAIRS*SNUM_2B + COUNTED_TRIP_PARAMS + QUAD_PAR_IDX + UNIQ_QUAD_IDX]))
+                    print ("%s %21.13e" % (LINE,x[effective_pair*SNUM_2B + COUNTED_TRIP_PARAMS + QUAD_PAR_IDX + UNIQ_QUAD_IDX]))
 
                 QUAD_PAR_IDX += int(UNIQ)
                 COUNTED_QUAD_PARAMS += int(UNIQ)
@@ -1292,27 +714,44 @@ def main():
 
     print ("")
 
-    total_params = TOTAL_PAIRS * SNUM_2B + COUNTED_TRIP_PARAMS + COUNTED_QUAD_PARAMS + COUNTED_COUL_PARAMS 
+    total_params = effective_pair * SNUM_2B + COUNTED_TRIP_PARAMS + COUNTED_QUAD_PARAMS + COUNTED_COUL_PARAMS 
+    
+    N_ENER_OFFSETS = int(hf[9].split()[2]) - len(EXCL_1B)
+    N_ATOM_TYPES   = int(hf[9].split()[2])
 
-    N_ENER_OFFSETS = TOTAL_ATOM_TYPES
+
+
 
 ## Parameter count could be off by natom_types, if energies are included in the fit
     if (total_params != len(x)) and (len(x) != (total_params+N_ENER_OFFSETS)) :
         sys.stderr.write( "Error in counting parameters\n") 
+        sys.stderr.write("total_params " + str(total_params) + "\n")
+        sys.stderr.write("N_ENER_OFFSETS " + str(N_ENER_OFFSETS) + "\n")
+        sys.stderr.write("total_params+N_ENER_OFFSETS " + str(total_params+N_ENER_OFFSETS) + "\n")	
         sys.stderr.write("len(x) " + str(len(x)) + "\n") 
         sys.stderr.write("TOTAL_PAIRS " + str(TOTAL_PAIRS) + "\n") 
         sys.stderr.write("SNUM_2B " + str(SNUM_2B) + "\n") 
         sys.stderr.write("COUNTED_TRIP_PARAMS " + str(COUNTED_TRIP_PARAMS) + "\n") 
         sys.stderr.write("COUNTED_QUAD_PARAMS " + str(COUNTED_QUAD_PARAMS) + "\n")
         sys.stderr.write("COUNTED_COUL_PARAMS " + str(COUNTED_COUL_PARAMS) + "\n")
+        sys.stderr.write("============= ")
+        for i in range(10):
+                sys.stderr.write(str(i) + "	" + hf[i])
         exit(1)
 
 
     if len(x) == (total_params+N_ENER_OFFSETS):
-        print ("NO ENERGY OFFSETS: ", N_ENER_OFFSETS)
+        print ("NO ENERGY OFFSETS: ", N_ATOM_TYPES)
+	
+        eff_idx = 0
     
-        for i in range(N_ENER_OFFSETS):
-            print ("ENERGY OFFSET %d %21.13e" % (i+1,x[total_params+i]))
+        for i in range(N_ATOM_TYPES):
+	
+            if i in EXCL_1B:
+                print ("ENERGY OFFSET %d %21.13e" % (i+1,0.0))	    
+            else:
+                print ("ENERGY OFFSET %d %21.13e" % (i+1,x[total_params+eff_idx]))
+                eff_idx += 1
 
     if args.test_suite:
         test_suite_params=open("test_suite_params.txt","w")		
@@ -1395,7 +834,7 @@ def fit_dlars(dlasso_dlars_path, nodes, cores, alpha, split_files, algorithm, re
             elif mpistyle == "ibrun":
                 exepath = "ibrun" + " " + dlars_file  
             else:
-                print("Unrecognized mpistyle:", mpistyle, ". Recognized options are srun or ibrun")
+                print("Unrecognized mpistyle:",args.mpistyle,". Recognized options are srun or ibrun")
            
             command = None
 
@@ -1445,10 +884,8 @@ def fit_dlars(dlasso_dlars_path, nodes, cores, alpha, split_files, algorithm, re
 
 # Python magic to allow having a main function definition.    
 if __name__ == "__main__":
-    mp.set_start_method('forkserver', force=True)
     main()
     
-
 
 
 
